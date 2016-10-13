@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>EDUComp - Premium Bootstrap Theme</title>
+    
+    <!--Bootstrap Framework Version 3.3.7 --> 
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    
+    <!--Font Awesome Version 4.5.0 --> 
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+        
+    <!--EDUComp Stylesheet -->
+    <link href="css/vendors.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link href="css/components.css" type="text/css" rel="stylesheet">
+    
+    <!--Google Fonts--> 
+    <link href='https://fonts.googleapis.com/css?family=Oswald:300,700,400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    
+    <!-- Respond.js and HTML shiv provide HTML5 support in older browsers like IE9 and 8 -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    
+    <div class="loader-backdrop">           <!-- Loader -->
+        <div class="loader">
+            <div class="ball-1"></div>
+            <div class="ball-2"></div>
+        </div>
+    </div>
+    
+    <header>            <!-- Header = Topbar + Navigation Bar -->
+        <div class="topbar">            <!-- Dark Blue Topbar -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <span class="call-us"><i class="fa fa-phone"></i> 1800-234-2845</span>          <!-- Change Phone Number Here -->
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="dropdown">          <!-- Language Dropdown -->
+                            <button class="btn btn-xs" type="button" id="select-lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-globe"></i> English
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="select-lang">
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">Spanish</a></li>
+                                <li><a href="#">Vietnamese</a></li>
+                            </ul>
+                        </div>
+                        <form class="search form-inline">           <!-- Search Form -->
+                            <input type="text" class="form-control" placeholder="Start typing...">
+                            <button class="btn-search" type="submit"><i class="fa fa-search fa-fw"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar navbar-default">         <!-- Navigation Bar -->
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navigation" aria-expanded="false">
+                        <span class="sr-only">Toggle Menu</span>
+                        <span>Menu</span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""></a> <!-- Replace with your Logo -->
+                </div>
+                
+                <div class="collapse navbar-collapse" id="main-navigation">         <!-- Main Menu -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active"><a href="#">About</a>
+                            <ul class="sub-menu">									<!-- Sub Menu -->
+                                <li><a href="brief-history.html">Brief History</a></li>
+                                <li><a href=about-educomp.html>About EduComp</a></li>
+                                <li><a href="admission-process.html">Admission Process</a></li>
+                                <li><a href="albums.html">Albums</a></li>
+                                <li><a href="album-single.html">Album Single</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                                <li><a href="faq.html">FAQ</a></li>
+                                <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Pages</a>
+                            <ul class="sub-menu">																<!-- Sub Menu -->
+                                <li><a href="#"> Courses <i class="fa fa-angle-right pull-right"></i></a>
+                                    <ul class="sub-menu">														<!-- Sub Sub Menu -->
+                                        <li><a href="course-grid.html">Course Grid</a></li>
+                                        <li><a href="course-list.html">Course List</a></li>
+                                        <li><a href="course-detail.html">Course Detail</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Teachers <i class="fa fa-angle-right pull-right"></i></a>
+                                    <ul class="sub-menu">														<!-- Sub Sub Menu -->
+                                        <li><a href="teachers.html">Our Teachers</a></li>
+                                        <li><a href="teacher-profile.html">Teacher Profile</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Events  <i class="fa fa-angle-right pull-right"></i></a>
+                                    <ul class="sub-menu">														<!-- Sub Sub Menu -->
+                                        <li><a href="upcoming-events.html">Upcoming Events</a></li>
+                                        <li><a href="event-details.html">Event Details</a></li>
+                                    </ul>                                
+                                </li>
+                                <li><a href="coming-soon.html">Coming Soon</a></li>
+                                <li><a href="not-found.html">404</a></li>                                
+                            </ul>
+                        </li>                        
+                        <li><a href="#">Elements</a>
+                            <ul class="sub-menu">																<!-- Sub Menu -->
+                                <li><a href="video.html">Video</a></li>
+                                <li><a href="modals.html">Modals</a></li>
+                                <li><a href="call-to-action.html">Call to action</a></li>
+                                <li><a href="icon-boxes.html">Icon boxes</a></li>
+                                <li><a href="accordion.html">Accordion</a></li>
+                                <li><a href="tabs.html">Tabs</a></li>
+                                <li><a href="tables.html">Tables</a></li>
+                                <li><a href="blockquotes.html">Blockquotes</a></li>
+                                <li><a href="progress-bars.html">Progress Bars</a></li>
+                                <li><a href="lists.html">Lists</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Blog</a>
+                            <ul class="sub-menu">																<!-- Sub Menu -->
+                                <li><a href="blog-list-right-sidebar.html">Blog Right Sidebar</a></li>
+                                <li><a href="blog-list-left-sidebar.html">Blog Left Sidebar</a></li>
+                                <li><a href="blog-single.html">Blog Single</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Contact</a>
+                            <ul class="sub-menu">																<!-- Sub Menu -->
+                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="google-map.html">Google Map</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>About EDUcomp</h1>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">About EDUcomp</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="container mt-100 mb-100">
+        <div class="row">
+            <div class="col-sm-8">
+                <h3 class="heading">An <span class="color2">Introduction</span></h3>
+                <p class="lead">Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero.</p>
+                <p class="text-justify">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+                <p class="text-justify">Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+            </div>
+            <div class="col-sm-4">
+                <aside class="applynow-widget">
+                    <img src="images/applynow.png" class="img-responsive center-block" alt="">
+                    <div class="apply-info text-center">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="font20">Admissions are open!</p>
+                        <a href="admission-process.html" class="btn btn-primary">Apply Now</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clearfix"></div>
+    
+    <div class="pt-100 pb-80 bgcolor2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="icon-box-3">            <!-- ***** Icon Box Style 3 ***** -->
+                        <div class="icon-box-icon">
+                            <i class="fa fa-bullseye" aria-hidden="true"></i>
+                        </div>
+                        <div class="icon-box-content">
+                            <h5 class="heading">Our Mission</h5>
+                            <span class="inverse">We believe in working towards the common goal.</span>
+                            <br><br>
+                            <a href="brief-history.html">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="icon-box-3">            <!-- ***** Icon Box Style 3 ***** -->
+                        <div class="icon-box-icon">
+                            <i class="fa fa-crosshairs" aria-hidden="true"></i>
+                        </div>
+                        <div class="icon-box-content">
+                            <h5 class="heading">Our Vision</h5>
+                            <span class="inverse">We believe in working towards the common goal.</span>
+                            <br><br>
+                            <a href="brief-history.html">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="icon-box-3">            <!-- ***** Icon Box Style 3 ***** -->
+                        <div class="icon-box-icon">
+                            <i class="fa fa-book" aria-hidden="true"></i>
+                        </div>
+                        <div class="icon-box-content">
+                            <h5 class="heading">Our Values</h5>
+                            <span class="inverse">We believe in working towards the common goal.</span>
+                            <br><br>
+                            <a href="brief-history.html">Learn More</a>
+                        </div>
+                    </div>
+                </div>                
+            </div>            
+        </div>
+    </div>
+    
+    <div class="clearfix"></div>
+
+    <div class="container mt-100 mb-80">
+        <div class="row">
+            <h2 class="heading text-center">Board of <span class="color2">Directors</span>
+                <span class="sub-heading">EDUComp is a fully responsive premium education theme for schools, colleges, insitutions and universities.</span>
+                <span class="icon-divider"></span>
+            </h2>
+            <div class="col-sm-4">
+                <div class="teacher-card">
+                    <ul class="social-links">
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                    <img src="images/teacher-1.png" class="teacher-img img-responsive" alt="">
+                    <a href="teacher-profile.html" class="teacher-link">View Profile</a>
+                    <div class="teacher-detail">
+                        <h4 class="heading">Ms. Simcy Janes</h4>
+                        <span class="position">HOD, Science Department</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="teacher-card">
+                    <ul class="social-links">
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                    <img src="images/teacher-2.png" class="teacher-img img-responsive" alt="">
+                    <a href="teacher-profile.html" class="teacher-link">View Profile</a>
+                    <div class="teacher-detail">
+                        <h4 class="heading">Mr. Janes Simcy</h4>
+                        <span class="position">HOD, Science Department</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="teacher-card">
+                    <ul class="social-links">
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                    <img src="images/teacher-3.png" class="teacher-img img-responsive" alt="">
+                    <a href="teacher-profile.html" class="teacher-link">View Profile</a>
+                    <div class="teacher-detail">
+                        <h4 class="heading">Ms. Simcy Janes</h4>
+                        <span class="position">HOD, Science Department</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+            
+    <div class="clearfix"></div>
+    
+    <div class="bgcolor3 pt-100 pb-100">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="logo-scroll">
+                    <img src="images/logo-1.png" alt="">
+                    <img src="images/logo-2.png" alt="">
+                    <img src="images/logo-3.png" alt="">
+                    <img src="images/logo-4.png" alt="">
+                    <img src="images/logo-5.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">         <!-- Footer -->
+        <div class="footer-pri">            <!-- Primary Footer -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4 footer-widget">            <!-- Footer Widget - Blog -->
+                        <h5 class="heading inverse">Recent <span class="color2">Blog</span></h5>
+                        <ul class="blog-thumbnail">
+                            <li class="entry">          <!-- Blog Entry Excerpt -->
+                                <div class="entry-content">
+                                    <h4 class="entry-header"><a href="blog-single.html">What it takes to be National Best ?</a></h4>
+                                    <p class="entry-text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.                                     </p>
+                                </div>
+                            </li>
+                            <li class="entry">          <!-- Blog Entry Excerpt -->
+                                <div class="entry-content">
+                                    <h4 class="entry-header"><a href="blog-single.html">How do we achieve 100% success rate ?</a></h4>
+                                    <p class="entry-text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.                                     </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2 footer-widget">            <!-- Footer Widget - Quick Links -->
+                        <h5 class="heading inverse">Quick <span class="color2">Links</span></h5>
+                        <ul class="quick-links">
+                            <li><a href="brief-history.html">Brief History</a></li>
+                            <li><a href="about-educomp.html">About EDUComp</a></li>
+                            <li><a href="course-grid.html">Our Courses</a></li>
+                            <li><a href="teachers.html">Our Teachers</a></li>
+                            <li><a href="upcoming-events.html">Upcoming Events</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2 footer-widget">            <!-- Footer Widget - Affiliations -->
+                        <h5 class="heading inverse">Affiliations &amp; <span class="color2">Awards</span></h5>
+                        <ul class="affiliations">
+                            <li><img src="images/university-1.png" class="img-responsive" alt=""></li>
+                            <li><img src="images/university-2.png" class="img-responsive" alt=""></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2 footer-widget">            <!-- Footer Widget - Policies -->
+                        <h5 class="heading inverse">Our <span class="color2">Elements</span></h5>
+                        <ul class="quick-links">
+                            <li><a href="icon-boxes.html">Icon Boxes</a></li>
+                            <li><a href="accordion.html">Accordion</a></li>
+                            <li><a href="tables.html">Tables</a></li>
+                            <li><a href="tabs.html">Tabs</a></li>
+                            <li><a href="modals.html">Modals</a></li>
+                            <li><a href="progress-bars.html">Progress Bars</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2 footer-widget">            <!-- Footer Widget - Contact Info -->
+                        <h5 class="heading inverse">Contact  <span class="color2">Us</span></h5>
+                        <address>
+                            <strong>EDUcomp Group Of Institutions</strong>
+                            <span>45th Floor,<br/> Newzek Estate Building,<br/> United Kingdom</span>
+                        </address>
+                        <a href="tel:+4525644563" class="phone"><i class="fa fa-phone fa-fw"></i> +452 564 4563</a>
+                        <a href="mailto:test@example.com" class="email"><i class="fa fa-envelope fa-fw"></i> info@company.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-sec">            <!-- Secondary Footer -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 text-center">
+                        <span class="copyright">&copy; Copyright Your Company 2016</span>           <!-- Copyright Text -->
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <ul class="social">          <!-- Social Media Links -->
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-reddit-alien"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+	<div id="back"><i class="fa fa-angle-up"></i></div>     <!-- Back To Top -->
+    
+    <!--jQuery Version 2.2.1-->
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+
+    <!--Bootstrap Framework version 3.3.7-->
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    
+    <!-- Owl Carousel Version 2.0.0 -->
+    <script src="js/owl.carousel.min.js" type="text/javascript"></script>
+	
+    <!--Educomp Custom Script-->
+    <script src="js/main.js" type=text/javascript></script>
+
+</body>
+
+</html>
