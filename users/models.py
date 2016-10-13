@@ -49,6 +49,14 @@ class User(AbstractEmailUser):
 class Student(User):
     pass
 
+    class Meta:
+        verbose_name = 'student'
+        verbose_name_plural = 'students'
+
 
 class Instructor(User):
     categories = models.ManyToManyField('courses.Category', related_name='instructors')
+
+    class Meta:
+        verbose_name = 'instructor'
+        verbose_name_plural = 'instructors'

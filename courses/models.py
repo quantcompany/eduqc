@@ -6,6 +6,14 @@ class Category(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
 
+    class Meta:
+        ordering = ['name']
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
+
+    def __str__(self):
+        return self.name
+
 
 class Course(models.Model):
     LEVEL_CHOICES = [(1, 'Beginner'), (2, 'Intermediate'), (3, 'Advanced')]
@@ -20,6 +28,14 @@ class Course(models.Model):
     topics = models.TextField()
     audience = models.TextField()
 
+    class Meta:
+        ordering = ['name']
+        verbose_name = 'course'
+        verbose_name_plural = 'courses'
+
+    def __str__(self):
+        return self.name
+
 
 class FAQ(models.Model):
     question = models.CharField(max_length=400)
@@ -32,3 +48,4 @@ class Review(models.Model):
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     course = models.ForeignKey('courses.Course', related_name='reviews')
     user = models.ForeignKey('users.Student', related_name='reviews')
+    created = models.DateTimeField(auto_now_add=True)
