@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'custom_user',
+    'courses',
+    'sesiones',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -117,4 +121,43 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+# Static files
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
+
+
+# Costum User
+AUTH_USER_MODEL = 'users.User'
+
+
+# Where to redirect when an anonymous user tries to access a login_required page
+# We redirect to the root url because our landing page is also our login page
+#LOGIN_URL = '/'
+
+# Print emails to terminal instead of trying to actually send them:
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+DATE_INPUT_FORMATS = ('%d/%m/%Y',)
+
+#EMAIL_PORT = 465
+# EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+#EMAIL_USE_SSL = True
+#EMAIL_HOST = 'smtp.zoho.com'
+#EMAIL_HOST_USER = 'info@tripletherapy.net'
+#EMAIL_HOST_PASSWORD = 'quant_zx_963'
+#DEFAULT_FROM_EMAIL = 'info@tripletherapy.net'
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
+
+try:
+    from local_settings import *
+except:
+    pass
