@@ -160,6 +160,8 @@ LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
 
+COURSES_PER_PAGE = 3
+
 try:
     from local_settings import *
 except:

@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_css %}
+{% endblock %}
+
+{% block page_header %}Course List{% endblock %}
+
+{% block breadcrumbs %}
+    <li><a href="index.html">Home</a></li>
+    <li class="active">Course List</li>
+{% endblock %}
+
+{% block content %}
+    <div class="pt-60 pb-60 bgcolor3">
+        <div class="container">
+            <div class="row">
+                <form class="course-search" ic-get-from="{% url 'courses:index' %}" ic-target="#course-list">
+                    <input id="p" type="hidden" value="1">
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <input id="search-1" type="text" class="form-control">
+                            <label for="search-1">Enter Keywords...</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <select id="category-filter" name="c" class="selectpicker" data-style="btn-inverse" data-width="100%" multiple>
+                            {% for category in categories %}
+                                <option value="{{ category.id }}">{{ category.name }}</option>
+                            {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <select class="selectpicker" data-style="btn-inverse" data-width="100%">
+                                <option>Ontario</option>
+                                <option>London</option>
+                                <option>New York</option>
+                                <option>Amsterdam</option>
+                            </select>
+                        </div>
+                    </div>                    
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-search"></i> Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-20 mb-60">
+        <div class="row">
+            <div id="course-list" class="col-sm-8">
+                {% include 'courses/includes/course_list.html' %}
+            </div>
+            
+            <div class="col-sm-4">                  <!-- sidebar -->
+                <aside class="widget download-widget text-center">
+                    <div class="download-info">
+                        <p class="inverse font24">Join the best people in industry.</p><br/>
+                        <a href="admission-process.html" class="btn btn-default">Apply Now</a>
+                    </div>
+                </aside>
+                <aside class="widget twitter-widget">
+                    <h5 class="heading">Twitter Feed</h5>
+                    <ul class="tweet-list">
+                        <li>We've done it again. Educomp wins <a href="">#SirEdward</a> award yet again! Kudos to all Educomp family!</li>
+                    </ul>
+                </aside>
+                <aside class="widget category-widget">
+                    <h5 class="heading">Categories</h5>
+                    <ul class="categories">
+                        <li><a href="#">Personality Development</a></li>
+                        <li><a href="#">Techonology</a></li>
+                        <li><a href="#">Life Teachings</a></li>
+                        <li><a href="#">Stress Management</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Techonology</a></li>
+                        <li><a href="#">Life Teachings</a></li>
+                    </ul>
+                </aside>
+                <aside class="widget tagcloud-widget">
+                    <h5 class="heading">Trending Tags</h5>
+                    <ul class="tagcloud">
+                        <li><a href="#">Maths</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">Course</a></li>
+                        <li><a href="#">Study</a></li>
+                        <li><a href="#">Bachelors</a></li>
+                        <li><a href="#">Best</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Life</a></li>
+                        <li><a href="#">Fun</a></li>
+                        <li><a href="#">Maths</a></li>
+                        <li><a href="#">Study</a></li>
+                    </ul>
+                </aside>
+                <aside class="widget blog-widget">
+                    <h5 class="heading">Recent Blog</h5>
+                    <ul class="blog-thumbnail">
+                        <li class="entry">
+                            <div class="entry-content">
+                                <h4 class="entry-header"><a href="blog-single.html">What it takes to be National Best</a></h4>
+                                <p class="entry-text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings.</p>
+                            </div>
+                        </li>
+                        <li class="entry">
+                            <div class="entry-content">
+                                <h4 class="entry-header"><a href="blog-single.html">What it takes to be National Best</a></h4>
+                                <p class="entry-text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings.</p>
+                            </div>
+                        </li>
+                    </ul>       
+                </aside>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block tail_js %}
+    <!-- Select Box Styling Version 1.10-->
+    <script src="{% static 'js/bootstrap-select.min.js' %}" type="text/javascript"></script>
+
+    <script>
+        // $('.pagination>li>a').on('click', function(e){
+        //     $('#p').val($(this).data('p'));
+        //     $('.course-search').submit();
+        // });
+    </script>
+{% endblock %}

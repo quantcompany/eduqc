@@ -1,10 +1,7 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block head_css %}
-    <link href="{% static 'css/vendors.css' %}" type="text/css" rel="stylesheet">
-
     <!--Slider Revolution -->
     <link href="{% static 'slider-revolution/css/settings.css' %}" type="text/css" rel="stylesheet">
     <link href="{% static 'slider-revolution/css/layers.css' %}" type="text/css" rel="stylesheet">
@@ -12,7 +9,7 @@
 {% endblock %}
 
 
-{% block content %}
+{% block main %}
     <!-- Slider Revolution -->
     <div class="rev_slider_wrapper fullwidthbanner-container">
         <div id="slider" class="rev_slider fullwidthbanner" data-version="5.0.7">    
@@ -374,33 +371,33 @@
                 </div>
                 <div class="col-sm-3 no-gutter">
                     <div class="img-box">
-                        <a href="images/gallery-4.jpg" data-gal="prettyPhoto[galleryName]" class="img-zoom"><i class="fa fa-search"></i></a>
+                        <a href="{% static 'images/gallery-4.jpg' %}" data-gal="prettyPhoto[galleryName]" class="img-zoom"><i class="fa fa-search"></i></a>
                         <img src="{% static 'images/gallery-4' %}.jpg" alt="" class="img-responsive">
                     </div>
                 </div>
                 <div class="col-sm-3 no-gutter">
                     <div class="img-box">
-                        <a href="images/gallery-6.jpg" data-gal="prettyPhoto[galleryName]" class="img-zoom"><i class="fa fa-search"></i></a>
+                        <a href="{% static 'images/gallery-6.jpg' %}" data-gal="prettyPhoto[galleryName]" class="img-zoom"><i class="fa fa-search"></i></a>
                         <img src="{% static 'images/gallery-6' %}.jpg" alt="" class="img-responsive">
                     </div>
                     <div class="img-box">
-                        <a href="images/gallery-1.jpg" data-gal="prettyPhoto[galleryName]" class="img-zoom"><i class="fa fa-search"></i></a>
+                        <a href="{% static 'images/gallery-1.jpg' %}" data-gal="prettyPhoto[galleryName]" class="img-zoom"><i class="fa fa-search"></i></a>
                         <img src="{% static 'images/gallery-1' %}.jpg" alt="" class="img-responsive">
                     </div>                    
                 </div>
                 <div class="col-sm-3 no-gutter">
                     <div class="img-box">
-                        <a href="images/gallery-2.jpg" data-gal="prettyPhoto[galleryName]" class="img-zoom"><i class="fa fa-search"></i></a>
+                        <a href="{% static 'images/gallery-2.jpg' %}" data-gal="prettyPhoto[galleryName]" class="img-zoom"><i class="fa fa-search"></i></a>
                         <img src="{% static 'images/gallery-2' %}.jpg" alt="" class="img-responsive">
                     </div>
                     <div class="img-box">
-                        <a href="images/gallery-3.jpg" data-gal="prettyPhoto[galleryName]" class="img-zoom"><i class="fa fa-search"></i></a>
+                        <a href="{% static 'images/gallery-3.jpg' %}" data-gal="prettyPhoto[galleryName]" class="img-zoom"><i class="fa fa-search"></i></a>
                         <img src="{% static 'images/gallery-3' %}.jpg" alt="" class="img-responsive">
                     </div>                    
                 </div>
                 <div class="col-sm-3 no-gutter">
                     <div class="img-box">
-                        <a href="images/gallery-5.jpg" data-gal="prettyPhoto[galleryName]" class="img-zoom"><i class="fa fa-search"></i></a>
+                        <a href="{% static 'images/gallery-5.jpg' %}" data-gal="prettyPhoto[galleryName]" class="img-zoom"><i class="fa fa-search"></i></a>
                         <img src="{% static 'images/gallery-5' %}.jpg" alt="" class="img-responsive">
                     </div>
                 </div>                
