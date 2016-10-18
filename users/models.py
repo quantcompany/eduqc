@@ -13,7 +13,7 @@ class User(AbstractEmailUser):
     """
     Users for the application
     """
-    user_name = models.CharField(max_length=30)
+    user_name = models.CharField(max_length=30, blank=True)
     first_name = models.CharField(max_length=40, blank=True)
     last_name = models.CharField(max_length=40, blank=True)
     description = models.TextField(blank=True)
