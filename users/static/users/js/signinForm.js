@@ -1,38 +1,35 @@
-var signupForm = {
+var signinForm = {
     done: false,
     errors: [],
     submitting: false,
 
     email: {value: '', error: ''},
-    password1: {value: '', error: ''},
-    password2: {value: '', error: ''},
+    password: {value: '', error: ''},
+
     clear: function(){
         this.errors = [];
         
         this.email.value = '';
         this.email.error = '';
 
-        this.password1.value = '';
-        this.password1.error = ''
-
-        this.password2.value = '';
-        this.password2.error = ''
+        this.password.value = '';
+        this.password.error = ''
     }
 };
 
 
-rivets.bind($('#signup-form'), {form: signupForm})
+rivets.bind($('#signin-form'), {form: signinForm})
 
 
-$('#signup-form').on('submit', function(e){
-    signupForm.submitting = true;
+$('#signin-form').on('submit', function(e){
+    signinForm.submitting = true;
     
     e.preventDefault();
 
     var fd = new FormData(this);
 
     var request = $.ajax({
-        url: '/users/signup',
+        url: '/users/signin',
         method: 'POST',
         data: new FormData(this),
         processData: false,  // tell jQuery not to process the data
@@ -42,9 +39,9 @@ $('#signup-form').on('submit', function(e){
 
     request.done(function(data, textStatus, jqXHR) {
         console.log('Success\n' + jqXHR.responseText);
-        signupForm.submitting = false;
-        signupForm.clear();
-        signupForm.done = true;
+        signinForm.submitting = false;
+        signinForm.clear();
+        signinForm.done = true;
     });
      
     request.fail(function(jqXHR, textStatus, errorThrown) {
@@ -53,12 +50,11 @@ $('#signup-form').on('submit', function(e){
         var data = JSON.parse(jqXHR.responseText);
 
         if (jqXHR.status == 400){
-            signupForm.errors = data.__all__ || [];
-            signupForm.email.error = data.email ? data.email[0] : '';
-            signupForm.password1.error = data.password1 ? data.password1[0] : '';
-            signupForm.password2.error = data.password2 ? data.password2[0] : '';
+            signinForm.errors = data.__all__ || [];
+            signinForm.email.error = data.username ? data.username[0] : '';
+            signinForm.password.error = data.password ? data.password[0] : '';
         }
 
-        signupForm.submitting = false;
+        signinForm.submitting = false;
     });
 });

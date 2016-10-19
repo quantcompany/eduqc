@@ -1,11 +1,21 @@
-<form action="{% url 'users:signin' %}">
-    <div class="form-group">
-        <input class="form-control" type="email" placeholder="Email">
+<form id="signin-form" action="{% url 'users:signin' %}" method="POST">
+    {% csrf_token %}
+    
+    <ul rv-show="form.errors">
+        <li rv-each-error="form.errors">{ error }</li>
+    </ul>
+
+    <div class="form-group" rv-class-has-error="form.email.error">
+        <input class="form-control" name="username" type="email" placeholder="Email" rv-value="form.email.value" >
+        <label class="control-label" rv-show="form.email.error"><small rv-html="form.email.error"></small></label>
     </div>
-    <div class="form-group">
-        <input class="form-control" type="password" placeholder="Password">
+
+    <div class="form-group" rv-class-has-error="form.password.error">
+        <input class="form-control" name="password" type="password" placeholder="Password" rv-value="form.password.value" >
+        <label class="control-label" rv-show="form.password.error"><small rv-html="form.password.error"></small></label>
     </div>
+    
     <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+        <button type="submit" class="btn btn-primary btn-block" rv-class-active="form.submitting">Sign In</button>
     </div>
 </form>

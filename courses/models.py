@@ -14,6 +14,13 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def as_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'description': self.description
+        }
+
 
 class Course(models.Model):
     LEVEL_CHOICES = [(1, 'Beginner'), (2, 'Intermediate'), (3, 'Advanced')]
@@ -35,6 +42,16 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
+
+    def as_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'description': self.description,
+            'duration': self.duration,
+            'category': self.category.as_dict(),
+            'main_image': self.main_image.url,
+        }
 
 
 class FAQ(models.Model):

@@ -1,27 +1,36 @@
-<form id="signup-form">
-    {% csrf_token %}
+<form id="signup-form" action="{% url 'users:signup' %}" method="POST">
+    <div rv-hide="form.done">
+        {% csrf_token %}
 
-    <ul rv-show="form.errors">
-        <li rv-each-error="form.errors">{ error }</li>
-    </ul>
+        <ul rv-show="form.errors">
+            <li rv-each-error="form.errors">{ error }</li>
+        </ul>
 
-    <div class="form-group" rv-class-has-error="form.email.error">
-        <input class="form-control" name="email" type="email" placeholder="Email" rv-value="form.email.value" >
-        <label class="control-label" rv-show="form.email.error"><small rv-html="form.email.error"></small></label>
+        <div class="form-group" rv-class-has-error="form.email.error">
+            <input class="form-control" name="email" type="email" placeholder="Email" rv-value="form.email.value" >
+            <label class="control-label" rv-show="form.email.error"><small rv-html="form.email.error"></small></label>
+        </div>
+        
+        <div class="form-group" rv-class-has-error="form.password1.error">
+            <input class="form-control" name="password1" type="password" placeholder="Password" rv-value="form.password1.value" >
+            <label class="control-label" rv-show="form.password1.error"><small rv-html="form.password1.error"></small></label>
+        </div>
+        
+        <div class="form-group" rv-class-has-error="form.password2.error">
+            <input class="form-control" name="password2" type="password" placeholder="Password (again)" rv-value="form.password2.value">
+            <label class="control-label" rv-show="form.password2.error"><small rv-html="form.password2.error"></small></label>
+        </div>
+     
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block" rv-class-active="form.submitting">Sign Up</button>
+        </div>
     </div>
     
-    <div class="form-group" rv-class-has-error="form.password1.error">
-        <input class="form-control" name="password1" type="password" placeholder="Password" rv-value="form.password1.value" >
-        <label class="control-label" rv-show="form.password1.error"><small rv-html="form.password1.error"></small></label>
-    </div>
-    
-    <div class="form-group" rv-class-has-error="form.password2.error">
-        <input class="form-control" name="password2" type="password" placeholder="Password (again)" rv-value="form.password2.value">
-        <label class="control-label" rv-show="form.password2.error"><small rv-html="form.password2.error"></small></label>
-    </div>
- 
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block" rv-show="form.submitting" disabled>Sign Up</button>
-        <button type="submit" class="btn btn-primary btn-block" rv-hide="form.submitting">Sign Up</button>
+    <div class="row" rv-show="form.done">
+        <div class="col-md-12">
+            <h4>Thanks!</h4>
+            <p>An email with an activation link was sent to your email address.</p>
+            <p>Please click on the link to activate your account before signing in!</p>
+        </div>
     </div>
 </form>
