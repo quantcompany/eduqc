@@ -37,10 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'custom_user',
-    
+
     'courses',
+    'emails',
     'index',
     'sesiones',
     'users',
@@ -144,7 +145,7 @@ AUTH_USER_MODEL = 'users.User'
 #LOGIN_URL = '/'
 
 # Print emails to terminal instead of trying to actually send them:
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 DATE_INPUT_FORMATS = ('%d/%m/%Y',)
 

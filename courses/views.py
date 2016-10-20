@@ -1,48 +1,30 @@
-from django.http import JsonResponse
 from django.conf import settings
-from django.shortcuts import render
 from django.core.paginator import Paginator
+from django.http import JsonResponse
+from django.shortcuts import render, get_object_or_404
 
-from .models import Course, Category
 from .forms import CourseFilterForm
+from .models import Course, Category
 
 
 def index(request, *args, **kwargs):
-    # page_number = int(request.GET.get('p', '1'))
-    # category_filter = [int(id) for id in request.GET.getlist('c')]
-
-    # if len(category_filter) > 0:
-    #     courses = Course.objects.filter(category__id__in=category_filter)
-    # else:
-    #     courses = Course.objects.all()
-
-    # paginator = Paginator(courses, settings.COURSES_PER_PAGE)
-
-    # if page_number < 1 or page_number > paginator.num_pages:
-    #     page_number = 1
-
-    # category_query = '&'.join(['c={0}'.format(c) for c in category_filter])
-
-    # context = {
-    #     'page': paginator.page(page_number),
-    #     'page_range': paginator.page_range,
-    #     'categories': Category.objects.all(),
-    #     'category_query': category_query
-    # }
-
-    # if request.is_ajax():
-    #     return render(request, 'courses/includes/course_list.html', context)
-    # else:
     return render(request, 'courses/index.html', {'categories': Category.objects.all()})
+
+
+def detail(request, course_id):
+    course = get_object_or_404(Course, id=course_id)
+    return render(request, 'courses/detail.html', {'course': course})
 
 
 def course_filter(request):
     form = CourseFilterForm(request.POST)
 
+    courses = Course.objects.all()
+
     if form.is_valid():
-        courses = Course.objects.filter(category__in=form.cleaned_data['categories'])
-    else:
-        courses = Course.objects.all()
+        categories = form.cleaned_data['categories']
+        if len(categories) > 0:
+            courses = courses.filter(category__in=categories)
 
     paginator = Paginator(courses, settings.COURSES_PER_PAGE)
 
