@@ -18,11 +18,12 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from index.views import index
+from index.views import index, contact
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name='index'),
+    url(r'^contact$', contact, name='contact'),
     url(r'^courses/', include('courses.urls', namespace='courses')),
     url(r'^users/', include('users.urls', namespace='users')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
