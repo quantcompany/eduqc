@@ -1,6 +1,6 @@
 {% load static %}
 
-<nav class="navbar navbar-default">         <!-- Navigation Bar -->
+<nav class="navbar navbar-default font16">         <!-- Navigation Bar -->
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navigation" aria-expanded="false">
@@ -9,12 +9,17 @@
             </button>
             <a class="navbar-brand" href="index.html"><img src="{% static 'images/logo.png' %}" alt=""></a> <!-- Replace with your Logo -->
         </div>
-        
+
         <div class="collapse navbar-collapse" id="main-navigation">         <!-- Main Menu -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Courses</a>
-                <li><a href="#">Contact</a>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'courses:index' %}">Courses</a>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="#"><span class="flag-icon flag-icon-us"></span> US</a>
+                  <ul class="sub-menu">
+                    <li><a href="#"><span class="flag-icon flag-icon-es"></span> ES</a></li>
+                    <li><a href="#"><span class="flag-icon flag-icon-fr"></span> FR</a></li>
+                  </ul>
                 </li>
             </ul>
         </div>

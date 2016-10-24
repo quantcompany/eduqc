@@ -7,7 +7,6 @@
 {% block page_header %}Course Detail{% endblock %}
 
 {% block breadcrumbs %}
-    <li><a href="index.html">Home</a></li>
     <li><a href="{% url 'courses:index' %}">Courses</a></li>
     <li class="active">{{ course.name }}</li>
 {% endblock %}

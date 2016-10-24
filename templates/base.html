@@ -33,6 +33,9 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
+        <!-- Flags -->
+        <link href="{% static 'flag-icon/css/flag-icon.min.css' %}" type="text/css" rel="stylesheet">
+
         {% block head_css %}{% endblock %}
     </head>
 
@@ -45,7 +48,6 @@
         </div>
 
         <header>            <!-- Header = Topbar + Navigation Bar -->
-            {% include 'includes/topbar.html' %}
             {% include 'includes/navbar.html' %}
         </header>
 
@@ -55,9 +57,9 @@
                 <div class="container">
                     <h1>{% block page_header %}Empty Page{% endblock %}</h1>
                     <ul class="breadcrumb">
+                      <li><a href="{% url 'index' %}">Home</a></li>
                     {% block breadcrumbs %}
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active">Empty Page</li>
+                      <li class="active">Empty Page</li>
                     {% endblock %}
                     </ul>
                 </div>

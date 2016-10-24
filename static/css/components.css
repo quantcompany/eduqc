@@ -143,7 +143,7 @@ textarea.form-control, select.form-control{
     border-radius: 50%;
     text-align: center;
     border: 2px solid #fff;
-    background-color: transparent;    
+    background-color: transparent;
 }
 
 .icon-fill{
@@ -215,7 +215,7 @@ textarea.form-control, select.form-control{
 {
     font-family: 'Montserrat', sans-serif;
     color: #fff;
-    font-size: 13px;
+    font-size: 16px;
     text-transform: uppercase;
     font-weight: 300;
     overflow: hidden;
@@ -240,7 +240,7 @@ textarea.form-control, select.form-control{
 	pointer-events: none;
 	-webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
-    transform: translateX(-50%);	
+    transform: translateX(-50%);
 }
 
 .navbar-default .navbar-nav>li>a:hover{
@@ -249,7 +249,7 @@ textarea.form-control, select.form-control{
 
 .navbar-default .navbar-nav>li>a:hover::before, .navbar-default .navbar-nav>.active>a::before{
 	color:#fff;
-	text-shadow:6px 0 #fff, -6px 0 #fff;	
+	text-shadow:6px 0 #fff, -6px 0 #fff;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
@@ -316,7 +316,7 @@ textarea.form-control, select.form-control{
     padding:12px;
     background-color: rgba(26, 43, 81,0.85);
     border-left: 2px solid #ff9c00;
-    font-size: 11px;
+    font-size: 13px;
     color: #fff;
     display: block;
     transition: 200ms ease all;
@@ -365,7 +365,7 @@ textarea.form-control, select.form-control{
     background-color: #fff;
     transform: translate(-50%, -50%);
     transition: 550ms ease all;
-    z-index: -1;    
+    z-index: -1;
 }
 
 .btn:hover:after{
@@ -484,7 +484,7 @@ a.readmore{
     padding: 10px;
     font-weight: 700;
     text-decoration: underline;
-    letter-spacing: 0.025em;    
+    letter-spacing: 0.025em;
 }
 
 /* Dropdowns */
@@ -846,7 +846,7 @@ a.readmore{
 
 .accordion-2 .panel-default>.panel-heading{
     background-color: #fff;
-    border-radius: 0px; 
+    border-radius: 0px;
     padding: 20px 14px;
     position: relative;
 }
@@ -894,7 +894,7 @@ a.readmore{
 
 .accordion-3 .panel-default>.panel-heading{
     background-color: #fff;
-    border-radius: 0px; 
+    border-radius: 0px;
     padding: 10px 14px;
     border-bottom: 1px solid #d7d7d7;
     position: relative;
@@ -989,12 +989,12 @@ ul.list-styled>li:before{
     line-height: 3px;
 }
 
-ol { 
+ol {
     counter-reset: item;
     padding-left: 25px;
 }
 
-ol li { 
+ol li {
     display: block;
 }
 
@@ -1033,7 +1033,7 @@ ol.list-styled>li{
 
 /* Tables */
 
-.table>thead>tr>th, .table th, th{    
+.table>thead>tr>th, .table th, th{
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     font-size: 16px;
@@ -1332,7 +1332,7 @@ ol.list-styled>li{
 }
 
 .modal-title{
-    font-weight: 700;   
+    font-weight: 700;
     text-align: center;
 }
 
@@ -1387,22 +1387,22 @@ ol.list-styled>li{
 
 /* Media Queries */
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px) {
-        
+
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
-    
+
     .navbar-default{
         position: absolute;
     }
-    
+
     .navbar-default .navbar-nav>li>a{
         padding: 35px 18px;
     }
-    
+
     .navbar-default .navbar-nav>li:after{
         content: "";
         position: absolute;
@@ -1412,50 +1412,50 @@ ol.list-styled>li{
         color: #d7d7d7;
         font-weight: 600;
     }
-    
+
     .navbar-default .navbar-nav>li:last-child:after{
         display: none;
     }
-    
+
     .navbar-default{
         margin-bottom: 0px;
     }
-    
+
     .navbar-default .navbar-nav>li>a::before{
         left: 50%;
         bottom: 12px;
     }
-    
+
     .sub-menu{
         position: absolute;
         display: block;
         margin-top: -15px;
     }
-    
+
     .sub-menu .sub-menu{
         transform: translateX(100%);
     }
-    
+
     .navbar-default > li:hover > .sub-menu{
         display: block;
     }
-    
+
     .page-header{
         padding: 170px 10px 30px 10px;
     }
-    
+
     .page-header h1{
         font-size: 40px;
     }
-        
+
     .nav-stacked{
         width: auto;
     }
-    
+
     .nav-tabs>li{
         float: left;
     }
-    
+
     .modal:before {
         display: inline-block;
         vertical-align: middle;

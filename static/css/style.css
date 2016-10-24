@@ -68,7 +68,7 @@ hr{
   position: absolute;
   top: 0;
   left: 0;
-  
+
   -webkit-animation: bounce 2.0s infinite ease-in-out;
   animation: bounce 2.0s infinite ease-in-out;
 }
@@ -84,10 +84,10 @@ hr{
 }
 
 @keyframes bounce {
-  0%, 100% { 
+  0%, 100% {
     transform: scale(0.0);
     -webkit-transform: scale(0.0);
-  } 50% { 
+  } 50% {
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }
@@ -359,8 +359,8 @@ blockquote footer{
     display: inline-block;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-    -webkit-animation: ripple 2s infinite;
-    animation: ripple 2s infinite;
+    /*-webkit-animation: ripple 2s infinite;*/
+    /*animation: ripple 2s infinite;*/
 }
 
 @-webkit-keyframes ripple {
@@ -395,7 +395,7 @@ blockquote footer{
 
 .announcement .announcement-text{
     font-size: 22px;
-    padding: 50px 0px 30px 
+    padding: 50px 0px 30px
 }
 
 .announcement .owl-nav .owl-left, .announcement .owl-nav .owl-right{
@@ -980,9 +980,9 @@ blockquote footer{
 
 .cta-dark-full h1,
 .cta-dark-full h2,
-.cta-dark-full h3, 
-.cta-dark-full h4, 
-.cta-dark-full h5, 
+.cta-dark-full h3,
+.cta-dark-full h4,
+.cta-dark-full h5,
 .cta-dark-full h6{
     color: #fff;
     margin:0;
@@ -1022,9 +1022,9 @@ blockquote footer{
 
 .cta-light-full h1,
 .cta-light-full h2,
-.cta-light-full h3, 
-.cta-light-full h4, 
-.cta-light-full h5, 
+.cta-light-full h3,
+.cta-light-full h4,
+.cta-light-full h5,
 .cta-light-full h6{
     color: #1a2b51;
     margin:0;
@@ -1071,9 +1071,9 @@ blockquote footer{
 
 .cta-anim h1,
 .cta-anim h2,
-.cta-anim h3, 
-.cta-anim h4, 
-.cta-anim h5, 
+.cta-anim h3,
+.cta-anim h4,
+.cta-anim h5,
 .cta-anim h6{
     visibility: hidden;
     opacity: 0;
@@ -1081,9 +1081,9 @@ blockquote footer{
 
 .cta-anim .btn,
 .cta-anim .btn,
-.cta-anim .btn, 
-.cta-anim .btn, 
-.cta-anim .btn, 
+.cta-anim .btn,
+.cta-anim .btn,
+.cta-anim .btn,
 .cta-anim .btn{
     visibility: hidden;
     opacity: 0;
@@ -1093,9 +1093,9 @@ blockquote footer{
 
 .cta-anim:hover h1,
 .cta-anim:hover h2,
-.cta-anim:hover h3, 
-.cta-anim:hover h4, 
-.cta-anim:hover h5, 
+.cta-anim:hover h3,
+.cta-anim:hover h4,
+.cta-anim:hover h5,
 .cta-anim:hover h6{
     visibility: visible;
     opacity: 1;
@@ -1103,9 +1103,9 @@ blockquote footer{
 
 .cta-anim:hover .btn,
 .cta-anim:hover .btn,
-.cta-anim:hover .btn, 
-.cta-anim:hover .btn, 
-.cta-anim:hover .btn, 
+.cta-anim:hover .btn,
+.cta-anim:hover .btn,
+.cta-anim:hover .btn,
 .cta-anim:hover .btn{
     visibility: visible;
     opacity: 1;
@@ -1302,15 +1302,15 @@ blockquote footer{
     padding: 8px 12px;
     border-radius: 3px;
     -webkit-transform:translateX(-50%);
-    transform:translateX(-50%);    
-    -webkit-transition: 350ms ease all;    
+    transform:translateX(-50%);
+    -webkit-transition: 350ms ease all;
     transition: 350ms ease all;
 }
 
 .teacher-card:hover .teacher-link{
     margin-top:-35px;
 }
-    
+
 .teacher-card .teacher-detail{
     position: absolute;
     top:60%;
@@ -2238,7 +2238,7 @@ blockquote footer{
     top:50%;
     left: 50%;
     color: #ff9c00;
-    font-size: 34px;    
+    font-size: 34px;
     height: 140px;
     width: 140px;
     text-align: center;
@@ -2343,7 +2343,7 @@ blockquote footer{
 }
 
 .blog-card .blog-body p{
-	
+
 	text-align:justify;
 }
 
@@ -2808,7 +2808,7 @@ blockquote footer{
 }
 
 .footer-widget address{
-    color: #aeaeae; 
+    color: #aeaeae;
 }
 
 .email, .phone, .footer-widget p.email, .footer-widget p.phone{
@@ -2970,7 +2970,7 @@ blockquote footer{
 /****** 10. Media Queries ******/
 /*******************************/
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px) {
     .xs-center{
         display:initial;
@@ -2978,60 +2978,60 @@ blockquote footer{
     .course-list .course-media{
         width: 29.5%;
     }
-    
+
     .course-list .course-detail{
         width: 68%;
     }
-    
+
     .course-full .personal > div:first-child{
         padding-left: 0px;
-    }    
-    
+    }
+
     .course-full .personal > div{
         width: auto;
         border-bottom: 0px;
         border-right: 1px dashed #d7d7d7;
     }
-    
+
     .teacher-full .personal > div:first-child{
         padding-left: 0px;
-    }    
-        
+    }
+
     .teacher-full .personal > div{
         width: auto;
         border-bottom: 0px;
         border-right: 1px dashed #d7d7d7;
     }
-    
+
     .event-intro .timer .days,
     .event-intro .timer .hours,
     .event-intro .timer .minutes,
     .event-intro .timer .seconds{
         font-size: 55px;
     }
-    
+
     .event-intro .timer > li{
         width: 115px;
     }
-    
+
     .event .timer .days,
     .event .timer .hours,
     .event .timer .minutes,
     .event .timer .seconds{
         font-size: 55px;
     }
-    
+
     .event .timer > li{
         width: 115px;
     }
-    
+
     .coming-soon .timer .days,
     .coming-soon .timer .hours,
     .coming-soon .timer .minutes,
     .coming-soon .timer .seconds{
         font-size: 30px;
     }
-    
+
     .coming-soon .timer > li{
         width: 85px;
     }
@@ -3042,59 +3042,59 @@ blockquote footer{
     .sm-center{
         display:initial;
     }
-    
+
     .no-left-gutter{padding-left: 0;}
     .no-right-gutter{padding-right: 0;}
-    
+
     .pull-up{
         margin-top:-75px;
     }
-    
+
     .topbar{
         display: block;
     }
-    
+
     .topbar .call-us{
         text-align: left;
     }
-    
+
     .btn-announce{
         height:90px;
         width: 90px;
         line-height: 100px;
         margin-top: -45px;
     }
-    
+
     .btn-announce .fa{
         font-size: 30px;
     }
-    
+
     .event{
         background-attachment: fixed;
     }
-    
+
     .event-intro .timer .days,
     .event-intro .timer .hours,
     .event-intro .timer .minutes,
     .event-intro .timer .seconds{
         font-size: 70px;
     }
-    
+
     .event-intro .timer > li{
         width: 135px;
     }
-    
+
     .event .timer .days,
     .event .timer .hours,
     .event .timer .minutes,
     .event .timer .seconds{
         font-size: 70px;
     }
-    
+
     .event .timer > li{
         width: 135px;
-    }    
-    
+    }
+
     .coming-soon .timer .days,
     .coming-soon .timer .hours,
     .coming-soon .timer .minutes,
@@ -3102,58 +3102,58 @@ blockquote footer{
         font-size: 40px;
     }
 
-            
+
     .process-2 .process-box .process-cell{
         height: 120px;
         overflow: visible;
     }
-    
+
     .process-2 .process-box .process-cell.empty{
         display: block;
     }
-    
+
     .coming-soon h1{
         font-size: 52px;
     }
-    
+
     .coming-soon .timer .days,
     .coming-soon .timer .hours,
     .coming-soon .timer .minutes,
     .coming-soon .timer .seconds{
         font-size: 55px;
     }
-    
+
     .coming-soon .timer > li{
         width: 115px;
     }
-    
+
     .flex-row{
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
     }
-    
+
     .testimonial-text{
         margin-left: 35%;
         padding: 100px 0px;
     }
-    
+
     .testimonial-img{
         display: inline-block !important;
     }
-    
+
     .testimonial-text p{
         font-size: 24px;
     }
-    
+
     .testimonials + .owl-nav{
         display: block;
     }
 
     .motto-text{
         padding-left: 280px;
-    }    
+    }
 }
 
 /* Medium Devices, Desktops */
