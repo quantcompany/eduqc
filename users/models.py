@@ -18,6 +18,7 @@ class User(AbstractEmailUser):
     last_name = models.CharField(max_length=40, blank=True)
     description = models.TextField(blank=True)
     country = models.CharField(max_length=100, blank=True, choices=COUNTRY_CHOICES) # Add country list
+    image = models.ImageField(upload_to='users/images', blank=True)
 
     def guess_user_name(self):
         if not self.user_name:
@@ -56,6 +57,7 @@ class Student(User):
 
 class Instructor(User):
     categories = models.ManyToManyField('courses.Category', related_name='instructors')
+    years_of_experience = models.IntegerField()
 
     class Meta:
         verbose_name = 'instructor'

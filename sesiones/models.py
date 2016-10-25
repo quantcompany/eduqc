@@ -18,3 +18,4 @@ class Enrollment(models.Model):
     enrollment_date = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     total_price = models.DecimalField(max_digits=6, decimal_places=2)
+    transaction = models.CharField(max_length=100, default='0')

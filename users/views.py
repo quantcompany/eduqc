@@ -48,3 +48,7 @@ def verify(request, code):
     user.is_active = True
     user.save()
     return render(request, 'users/verified.html')
+
+
+def profile(request):
+    return render(request, 'users/profile.html')
