@@ -68,21 +68,21 @@ $('#contact-form').on('submit', function(e){
     request.done(function(data, textStatus, jqXHR) {
         console.log('Success\n' + jqXHR.responseText);
         contactForm.submitting = false;
-        // contactForm.clear();
-        // contactForm.done = true;
+        contactForm.clear();
+        contactForm.done = true;
     });
 
     request.fail(function(jqXHR, textStatus, errorThrown) {
         console.log('Error ' + jqXHR.status + '\n' + jqXHR.responseText);
 
-        // var data = JSON.parse(jqXHR.responseText);
-        //
-        // if (jqXHR.status == 400){
-        //     contactForm.errors = data.__all__ || [];
-        //     contactForm.email.error = data.email ? data.email[0] : '';
-        //     contactForm.password1.error = data.password1 ? data.password1[0] : '';
-        //     contactForm.password2.error = data.password2 ? data.password2[0] : '';
-        // }
+        if (jqXHR.status == 400){
+            var data = JSON.parse(jqXHR.responseText);
+            contactForm.errors = data.__all__ || [];
+            contactForm.name.error = data.name ? data.name[0] : '';
+            contactForm.email.error = data.email ? data.email[0] : '';
+            contactForm.subject.error = data.subject ? data.subject[0] : '';
+            contactForm.message.error = data.message ? data.message[0] : '';
+        }
 
         contactForm.submitting = false;
     });

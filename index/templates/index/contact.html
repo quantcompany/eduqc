@@ -17,26 +17,34 @@
                 <h4 class="heading">Happy to <span class="color2">help!</span></h4>
                 <form id="contact-form" action="{% url 'contact' %}" method="POST">
                     {% csrf_token %}
-                    <div class="form-group" rv-class-has-error="form.name.error">
-                        <input id="name" type="text" class="form-control" name="name" rv-value="form.name.value">
-                        <label class="control-label" for="contact-name">Your Name <span rv-show="form.name.error"><small rv-text="form.name.error"></small></span></label>
-                    </div>
-                    <div class="form-group" rv-class-has-error="form.email.error">
-                        <input id="contact-email" type="text" class="form-control" name="email" rv-value="form.email.value">
-                        <label class="control-label" for="contact-email">Email ID <span rv-show="form.email.error"><small rv-text="form.email.error"></small></span></label>
-                    </div>
-                    <div class="form-group" rv-class-has-error="form.subject.error">
-                        <input id="contact-number" type="text" class="form-control" name="subject" rv-value="form.subject.value">
-                        <label class="control-label" for="contact-number">Subject <span rv-show="form.subject.error"><small rv-text="form.subject.error"></small></span></label>
-                    </div>
-                    <div class="form-group" rv-class-has-error="form.message.error">
-                        <textarea id="contact-message" class="form-control" rows="6" name="message" rv-value="form.message.value"></textarea>
-                        <label class="control-label" for="contact-message">Your Message <span rv-show="form.message.error"><small rv-text="form.message.error"></small></span></label>
+                    <div rv-hide="form.done">
+                      <div class="form-group" rv-class-has-error="form.name.error">
+                          <input id="name" type="text" class="form-control" name="name" rv-value="form.name.value">
+                          <label class="control-label" for="contact-name">Your Name <span rv-show="form.name.error"><small rv-text="form.name.error"></small></span></label>
+                      </div>
+                      <div class="form-group" rv-class-has-error="form.email.error">
+                          <input id="contact-email" type="text" class="form-control" name="email" rv-value="form.email.value">
+                          <label class="control-label" for="contact-email">Email ID <span rv-show="form.email.error"><small rv-text="form.email.error"></small></span></label>
+                      </div>
+                      <div class="form-group" rv-class-has-error="form.subject.error">
+                          <input id="contact-number" type="text" class="form-control" name="subject" rv-value="form.subject.value">
+                          <label class="control-label" for="contact-number">Subject <span rv-show="form.subject.error"><small rv-text="form.subject.error"></small></span></label>
+                      </div>
+                      <div class="form-group" rv-class-has-error="form.message.error">
+                          <textarea id="contact-message" class="form-control" rows="6" name="message" rv-value="form.message.value"></textarea>
+                          <label class="control-label" for="contact-message">Your Message <span rv-show="form.message.error"><small rv-text="form.message.error"></small></span></label>
+                      </div>
+
+                      <p id="status"></p>
+
+                      <button type="submit" name="submit" class="btn btn-primary">Send Query</button>
                     </div>
 
-                    <p id="status"></p>
-
-                    <button type="submit" name="submit" class="btn btn-primary">Send Query</button>
+                    <div class="row" rv-show="form.done">
+                        <div class="col-md-12">
+                            <h5>Thank you for contacting us, your message has been <span class="color2">received</span>. We will respond as soon as possible!</h5>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="col-sm-5 mt-20">
