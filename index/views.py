@@ -1,5 +1,8 @@
 from django.http import JsonResponse
 from django.shortcuts import render
+from django.contrib.sites.shortcuts import get_current_site
+
+from emails import send_contact_email
 
 from .forms import ContactForm
 
@@ -14,8 +17,7 @@ def contact(request, *args, **kwargs):
         form = ContactForm(request.POST)
 
         if form.is_valid():
-            # form.save()
-            # aqui se tiene que enviar el correo!
+            send_contact_email(form.cleaned_data, site=get_current_site(request))
             return JsonResponse({})
         else:
             return JsonResponse(form.errors, status=400)
