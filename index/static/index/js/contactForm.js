@@ -68,8 +68,8 @@ $('#contact-form').on('submit', function(e){
     request.done(function(data, textStatus, jqXHR) {
         console.log('Success\n' + jqXHR.responseText);
         contactForm.submitting = false;
-        // contactForm.clear();
-        // contactForm.done = true;
+        contactForm.clear();
+        contactForm.done = true;
     });
 
     request.fail(function(jqXHR, textStatus, errorThrown) {
