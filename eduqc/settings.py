@@ -149,12 +149,19 @@ AUTH_USER_MODEL = 'users.User'
 #LOGIN_URL = '/'
 
 # Print emails to terminal instead of trying to actually send them:
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 DATE_INPUT_FORMATS = ('%d/%m/%Y',)
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'director@quantcompany.com'
+EMAIL_HOST_PASSWORD = 'quant_zx_963'
+DEFAULT_FROM_EMAIL = 'Quant Company <do-not-reply@quantcompany.com>'
+EMAIL_PORT = 587
+
 #EMAIL_PORT = 465
-# EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+#EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
 #EMAIL_USE_SSL = True
 #EMAIL_HOST = 'smtp.zoho.com'
 #EMAIL_HOST_USER = 'info@tripletherapy.net'

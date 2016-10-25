@@ -1,6 +1,8 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 
+from .forms import ContactForm
+
 
 def index(request, *args, **kwargs):
     return render(request, 'index/index.html')
