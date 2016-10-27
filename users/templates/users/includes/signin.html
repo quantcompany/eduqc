@@ -1,7 +1,7 @@
 <form id="signin-form" action="{% url 'users:signin' %}" method="POST">
     {% csrf_token %}
-    
-    <ul rv-show="form.errors">
+
+    <ul rv-show="form.errors" style="font-size:12px; font-family:sans-serif; color:crimson;">
         <li rv-each-error="form.errors">{ error }</li>
     </ul>
 
@@ -14,7 +14,7 @@
         <input class="form-control" name="password" type="password" placeholder="Password" rv-value="form.password.value" >
         <label class="control-label" rv-show="form.password.error"><small rv-html="form.password.error"></small></label>
     </div>
-    
+
     <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block" rv-class-active="form.submitting">Sign In</button>
     </div>

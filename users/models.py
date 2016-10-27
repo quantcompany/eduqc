@@ -8,6 +8,9 @@ class EmailVerification(models.Model):
     code = models.CharField(max_length=40, unique=True)
     done = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.user.email
+
 
 class User(AbstractEmailUser):
     """
@@ -20,14 +23,21 @@ class User(AbstractEmailUser):
     country = models.CharField(max_length=100, blank=True, choices=COUNTRY_CHOICES) # Add country list
     image = models.ImageField(upload_to='users/images', blank=True)
 
+    DEFAULT_IMAGE_URL = '/static/images/teacher-1.png'
+
+    def image_url(self):
+        if self.image and self.image.name:
+            return self.image.url
+        else:
+            return self.DEFAULT_IMAGE_URL
+
     def guess_user_name(self):
         if not self.user_name:
             if self.first_name or self.last_name:
                 self.user_name = '{0} {0}'.format(self.first_name, self.last_name).strip()
             else:
                 self.user_name = self.email.split('@')[0]
-
-            self.save()
+            # self.save()
         return self.user_name
 
     def get_short_name(self):
@@ -45,6 +55,10 @@ class User(AbstractEmailUser):
             'last_name': self.last_name,
             'country': self.country
         }
+
+    def save(self, *args, **kwargs):
+        self.guess_user_name()
+        super(User, self).save(*args, **kwargs)
 
 
 class Student(User):

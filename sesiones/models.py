@@ -12,10 +12,13 @@ class Session(models.Model):
 class Enrollment(models.Model):
     STATUS_CHOICES = [('active', 'Active'), ('cancelled', 'Cancelled'), ('finished', 'Finished')]
 
-    session = models.ForeignKey('sesiones.Session')
-    student = models.ForeignKey('users.Student')
+    session = models.ForeignKey('sesiones.Session', related_name='enrollments')
+    student = models.ForeignKey('users.Student', related_name='enrollments')
     status = models.CharField(max_length=10, choices=STATUS_CHOICES)
     enrollment_date = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     total_price = models.DecimalField(max_digits=6, decimal_places=2)
     transaction = models.CharField(max_length=100, default='0')
+
+    class Meta:
+        ordering = ['last_modified', 'enrollment_date']

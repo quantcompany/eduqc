@@ -146,7 +146,7 @@ AUTH_USER_MODEL = 'users.User'
 
 # Where to redirect when an anonymous user tries to access a login_required page
 # We redirect to the root url because our landing page is also our login page
-#LOGIN_URL = '/'
+LOGIN_URL = '/'
 
 # Print emails to terminal instead of trying to actually send them:
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

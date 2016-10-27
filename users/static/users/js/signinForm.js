@@ -6,14 +6,15 @@ var signinForm = {
     email: {value: '', error: ''},
     password: {value: '', error: ''},
 
-    clear: function(){
+    clearErrors: function(){
         this.errors = [];
-        
-        this.email.value = '';
         this.email.error = '';
-
-        this.password.value = '';
         this.password.error = ''
+    },
+
+    clearValues: function(){
+        this.email.value = '';
+        this.password.value = '';
     }
 };
 
@@ -23,7 +24,8 @@ rivets.bind($('#signin-form'), {form: signinForm})
 
 $('#signin-form').on('submit', function(e){
     signinForm.submitting = true;
-    
+    signinForm.clearErrors();
+
     e.preventDefault();
 
     var fd = new FormData(this);
@@ -35,15 +37,15 @@ $('#signin-form').on('submit', function(e){
         processData: false,  // tell jQuery not to process the data
         contentType: false,  // tell jQuery not to set contentType
     });
-    
+
 
     request.done(function(data, textStatus, jqXHR) {
         console.log('Success\n' + jqXHR.responseText);
         signinForm.submitting = false;
-        signinForm.clear();
         signinForm.done = true;
+        window.location.href = '/users/profile';
     });
-     
+
     request.fail(function(jqXHR, textStatus, errorThrown) {
         console.log('Error ' + jqXHR.status + '\n' + jqXHR.responseText);
 

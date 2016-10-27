@@ -2,6 +2,7 @@ import uuid
 
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
 from django.contrib.sites.shortcuts import get_current_site
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
@@ -42,6 +43,7 @@ def signup(request):
         return JsonResponse(form.errors, status=400)
 
 
+@login_required
 def verify(request, code):
     verification = get_object_or_404(EmailVerification, code=code)
     user = verification.user
@@ -50,5 +52,6 @@ def verify(request, code):
     return render(request, 'users/verified.html')
 
 
+@login_required
 def profile(request):
     return render(request, 'users/profile.html')

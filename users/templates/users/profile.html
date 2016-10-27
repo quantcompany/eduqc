@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_css %}
+{% endblock %}
+
+{% block page_header %}Profile{% endblock %}
+
+{% block breadcrumbs %}
+    <li class="active">Profile</li>
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-100">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="teacher-intro">
+                    <img src="{{ user.image_url }}" class="img-responsive" alt="">
+                    <!-- <ul class="social">
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                    </ul> -->
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="teacher-full">
+                    <h2 class="heading">{{ user.user_name }}</h2>
+                    <div class="personal">
+                        <div>
+                            <span>Email Address</span>
+                            <span>{{ user.email }}</span>
+                        </div>
+
+                        <div>
+                            <span>Country</span>
+                            <span>{{ user.get_country_display|default:"None" }}</span>
+                        </div>
+                    </div>
+
+                    <p>
+                      {% if user.description %}
+                        {{ user.description }}
+                      {% else %}
+                        <i>no description yet!</i>
+                      {% endif %}
+                    </p>
+                </div>
+                <div class="teacher-facts">
+                    <div class="fact col-sm-4">
+                        <span class="head"><span class="count" data-from="0" data-to="80" data-speed="3000">80</span>Average Score</span>
+                    </div>
+                    <div class="fact col-sm-4">
+                        <span class="head"><span class="count" data-from="0" data-to="94" data-speed="3000">94</span> Students Passed</span>
+                    </div>
+                    <div class="fact col-sm-4">
+                        <span class="head"><span class="count" data-from="0" data-to="20" data-speed="3000">20%</span> Scholar Students</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="container mt-60 mb-100">
+        <h2>My <span class="color2">Sessions</span></h2>
+        <div class="time-table">
+            <div class="row">
+                <div>Course</div>
+                <div>Start</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+            </div>
+            <div class="row">
+                <div>Monday</div>
+                <div>Area Geometry</div>
+                <div>Basic Economics</div>
+                <div>Atomic Physics</div>
+                <div>Area Geometry</div>
+                <div>Micro Science</div>
+            </div>
+            <div class="row">
+                <div>Tuesday</div>
+                <div>Basic Economics</div>
+                <div>Atomic Physics</div>
+                <div>Micro Science</div>
+                <div>Area Geometry</div>
+                <div>Micro Science</div>
+            </div>
+            <div class="row">
+                <div>Wednesday</div>
+                <div>Basic Economics</div>
+                <div>Area Geometry</div>
+                <div>Micro Science</div>
+                <div>Area Geometry</div>
+                <div>Micro Science</div>
+            </div>
+            <div class="row">
+                <div>Thursday</div>
+                <div>Area Geometry</div>
+                <div>Basic Economics</div>
+                <div>Atomic Physics</div>
+                <div>Area Geometry</div>
+                <div>Micro Science</div>
+            </div>
+            <div class="row">
+                <div>Friday</div>
+                <div>Micro Science</div>
+                <div>Basic Economics</div>
+                <div>Area Geometry</div>
+                <div>Atomic Physics</div>
+                <div>Micro Science</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+{% endblock %}
+
+{% block tail_js %}
+    <!-- CountTo -->
+    <script src="{% static 'js/jquery.countTo.js' %}" type="text/javascript"></script>
+
+    <!-- Appear -->
+    <script src="{% static 'js/jquery.appear.js' %}" type="text/javascript"></script>
+{% endblock %}

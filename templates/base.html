@@ -92,15 +92,17 @@
         <!--Bootstrap Framework version 3.3.7-->
         <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript"></script>
 
-        <!--Educomp Custom Script-->
-        <script src="{% static 'js/main.js' %}" type="text/javascript"></script>
-
         <!--Intercooler JS-->
         <script src="{% static 'js/intercooler.min.js' %}" type="text/javascript"></script>
 
         <!--Rivets JS-->
         <script src="{% static 'js/rivets/rivets.min.js' %}" type="text/javascript"></script>
         <script src="{% static 'js/rivets/formatters.js' %}" type="text/javascript"></script>
+
+        <!--Custom Page-Level scripts-->
         {% block tail_js %}{% endblock %}
+        
+        <!--Educomp Custom Script-->
+        <script src="{% static 'js/main.js' %}" type="text/javascript"></script>
     </body>
 </html>
