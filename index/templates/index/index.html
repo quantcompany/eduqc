@@ -67,8 +67,9 @@
                         data-splitin="none"
                         data-splitout="none"
                         data-responsive_offset="on"
-                        style="z-index: 6; white-space: nowrap; font-weight:bold; font-family: 'Libre Baskerville', serif;">The First E-Learning Company
+                        style="z-index: 6; white-space: nowrap; font-weight:bold; font-family: 'Libre Baskerville', serif;">Primera empresa de e-learning especializada en
                     </div>
+
                     <!-- Main Text -->
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-0"
                         id="slide-1-main-text"
@@ -89,11 +90,11 @@
                         data-splitin="none"
                         data-splitout="none"
                         data-responsive_offset="on"
-                        style="z-index: 7; min-width: 600px; max-width: 600px; white-space: normal; text-shadow:0px 2px 2px #000; text-transform:capitalize; font-weight:600; text-align:right; font-family: 'Montserrat', sans-serif;">Focused in Data Science and quantitative skills.
+                        style="z-index: 7; min-width: 600px; max-width: 600px; white-space: normal; text-shadow:0px 2px 2px #000; text-transform:capitalize; font-weight:600; text-align:right; font-family: 'Montserrat', sans-serif;">Ciencia de Datos y Análisis Cuantitativo
                     </div>
 
                     <!-- Button -->
-                    <a href="#signin-container" class="tp-caption btn btn-primary rs-parallaxlevel-0 hidden-xs"
+                    <a  href="{% url 'courses:index' %}" class="tp-caption btn btn-primary rs-parallaxlevel-0 hidden-xs"
                         id="slide-1-button"
                         data-x="['right','right','right','right']" data-hoffset="['53','53','53','30']"
                         data-y="['middle','middle','middle','middle']" data-voffset="['50','50','50','50']"
@@ -110,7 +111,7 @@
                         data-splitout="none"
                         data-responsive_offset="on"
                         data-responsive="off"
-                        style="z-index: 8;">COURSES
+                        style="z-index: 8;">CURSOS
                     </a>
                 </li>
 
@@ -243,10 +244,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 mt-100">
-                    <h3 class="heading">Data Science <span class="color2">Training</span></h3>
-                    <p>EDUComp is a premium education theme. 100% responsive and designed for quick customizations, this is an ideal theme for Schools, Colleges, Universities and other Educational Insitutions.</p>
-                    <p>A huge array of new elements coming your way, enjoy lifetime free updates for EDUComp, Buy Now!</p>
+                    <h3 class="heading">Aprende <span class="color2">Ciencia de Datos</span> a distancia</h3>
+                    <p>Analizar, comprender y extraer valor de los <span class="color2">datos</span> es una de las habilidades más importantes y demandadas en la actualidad.
+                        La analítica de datos no es sólamente una profesión <span class="color2">(Científico de Datos)</span>, sino es una <span class="color2">habilidad</span>
+                        cada vez mas indispensable para profesionales de áreas tan diversas como periodismo, ingenierías, gerencia, educación, entre otras.</p>
+                    <p>Cree una cuenta para recibir de manera gratuita nuestro E-Book: <span class="color2">Introducción a la Ciencia de Datos</span></p>
                     <br/>
+                    <!--
                     <ul class="list-styled pull-left">
                         <li>Super Easy to Customize</li>
                         <li>Very Well Documented</li>
@@ -255,22 +259,24 @@
                         <li>Quick Free Email Support</li>
                         <li>Lifetime Free Updates</li>
                     </ul>
+                                    -->
                     <div class="clearfix"></div>
                     <br/>
-                    <a href="about-educomp.html" class="btn btn-primary btn-sm">Learn More <i class="fa fa-long-arrow-right"></i> </a>
+                    <a href="about-educomp.html" class="btn btn-primary btn-sm"><i class="fa fa-long-arrow-right"></i>Cree una cuenta</a>
                 </div>
+
                 <div id="auth" class="col-sm-5 mt-60">
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#signin-container" aria-controls="signin-container" role="tab" data-toggle="tab"> Sign In</a></li>
-                        <li role="presentation"><a href="#signup-container" aria-controls="signup-container" role="tab" data-toggle="tab"> Sign Up</a></li>
+                        <li role="presentation" ><a href="#signin-container" aria-controls="signin-container" role="tab" data-toggle="tab"> Ingresar</a></li>
+                        <li role="presentation" class="active"><a href="#signup-container" aria-controls="signup-container" role="tab" data-toggle="tab"> Registrarse</a></li>
                     </ul>
 
                     <div class="tab-content">
-                        <div id="signin-container" role="tabpanel" class="tab-pane fade in active">
+                        <div id="signin-container" role="tabpanel" class="tab-pane fade">
                             {% include 'users/includes/signin.html' %}
                         </div>
 
-                        <div id="signup-container" role="tabpanel" class="tab-pane fade">
+                        <div id="signup-container" role="tabpanel" class="tab-pane fade in active">
                             {% include 'users/includes/signup.html' %}
                         </div>
                     </div>
@@ -283,8 +289,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h2 class="heading text-center">LEARNING AT <span class="color2">QUANT COMPANY</span>
-                        <span class="sub-heading">We understand how hard it is to learn Data Science and quantitative topics. Which is why we provide:</span>
+                    <h2 class="heading text-center">METODOLOGÍA EN <span class="color2">QUANT COMPANY</span>
+                        <span class="sub-heading">La Ciencia de Datos abarca témas sumamente técnicos, sabemos lo difícil que puede ser aprenderlos,
+                            por ello hemos diseñado un modelo único de enseñanza a distancia. Todos los cursos que ofrecemos incluyen:</span>
                         <span class="icon-divider"></span>
                     </h2>
                 </div>
@@ -296,8 +303,8 @@
                             <i class="fa fa-laptop"></i>
                         </div>
                         <div class="icon-box-content">
-                            <h5 class="heading">Live Online Classes</h5>
-                            <span>Interact with our faculty...</span>
+                            <h5 class="heading">Clases en Línea</h5>
+                            <span>Interactúa en nuestra aula virtual con el instructor y tus compañeros, podrás hacer preguntas, aclarar dudas y recibir acompañamiento.</span>
                         </div>
                     </div>
                 </div>
@@ -307,8 +314,8 @@
                             <i class="fa fa-users"></i>
                         </div>
                         <div class="icon-box-content">
-                            <h5 class="heading">Coaching Sessions</h5>
-                            <span>One-on-one sessions for personalized guidance and help in your learning.</span>
+                            <h5 class="heading">Mentorías Personalizadas</h5>
+                            <span>Semanalmente tendrás una sesión privada de mentoría para recibir ayuda en los temas que se te dificulten o profundizar en aquellos que te interesen.</span>
                         </div>
                     </div>
                 </div>
@@ -318,8 +325,8 @@
                             <i class="fa fa-calendar-check-o"></i>
                         </div>
                         <div class="icon-box-content">
-                            <h5 class="heading">Invited Experts</h5>
-                            <span>Industry experts are invited to our classes to share their industry experience.</span>
+                            <h5 class="heading">Invitados Expertos</h5>
+                            <span>Invitamos expertos de diferentes industrias y sectores para que compartan sus experiencias aplicando la Ciencia de Datos en el mundo real.</span>
                         </div>
                     </div>
                 </div>
@@ -331,8 +338,8 @@
                             <i class="fa fa-check-square-o"></i>
                         </div>
                         <div class="icon-box-content">
-                            <h5 class="heading">World-class materials</h5>
-                            <span>We provide the best materials curated from world experts and tailored to your needs.</span>
+                            <h5 class="heading">Los mejores materiales</h5>
+                            <span>Los materiales que utilizamos son los mejores, muchos de ellos producidos por líderes mundiales en el campo de la Ciencia de Datos.</span>
                         </div>
                     </div>
                 </div>
@@ -342,8 +349,8 @@
                             <i class="fa fa-map-marker"></i>
                         </div>
                         <div class="icon-box-content">
-                            <h5 class="heading">Real World Projects</h5>
-                            <span>Real world projects from industry.</span>
+                            <h5 class="heading">Proyectos con datos reales</h5>
+                            <span>Para demostrar tus habilidades, todos nuestros cursos incluyen proyectos en donde se resuelven problemas reales provenientes de diferentes industrias y sectores.</span>
                         </div>
                     </div>
                 </div>
@@ -353,8 +360,8 @@
                             <i class="fa fa-youtube"></i>
                         </div>
                         <div class="icon-box-content">
-                            <h5 class="heading">Certification</h5>
-                            <span>Verifiable certification to you skills.</span>
+                            <h5 class="heading">Certificación</h5>
+                            <span>Obten una certificación, que junto con tu proyectos mostrará a tus empleadores, jefes o clientes tus habilidades para extraer valor de los datos.</span>
                         </div>
                     </div>
                 </div>
