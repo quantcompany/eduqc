@@ -36,6 +36,9 @@
         <!-- Flags -->
         <link href="{% static 'flag-icon/css/flag-icon.min.css' %}" type="text/css" rel="stylesheet">
 
+        <!-- theano didot font -->
+        <link href="{% static 'css/theano.css' %}" rel="stylesheet">
+
         {% block head_css %}{% endblock %}
     </head>
 
@@ -101,7 +104,7 @@
 
         <!--Custom Page-Level scripts-->
         {% block tail_js %}{% endblock %}
-        
+
         <!--Educomp Custom Script-->
         <script src="{% static 'js/main.js' %}" type="text/javascript"></script>
     </body>

@@ -16,7 +16,7 @@ body{
 
 a{
     font-family: 'Montserrat', sans-serif;
-    color: #ff9c00;
+    color: #F2784B;
     -webkit-transition: 350ms ease all;
     transition: 350ms ease all;
 }
@@ -63,7 +63,7 @@ hr{
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #ff9c00;
+  background-color: #F2784B;
   opacity: 0.6;
   position: absolute;
   top: 0;
@@ -141,7 +141,7 @@ address{
 }
 
 address strong{
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 16px;
     font-weight: 400;
     display: block;
@@ -155,7 +155,7 @@ blockquote{
 blockquote:before{
     font: normal normal normal 14px/1 FontAwesome;
     content: "\f10d";
-    color: #ff9c00;
+    color: #F2784B;
     height: 50px;
     width: 50px;
     line-height: 50px;
@@ -198,12 +198,12 @@ blockquote footer{
 .font36{font-size: 36px;}
 
 .color1{color: #1a2b51;}     /* Blue Color */
-.color2{color: #ff9c00;}     /* Yellow Color */
+.color2{color: #F2784B;}     /* Yellow Color */
 .color3{color: #f7f7f7;}     /* Light Grey Color */
 .inverse{color: #fff;}       /* White Color */
 
 .bgcolor1{background-color: #1a2b51;}     /* Blue Color Background */
-.bgcolor2{background-color: #ff9c00;}     /* Yellow Color Background */
+.bgcolor2{background-color: #F2784B;}     /* Yellow Color Background */
 .bgcolor3{background-color: #f7f7f7;}     /* Light Grey Color Background */
 .bginverse{background-color: #fff}        /* White Color Background */
 
@@ -256,7 +256,7 @@ blockquote footer{
 
 .topbar .call-us{
     font-family: inherit;
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 16px;
     display: block;
     text-align: center;
@@ -283,7 +283,7 @@ blockquote footer{
     background-color: transparent;
     border-radius: 0px;
     border: 0;
-    border-bottom: 1px solid #ff9c00;
+    border-bottom: 1px solid #F2784B;
     height: 22px;
     width: 0px;
     color: #fff;
@@ -311,7 +311,7 @@ blockquote footer{
 .announcement{
     text-align: center;
     overflow: hidden;
-    background-color: #ff9c00;
+    background-color: #F2784B;
     max-height: 0px;
     -webkit-transition: 750ms ease all;
     transition: 750ms ease all;
@@ -323,7 +323,7 @@ blockquote footer{
 
 .btn-announce{
     position: absolute;
-    background-color: #ff9c00;
+    background-color: #F2784B;
     border-radius: 50%;
     height:70px;
     width: 70px;
@@ -354,7 +354,7 @@ blockquote footer{
     left: 0px;
     top:0px;
     z-index: -1;
-    background-color: #ff9c00;
+    background-color: #F2784B;
     border-radius: 50%;
     display: inline-block;
     -webkit-transform: rotate(45deg);
@@ -427,7 +427,7 @@ blockquote footer{
 }
 
 .tweets a{
-    color: #ff9c00;
+    color: #F2784B;
 }
 
 /****** Process ******/
@@ -449,7 +449,7 @@ blockquote footer{
 .process-1 .process-box .process-round{
     height:200px;
     max-width: 200px;
-    border: 10px solid #ff9c00;
+    border: 10px solid #F2784B;
     border-radius: 50%;
     margin: auto;
     padding: 10px;
@@ -472,7 +472,7 @@ blockquote footer{
 }
 
 .process-1 .process-box:hover .process-round .number{
-    color: #ff9c00;
+    color: #F2784B;
     -webkit-transform: scale(1.15);
     transform: scale(1.15);
 }
@@ -510,7 +510,7 @@ blockquote footer{
     position: absolute;
     height:10px;
     width:10px;
-    background-color: #ff9c00;
+    background-color: #F2784B;
     top:-5px;
     right: -5px;
     border-radius: 50%;
@@ -533,7 +533,7 @@ blockquote footer{
 }
 
 .fact > .head > .count{
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 56px;
 }
 
@@ -572,7 +572,7 @@ blockquote footer{
 .testimonial-text:before{
     font: normal normal normal 14px/1 FontAwesome;
     content: "\f10d";
-    color: #ff9c00;
+    color: #F2784B;
     height: 50px;
     width: 50px;
     line-height: 50px;
@@ -582,7 +582,7 @@ blockquote footer{
 
 .testimonial-by{
     font-size: 18px;
-    color: #ff9c00;
+    color: #F2784B;
     font-style: italic;
     margin-top: 20px;
     display: inline-block;
@@ -598,7 +598,7 @@ blockquote footer{
     padding: 5px 10px;
     background-color: #fff;
     display: inline-block;
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 16px;
     box-shadow: 0px 2px 5px #d7d7d7;
     -webkit-transition: 350ms ease all;
@@ -606,7 +606,7 @@ blockquote footer{
 }
 
 .testimonials + .owl-nav .owl-left:hover, .testimonials + .owl-nav .owl-right:hover{
-    background-color: #ff9c00;
+    background-color: #F2784B;
     color: #fff;
     cursor: pointer;
 }
@@ -641,7 +641,7 @@ blockquote footer{
 }
 
 .info-box .fact .fact-fig{
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 60px;
     display: block;
     line-height: 1em;
@@ -690,7 +690,7 @@ blockquote footer{
 
 .icon-box-1 > .icon-box-icon > .fa{
     font-size: 36px;
-    color: #ff9c00;
+    color: #F2784B;
     -webkit-transition: 150ms ease all;
     transition: 150ms ease all;
 }
@@ -717,7 +717,7 @@ blockquote footer{
 .icon-box-2 h6{
     font-family: 'Montserrat', sans-serif;
     margin-top: 0px;
-    color: #ff9c00;
+    color: #F2784B;
 }
 
 .icon-box-2 > .icon-box-icon, .icon-box-2 > .icon-box-content{
@@ -731,7 +731,7 @@ blockquote footer{
 
 .icon-box-2 > .icon-box-icon > .fa{
     font-size: 36px;
-    color: #ff9c00;
+    color: #F2784B;
     height: 100px;
     width: 100px;
     background-color: #1a2b51;
@@ -753,7 +753,7 @@ blockquote footer{
 .icon-box-3{
     position: relative;
     background-color: #191919;
-    border: 5px solid #ff9c00;
+    border: 5px solid #F2784B;
     box-shadow: 1px 2px 5px #222;
     padding: 50px 50px 35px;
     margin: 20px 0px 40px 0px;
@@ -788,7 +788,7 @@ blockquote footer{
 .icon-box-3 h5,
 .icon-box-3 h6{
     margin-top: 0px;
-    color: #ff9c00;
+    color: #F2784B;
     text-align: center;
     font-weight: 100;
     font-size: 30px;
@@ -845,7 +845,7 @@ blockquote footer{
 
 .icon-box-4 > .icon-box-icon > .fa{
     font-size: 24px;
-    color: #ff9c00;
+    color: #F2784B;
     height: 60px;
     width: 60px;
     line-height: 56px;
@@ -862,7 +862,7 @@ blockquote footer{
 }
 
 .icon-box-4:hover .icon-box-icon{
-    border-color: #ff9c00;
+    border-color: #F2784B;
 }
 
 .icon-box-4:hover .icon-box-icon:before{
@@ -900,7 +900,7 @@ blockquote footer{
     top:0;
     height: 100%;
     width: 12px;
-    border: 5px solid #ff9c00;
+    border: 5px solid #F2784B;
     border-right: 0;
     -webkit-transition: 200ms ease all;
     transition: 200ms ease all;
@@ -913,7 +913,7 @@ blockquote footer{
     right:35px;
     height: 100%;
     width: 12px;
-    border: 5px solid #ff9c00;
+    border: 5px solid #F2784B;
     border-left: 0;
     -webkit-transition: 200ms ease all;
     transition: 200ms ease all;
@@ -931,7 +931,7 @@ blockquote footer{
 
 .course-box{
     position: relative;
-    border-left: 2px solid #ff9c00;
+    border-left: 2px solid #F2784B;
 }
 
 .course-box .fa{
@@ -947,7 +947,7 @@ blockquote footer{
 
 .course-box .course-meta{
     overflow: hidden;
-    background-color: #ff9c00;
+    background-color: #F2784B;
     position: absolute;
     top:50%;
     left:0;
@@ -1005,7 +1005,7 @@ blockquote footer{
 }
 
 .cta-dark-full.cta-anim .text{
-    color: #ff9c00
+    color: #F2784B
 }
 
 .cta-light-full.cta-anim .text{
@@ -1121,7 +1121,7 @@ blockquote footer{
     position: relative;
     padding-bottom: 100px;
     margin-top: 50px;
-    border-top: 2px solid #ff9c00;
+    border-top: 2px solid #F2784B;
     -webkit-transition: 350ms ease all;
     transition: 350ms ease all;
 }
@@ -1194,12 +1194,12 @@ blockquote footer{
     color: #333;
     float: left;
     margin-right: 20px;
-    border: 2px solid #ff9c00;
+    border: 2px solid #F2784B;
 }
 
 .imp-dates .when .year{
     font-size: 24px;
-    color: #ff9c00;
+    color: #F2784B;
     display: block;
     text-align: center;
     padding: 0px 4px;
@@ -1297,7 +1297,7 @@ blockquote footer{
     position: absolute;
     left:50%;
     margin-top:-25px;
-    background-color: #ff9c00;
+    background-color: #F2784B;
     color: #fff;
     padding: 8px 12px;
     border-radius: 3px;
@@ -1364,7 +1364,7 @@ blockquote footer{
     text-align: center;
     line-height: 30px;
     border-radius: 50%;
-    background-color: #ff9c00;
+    background-color: #F2784B;
     color: #fff;
 }
 
@@ -1419,7 +1419,7 @@ blockquote footer{
 }
 
 .teacher-full .personal > div > span:nth-child(2){
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 14px;
     font-weight: 700;
 }
@@ -1435,7 +1435,7 @@ blockquote footer{
 }
 
 .teacher-facts .fact > .head > .count{
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 36px;
     display: block;
 }
@@ -1466,7 +1466,7 @@ blockquote footer{
 
 .time-table > .row > div:first-child{
     font-family: 'Oswald', sans-serif;
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 18px;
     text-transform: uppercase;
 }
@@ -1488,7 +1488,7 @@ blockquote footer{
 }
 
 .course-card .course-link .fa{
-    background-color: #ff9c00;
+    background-color: #F2784B;
     color: #fff;
     height: 50px;
     width: 50px;
@@ -1554,7 +1554,7 @@ blockquote footer{
 }
 
 .course-card .course-detail .course-features>li .fa{
-    color: #ff9c00;
+    color: #F2784B;
 }
 
 .course-card.new:before{
@@ -1566,7 +1566,7 @@ blockquote footer{
     height: 45px;
     top:0px;
     color: #fff;
-    background-color: #ff9c00;
+    background-color: #F2784B;
     padding: 25px 5px 5px 5px;
     font-size: 12px;
     text-align: center;
@@ -1659,7 +1659,7 @@ blockquote footer{
 }
 
 .course-list .course-detail .course-features>li .fa{
-    color: #ff9c00;
+    color: #F2784B;
 }
 
 .course-list .course-detail .brief{
@@ -1692,7 +1692,7 @@ blockquote footer{
     height: 45px;
     top:0px;
     color: #fff;
-    background-color: #ff9c00;
+    background-color: #F2784B;
     padding: 25px 5px 5px 5px;
     font-size: 12px;
     text-align: center;
@@ -1708,7 +1708,7 @@ blockquote footer{
     height: 0;
     border-style: solid;
     border-width: 12px 20px 0 20px;
-    border-color: #ff9d00 transparent transparent transparent;
+    border-color: #F2784B transparent transparent transparent;
     z-index: 2;
 }
 
@@ -1765,7 +1765,7 @@ blockquote footer{
 }
 
 .course-full .personal > div > span:nth-child(2){
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 14px;
     font-weight: 700;
 }
@@ -1781,7 +1781,7 @@ blockquote footer{
 }
 
 .course-facts .fact > .head > .count{
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 36px;
     display: block;
 }
@@ -1815,7 +1815,7 @@ blockquote footer{
 }
 
 .next-event .event-date{
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 80px;
 }
 
@@ -1829,7 +1829,7 @@ blockquote footer{
 .event .timer .hours,
 .event .timer .minutes,
 .event .timer .seconds{
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 40px;
 }
 
@@ -1844,7 +1844,7 @@ blockquote footer{
 }
 
 .event-card .event-link .fa{
-    background-color: #ff9c00;
+    background-color: #F2784B;
     color: #fff;
     height: 50px;
     width: 50px;
@@ -1862,14 +1862,14 @@ blockquote footer{
     font-weight: 600;
     text-transform: uppercase;
     color: #333;
-    border: 2px solid #ff9c00;
+    border: 2px solid #F2784B;
     background-color: #fff;
     z-index: 5;
 }
 
 .event-card .event-on .date{
     font-size: 30px;
-    color: #ff9c00;
+    color: #F2784B;
     display: block;
     text-align: center;
 }
@@ -1925,7 +1925,7 @@ blockquote footer{
 }
 
 .event-card .next-event .event-date{
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 36px;
 }
 
@@ -1946,7 +1946,7 @@ blockquote footer{
 .event-card .timer .seconds{
     font-size: 28px;
     margin-left: 10px;
-    color: #ff9c00;
+    color: #F2784B;
 }
 
 .event-card:hover .event-img{
@@ -1999,7 +1999,7 @@ blockquote footer{
 }
 
 .event-full .info > div > span:nth-child(2){
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 14px;
     font-weight: 700;
 }
@@ -2015,7 +2015,7 @@ blockquote footer{
 }
 
 .event-facts .fact > .head > .count{
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 36px;
     display: block;
 }
@@ -2040,7 +2040,7 @@ blockquote footer{
 .event-intro .timer .seconds{
     font-size: 34px;
     margin-left: 8px;
-    color: #ff9c00;
+    color: #F2784B;
 }
 
 /****** Gallery Home Page ******/
@@ -2056,8 +2056,8 @@ blockquote footer{
 
 .gallery .img-box img{
     position: relative;
-    border-right: 1px solid #ff9c00;
-    border-bottom: 1px solid #ff9c00;
+    border-right: 1px solid #F2784B;
+    border-bottom: 1px solid #F2784B;
     -webkit-transition: 350ms ease all;
     transition: 350ms ease all;
     z-index: 2;
@@ -2069,7 +2069,7 @@ blockquote footer{
     height: 12px;
     width: 12px;
     border-radius: 50%;
-    background-color: #ff9c00;
+    background-color: #F2784B;
     left:-6px;
     top: -6px;
     z-index: 10;
@@ -2077,7 +2077,7 @@ blockquote footer{
 
 .gallery .img-box .img-zoom{
     position: absolute;
-    background-color: #ff9c00;
+    background-color: #F2784B;
     color: #fff;
     height: 50px;
     width: 50px;
@@ -2136,7 +2136,7 @@ blockquote footer{
     font-family: 'Oswald', sans-serif;
     font-size: 80px;
     text-shadow: 0px 2px 2px #000;
-    color: #ff9c00;
+    color: #F2784B;
     z-index: 99;
     margin: 0;
     text-align: center;
@@ -2159,7 +2159,7 @@ blockquote footer{
 .album-card h5,
 .album-card h6{
     font-weight: bold;
-    color: #ff9c00;
+    color: #F2784B;
     position: absolute;
     bottom: 0px;
     background-color: rgba(0, 0, 0, 0.6);
@@ -2196,7 +2196,7 @@ blockquote footer{
 
 .gallery-card .img-zoom{
     position: absolute;
-    background-color: #ff9c00;
+    background-color: #F2784B;
     color: #fff;
     height: 50px;
     width: 50px;
@@ -2237,12 +2237,12 @@ blockquote footer{
     position: absolute;
     top:50%;
     left: 50%;
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 34px;
     height: 140px;
     width: 140px;
     text-align: center;
-    border: 10px solid #ff9c00;
+    border: 10px solid #F2784B;
     background-color: rgba(0, 0, 0, 0.40);
     line-height: 120px;
     border-radius: 50%;
@@ -2290,14 +2290,14 @@ blockquote footer{
     font-weight: 600;
     text-transform: uppercase;
     color: #333;
-    border: 2px solid #ff9c00;
+    border: 2px solid #F2784B;
     background-color: #fff;
     z-index: 5;
 }
 
 .blog-card .posted-on .date{
     font-size: 30px;
-    color: #ff9c00;
+    color: #F2784B;
     display: block;
     text-align: center;
 }
@@ -2384,14 +2384,14 @@ blockquote footer{
     font-weight: 600;
     text-transform: uppercase;
     color: #333;
-    border: 2px solid #ff9c00;
+    border: 2px solid #F2784B;
     background-color: #fff;
     z-index: 5;
 }
 
 .blog-single .posted-on .date{
     font-size: 30px;
-    color: #ff9c00;
+    color: #F2784B;
     display: block;
     text-align: center;
 }
@@ -2527,7 +2527,7 @@ blockquote footer{
 }
 
 .comment-list .comment .who-said .date{
-    color: #ff9c00;
+    color: #F2784B;
 }
 
 .comment-list .comment .who-said{
@@ -2700,7 +2700,7 @@ blockquote footer{
     position: relative;
     display: inline-block;
     padding: 30px 2px 1px 10px;
-    background-color: #ff9c00;
+    background-color: #F2784B;
     color: #fff;
     margin:5px 5px 0 0;
     text-transform: uppercase;
@@ -2739,7 +2739,7 @@ blockquote footer{
 /***********************/
 
 .footer-pri{
-    border-top: 10px solid #ff9c00;
+    border-top: 10px solid #F2784B;
     background-color: #151D30;
     padding: 30px 0 15px;
 }
@@ -2778,7 +2778,7 @@ blockquote footer{
 }
 
 .blog-thumbnail .entry .entry-content .entry-header a:hover{
-    color: #ff9c00;
+    color: #F2784B;
     text-decoration: none;
 }
 
@@ -2813,7 +2813,7 @@ blockquote footer{
 
 .email, .phone, .footer-widget p.email, .footer-widget p.phone{
     font-family: inherit;
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 14px;
     display: block;
 }
@@ -2831,7 +2831,7 @@ blockquote footer{
 }
 
 .social > li > a{
-    background-color: #ff9c00;
+    background-color: #F2784B;
     color: #1a2b51;
     height: 35px;
     width: 35px;
@@ -2864,7 +2864,7 @@ blockquote footer{
     bottom: 20px;
     height: 50px;
     width: 50px;
-    background-color: #ff9c00;
+    background-color: #F2784B;
     color: #fff;
     line-height: 50px;
     text-align: center;
@@ -2906,7 +2906,7 @@ blockquote footer{
     background-color: #fff;
     margin: 50px 0px;
     padding: 40px 25px;
-    border: 2px solid #ff9c00;
+    border: 2px solid #F2784B;
     box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
     z-index: 2;
 }
@@ -2918,7 +2918,7 @@ blockquote footer{
     width: 100%;
     left: 0px;
     top:0px;
-    border:5px solid #ff9c00;
+    border:5px solid #F2784B;
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
     z-index: -1;
@@ -2942,7 +2942,7 @@ blockquote footer{
 .coming-soon .timer .hours,
 .coming-soon .timer .minutes,
 .coming-soon .timer .seconds{
-    color: #ff9c00;
+    color: #F2784B;
     font-size: 26px;
     margin-left: 10px;
 }
