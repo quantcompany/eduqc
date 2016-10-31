@@ -7,7 +7,7 @@
                 <span class="sr-only">Toggle Menu</span>
                 <span>Menu</span>
             </button>
-            <a class="navbar-brand qcname" href="{% url 'index' %}" style="padding:35px 0px;color:white;"><i style="font-style:oblique;">∫ </i> Quant Company</a> <!-- Replace with your Logo -->
+            <a class="navbar-brand qcname" href="{% url 'index' %}" style="padding:35px 0px;color:white;">Quant Company</a> <!-- Replace with your Logo -->
         </div>
 
         <div class="collapse navbar-collapse" id="main-navigation">         <!-- Main Menu -->
@@ -15,11 +15,22 @@
                 <li><a href="{% url 'index' %}">Inicio</a></li>
                 <li><a href="{% url 'courses:index' %}">Cursos</a>
                 <li><a href="{% url 'contact' %}">Contacto</a></li>
-                <li><a href="#"><span class="flag-icon flag-icon-es"></span> Español</a>
+                {% if user.is_authenticated %}
+                <li><a href="#">{{ user.user_name }}</a>
                   <ul class="sub-menu">
-                    <li><a href="#"><span class="flag-icon flag-icon-us"></span> English</a></li>
+                    <li><a href="{% url 'users:profile' %}">Perfil</a></li>
+                    <li><a href="#">Idioma <i class="fa fa-angle-right pull-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="#"><span class="flag-icon flag-icon-es"></span> Español <i class="fa fa-check pull-right"></i></a></li>
+                            <li><a href="#"><span class="flag-icon flag-icon-us"></span> English</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'users:signout' %}">Salir</a></li>
                   </ul>
                 </li>
+                {% else %}
+                <li><a data-toggle="modal" data-target="#signin-modal">Ingresar</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>

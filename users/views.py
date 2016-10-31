@@ -5,7 +5,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.sites.shortcuts import get_current_site
 from django.http import JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
 
 from emails import send_verification_email
 
@@ -41,6 +42,11 @@ def signup(request):
         return JsonResponse({})
     else:
         return JsonResponse(form.errors, status=400)
+
+
+def signout(request):
+    logout(request)
+    return redirect(reverse('index'))
 
 
 @login_required

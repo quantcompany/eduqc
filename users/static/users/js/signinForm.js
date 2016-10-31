@@ -19,10 +19,10 @@ var signinForm = {
 };
 
 
-rivets.bind($('#signin-form'), {form: signinForm})
+rivets.bind($('.signin-form'), {form: signinForm})
 
 
-$('#signin-form').on('submit', function(e){
+$('.signin-form').on('submit', function(e){
     signinForm.submitting = true;
     signinForm.clearErrors();
 

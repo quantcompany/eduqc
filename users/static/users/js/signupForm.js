@@ -8,7 +8,7 @@ var signupForm = {
     password2: {value: '', error: ''},
     clear: function(){
         this.errors = [];
-        
+
         this.email.value = '';
         this.email.error = '';
 
@@ -21,12 +21,12 @@ var signupForm = {
 };
 
 
-rivets.bind($('#signup-form'), {form: signupForm})
+rivets.bind($('.signup-form'), {form: signupForm})
 
 
-$('#signup-form').on('submit', function(e){
+$('.signup-form').on('submit', function(e){
     signupForm.submitting = true;
-    
+
     e.preventDefault();
 
     var fd = new FormData(this);
@@ -38,7 +38,7 @@ $('#signup-form').on('submit', function(e){
         processData: false,  // tell jQuery not to process the data
         contentType: false,  // tell jQuery not to set contentType
     });
-    
+
 
     request.done(function(data, textStatus, jqXHR) {
         console.log('Success\n' + jqXHR.responseText);
@@ -46,7 +46,7 @@ $('#signup-form').on('submit', function(e){
         signupForm.clear();
         signupForm.done = true;
     });
-     
+
     request.fail(function(jqXHR, textStatus, errorThrown) {
         console.log('Error ' + jqXHR.status + '\n' + jqXHR.responseText);
 

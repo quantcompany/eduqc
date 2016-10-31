@@ -1,4 +1,4 @@
-<form id="signin-form" action="{% url 'users:signin' %}" method="POST">
+<form action="{% url 'users:signin' %}" class="signin-form" method="POST">
     {% csrf_token %}
 
     <ul rv-show="form.errors" style="font-size:12px; font-family:sans-serif; color:crimson;">
