@@ -10,7 +10,7 @@ from django.urls import reverse
 
 from emails import send_verification_email
 
-from .models import EmailVerification
+from .models import User, EmailVerification
 from .forms import SignUpForm
 
 
@@ -59,5 +59,21 @@ def verify(request, code):
 
 
 @login_required
-def profile(request):
-    return render(request, 'users/profile.html')
+def profile(request, user_id):
+    profile_user = get_object_or_404(User, id=user_id)
+
+    ctx = dict()
+
+    if profile_user.is_student():
+        template = 'users/student_profile.html'
+        ctx['profile_user'] = profile_user.student
+    elif profile_user.is_instructor():
+        template = 'users/instructor_profile.html'
+        ctx['profile_user'] = profile_user.instructor
+
+    return render(request, template, ctx)
+
+
+@login_required
+def me(request):
+    return profile(request, request.user.id)

@@ -686,6 +686,7 @@ blockquote footer{
 
 .icon-box-1 > .icon-box-icon{
     border-right: 1px dashed #d7d7d7;
+    background-color: #ECECEC;
 }
 
 .icon-box-1 > .icon-box-icon > .fa{
@@ -2823,6 +2824,8 @@ blockquote footer{
     overflow: hidden;
     padding-left: 0;
     display: inline-block;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .social > li{
@@ -2833,10 +2836,10 @@ blockquote footer{
 .social > li > a{
     background-color: #ff9c00;
     color: #1a2b51;
-    height: 35px;
-    width: 35px;
-    font-size: 18px;
-    line-height: 36px;
+    height: 30px;
+    width: 30px;
+    font-size: 16px;
+    line-height: 30px;
     display: inline-block;
     border-radius: 50%;
     text-align: center;

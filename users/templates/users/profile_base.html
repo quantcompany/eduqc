@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_css %}
+{% endblock %}
+
+{% block page_header %}Profile{% endblock %}
+
+{% block breadcrumbs %}
+    <li class="active">Profile</li>
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-100">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="teacher-intro">
+                    <img src="{{ profile_user.image_url }}" class="img-responsive" alt="">
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="teacher-full">
+                    <div>
+                      {% block intro %}
+                      {% endblock %}
+                    </div>
+
+                    <div class="personal">
+                        {% block personal %}
+                        {% endblock %}
+                    </div>
+
+                    <p>
+                      {% if profile_user.description %}
+                        {{ profile_user.description }}
+                      {% else %}
+                        <i>User has no description yet!</i>
+                      {% endif %}
+                    </p>
+                </div>
+                <div class="teacher-facts">
+                    <div class="fact col-sm-4">
+                        <span class="head"><span class="count" data-from="0" data-to="80" data-speed="3000">80</span>Average Score</span>
+                    </div>
+                    <div class="fact col-sm-4">
+                        <span class="head"><span class="count" data-from="0" data-to="94" data-speed="3000">94</span> Students Passed</span>
+                    </div>
+                    <div class="fact col-sm-4">
+                        <span class="head"><span class="count" data-from="0" data-to="20" data-speed="3000">20%</span> Scholar Students</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="container mt-60 mb-100">
+        {% block sessions %}
+        {% endblock %}
+    </div>
+
+    <div class="clearfix"></div>
+{% endblock %}
+
+{% block tail_js %}
+    <!-- CountTo -->
+    <script src="{% static 'js/jquery.countTo.js' %}" type="text/javascript"></script>
+
+    <!-- Appear -->
+    <script src="{% static 'js/jquery.appear.js' %}" type="text/javascript"></script>
+{% endblock %}

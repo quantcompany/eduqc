@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from django.db import models
 
 
@@ -7,6 +9,13 @@ class Session(models.Model):
     optional_text = models.TextField()  # para hacer alguna aclaracion sobre esta sesión
     instructor = models.ForeignKey('users.Instructor', related_name='sessions')
     students = models.ManyToManyField('users.Student', related_name='sessions', through='sesiones.Enrollment')
+
+    def __str__(self):
+        return '{} ({})'.format(self.course, self.instructor)
+
+    @property
+    def end_date(self):
+        return self.start_date + timedelta(days=self.course.duration * 7)
 
 
 class Enrollment(models.Model):
@@ -22,3 +31,6 @@ class Enrollment(models.Model):
 
     class Meta:
         ordering = ['last_modified', 'enrollment_date']
+
+    def __str__(self):
+        return '{} ({})'.format(self.session, self.student)

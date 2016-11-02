@@ -1,96 +1,97 @@
 "use strict";
 
 $(window).on("load",function(){
-   
+
     $(".loader-backdrop").fadeOut();               // Open Modal on Load or after delay
         if($(".modal").length && ($(".modal").attr("data-open-onload"))=="true"){
             setTimeout(function(){
-                $(".modal").modal();       
+                $(".modal").modal();
             }, $(".modal").attr("data-open-delay"));
     }
 });
 
-jQuery(document).ready(function() {	
-    
+jQuery(document).ready(function() {
+
 // ************ Function Calls ************//
-    
+
     if($("#slider").length){
         callSliderRevolution();                  // Call to Slider Revolution
     }
-        
+
     if($(".announcement").length){
         callAnnounceToggle();                    // Call to Announcement Slide Up/Down
     }
-    
+
     if($(".announcement-text").length){
         callAnnouncement();                      // Call to Announcement Carousels
     }
-    
+
     if($(".timer").length){
        $(".timer").each(function(){
            callCountdown(this);                  // Call to Event Countdown Timer
        });
     }
-    
+
     if($(".testimonials").length){
         callTestimonial();                       // Call to Testimonials Carousel
     }
-    
+
     if($(".logo-scroll").length){
         callLogoScroll();                        // Call to Logo Scroll
     }
-    
+
     if($(".tweets").length){
         callTweetScroll();                       // Call to Tweet Scroll
     }
-    
+
     if($(".selectpicker").length){
         callSelectPicker();                      // Call to Select Box Styler
     }
-    
-    if($(".fact .count").length){          
+
+    if($(".fact .count").length){
         $(".fact .count").appear(function() {    // Call function callCountTo() only when the Element is in viewport
             callCountTo();
         });
     }
-    
-    if($(".img-rotate").length){   
+
+    if($(".img-rotate").length){
         $(".img-rotate").find("img:first-child").show();
-        $(".img-rotate").mouseenter(function(){    
+        $(".img-rotate").mouseenter(function(){
             callAlbumHover(this);                       // Call to Album Hover (Gallery Albums Page)
         });
     }
-    
-    if($(".youtube").length){    
+
+    if($(".youtube").length){
         $(".youtube").each(function(){
             callYoutubeVideo(this);                     // Style each video found on page
-        });        
+        });
     }
-    
+
     if($("#gmap").length){
-        
+
         var lat=$("#gmap").attr("data-lat");            // Latitude of the place to be marked
-        
+
         var long=$("#gmap").attr("data-long");          // Longitude of the place to be marked
-        
+
         var infoWin=$("#gmap").attr("data-info-win");   // Content to be shown in Info Window on Marker
-        
+
         callGoogleMapStyle(lat, long, infoWin);         // Call to Google Map Styler
     }
-    
+
     if($("#back").length){                              // Back To Top Icon
         callBackToTop();
     }
-	
+
     if($("a[data-gal^='prettyPhoto']").length){
 		callPrettyPhoto();                              // Pretty Photo
 	}
-    
+
     if($("#main-contact-form").length){
         callFormSubmit();
     }
-    
-});	
+
+    callTooltip();  // activate toltips
+});
 
 
 // ************Definitions of Functions************//
@@ -102,7 +103,7 @@ function callSliderRevolution()
       sliderLayout:"auto",
       delay:5000,                                       // Delay in Transition from one slide to another in milliseconds
       navigation: {
-          arrows:{enable:true}				
+          arrows:{enable:true}
       },
       lazyLoad:"on",
       gridwidth:1200,
@@ -123,11 +124,11 @@ function callAnnounceToggle()
 function callAnnouncement()
 {
     var announceCarousel= $('.announcement-text');
-    
+
     $('.announcement .owl-left').click(function() {
         announceCarousel.trigger('prev.owl.carousel');
     })
-    
+
     $('.announcement .owl-right').click(function() {
         announceCarousel.trigger('next.owl.carousel');
     })
@@ -155,11 +156,11 @@ function callCountdown(thisTimer)
 function callTestimonial()
 {
     var testiCarousel= $('.testimonials');
-    
+
     $('.owl-left').click(function() {
         testiCarousel.trigger('prev.owl.carousel');
     })
-    
+
     $('.owl-right').click(function() {
         testiCarousel.trigger('next.owl.carousel');
     })
@@ -181,7 +182,7 @@ function callSelectPicker()
 }
 
 function callCountTo(){
-    $(".fact .count").countTo();                    
+    $(".fact .count").countTo();
 }
 
 function callLogoScroll()
@@ -220,14 +221,14 @@ function callTweetScroll()
 
 function callAlbumHover(hoverElement)
 {
-    var imgInterval = 750;                          // Change interval between items (in milliseconds)  
-    
+    var imgInterval = 750;                          // Change interval between items (in milliseconds)
+
     var imgSelect=$(hoverElement).find("img");
 
     var imgCount = $(imgSelect).length;
 
     var imgCurrent = 0;
-    
+
     var infiniteLoop = setInterval(function(){
         $(imgSelect).eq(imgCurrent).hide();
 
@@ -238,7 +239,7 @@ function callAlbumHover(hoverElement)
         }
         $(imgSelect).eq(imgCurrent).show();
     }, imgInterval);
-    
+
     $(hoverElement).mouseleave(function(){         // On Mouse Leave, the first Image again shows up
         clearTimeout(infiniteLoop);
         $(this).find("img").hide();
@@ -247,15 +248,15 @@ function callAlbumHover(hoverElement)
 }
 
 function callYoutubeVideo(currentVideo)
-{    
+{
     var videoId = $(currentVideo).attr("data-video-id");                                    // Get Video ID from data attributes
-    
+
     var thumbnail = 'url(https://img.youtube.com/vi/'+ videoId + '/sddefault.jpg)';         // Get Thumbail image of the video
-    
+
     $(currentVideo).css("background-image", thumbnail);                                     // Set thmbnail image as the background
-    
+
     var videoUrl= "https://www.youtube.com/embed/" + videoId + "?autoplay=1&autohide=1";    // Framing Video URL from video ID
-    
+
     $(currentVideo).find(".btn-play").click(function(){                                     // If play button is clicked, load Video within IFrame
         var videoFrame = $('<iframe/>', {
             'frameborder': '0',
@@ -264,11 +265,11 @@ function callYoutubeVideo(currentVideo)
             'height': $(currentVideo).height()
         });
         $(currentVideo).replaceWith(videoFrame);                                            // Finally replace the div with IFrame
-    });    
+    });
 }
 
 function callGoogleMapStyle(lat, long, infoWin)
-{   
+{
     var styles = [
     {
         featureType: 'water',                       //Color of the Water Bodies
@@ -307,43 +308,43 @@ function callGoogleMapStyle(lat, long, infoWin)
         ]
     }
 ];
-    
+
     var options = {
         mapTypeControlOptions: {
         mapTypeIds: ['Styled']
         },
         center: new google.maps.LatLng(lat, long),
         zoom: 16,
-        disableDefaultUI: true, 
+        disableDefaultUI: true,
         mapTypeId: 'Styled'
     };
     var div = document.getElementById('gmap');
-    
+
     var map = new google.maps.Map(div, options);
-    
+
     var styledMapType = new google.maps.StyledMapType(styles, { name: 'Styled' });
-    
+
     map.mapTypes.set('Styled', styledMapType);
-    
+
     var marker = new google.maps.Marker({
         map: map,
         position: new google.maps.LatLng(lat, long)             // Set Marker Position of the place
     });
-    
+
     marker['infowindow'] = new google.maps.InfoWindow({
         content: infoWin                                        // Set Content of the Info Window of the Marker
     });
 
     new google.maps.event.addListener(marker, 'mouseover', function() {
         this['infowindow'].open(map, this);                     // On Marker Hover, show Info Window
-    });    
+    });
 }
 
 function callBackToTop()
 {
-    var offset = 250;                          // Offset after which Back To Top button will be visible 
+    var offset = 250;                          // Offset after which Back To Top button will be visible
     var duration = 1000;                       // Time duration in which the page scrolls back up.
-    
+
     jQuery(window).scroll(function() {
         if (jQuery(this).scrollTop() > offset) {
             $('#back').fadeIn(500);
@@ -356,7 +357,7 @@ function callBackToTop()
         event.preventDefault();
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
-    });    
+    });
 }
 
 function callPrettyPhoto()
@@ -365,8 +366,8 @@ function callPrettyPhoto()
 }
 
 function callFormSubmit(){
-    
-    var options = 
+
+    var options =
 	{
 		clearForm : 'false',
 		type : 'POST',
@@ -375,22 +376,22 @@ function callFormSubmit(){
 		resetForm : 'false',
 		async : 'true',
 		datatype : 'html',
-		timeout : 2400000,		
-		
+		timeout : 2400000,
+
 		beforeSend:function(){
 			text = "<i class='fa fa-spinner fa-spin'></i>Submitting your message, please wait.";
 			$("#status").empty().html(text);
 		},
-		
+
 		complete: function(xhr, textStatus)
 		{
 			$("#status").empty().html(xhr.responseText);
 		},
-		
+
 		error: function(jqXHR, textStatus, errorThrown)
 		{
-			$("#status").empty().html('Error in application : Please try again.');		
-		}				
+			$("#status").empty().html('Error in application : Please try again.');
+		}
 	};
 
 	$.validator.setDefaults({
@@ -400,18 +401,18 @@ function callFormSubmit(){
 	});
 
 	$("#main-contact-form").validate({
-        
+
 		rules: {
 			name:  {
 				required: true,
-			},		
+			},
 			email:  {
 				required: true,
 				email: true,
-			},			
+			},
 			subject: {
 				required: true,
-			}, 
+			},
 			message: {
 				required: true,
 			}
@@ -431,9 +432,13 @@ function callFormSubmit(){
 				required: "Please enter your message.",
 			}
 		},
-        
+
         errorPlacement: function() {
              return false;
            }
 	});
+}
+
+function callTooltip(){
+  $('[data-toggle="tooltip"]').tooltip(); 
 }

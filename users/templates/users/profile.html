@@ -65,57 +65,36 @@
     <div class="clearfix"></div>
 
     <div class="container mt-60 mb-100">
+        <h1>{{ user }}</h1>
+        <h1>{{ student.enrollments.count }}</h1>
+        {% if student.enrollments.count > 0 %}
         <h2>My <span class="color2">Sessions</span></h2>
         <div class="time-table">
-            <div class="row">
-                <div>Course</div>
-                <div>Start</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-            </div>
-            <div class="row">
-                <div>Monday</div>
-                <div>Area Geometry</div>
-                <div>Basic Economics</div>
-                <div>Atomic Physics</div>
-                <div>Area Geometry</div>
-                <div>Micro Science</div>
-            </div>
-            <div class="row">
-                <div>Tuesday</div>
-                <div>Basic Economics</div>
-                <div>Atomic Physics</div>
-                <div>Micro Science</div>
-                <div>Area Geometry</div>
-                <div>Micro Science</div>
-            </div>
-            <div class="row">
-                <div>Wednesday</div>
-                <div>Basic Economics</div>
-                <div>Area Geometry</div>
-                <div>Micro Science</div>
-                <div>Area Geometry</div>
-                <div>Micro Science</div>
-            </div>
-            <div class="row">
-                <div>Thursday</div>
-                <div>Area Geometry</div>
-                <div>Basic Economics</div>
-                <div>Atomic Physics</div>
-                <div>Area Geometry</div>
-                <div>Micro Science</div>
-            </div>
-            <div class="row">
-                <div>Friday</div>
-                <div>Micro Science</div>
-                <div>Basic Economics</div>
-                <div>Area Geometry</div>
-                <div>Atomic Physics</div>
-                <div>Micro Science</div>
-            </div>
+          <div class="row">
+            <div>COURSE</div>
+            <div>INSTRUCTOR</div>
+            <div>START</div>
+            <div>END</div>
+            <div>STATUS</div>
+          </div>
+          {% for enrollment in user.enrollments %}
+          <div class="row">
+            <div>Friday</div>
+            <div>Micro Science</div>
+            <div>Basic Economics</div>
+            <div>Area Geometry</div>
+            <div>Atomic Physics</div>
+            <div>Micro Science</div>
+          </div>
+          {% empty %}
+          <div class="row">
+            <div colspan="5">You haven't enrolled in any courses yet!</div>
+          </div>
+          {% endfor %}
         </div>
+        {% else %}
+        <h2>Aun no te has inscrito en un <span class="color2">curso</span>!</h2>
+        {% endif %}
     </div>
 
     <div class="clearfix"></div>

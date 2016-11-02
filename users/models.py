@@ -25,6 +25,16 @@ class User(AbstractEmailUser):
 
     DEFAULT_IMAGE_URL = '/static/images/teacher-1.png'
 
+    def save(self, *args, **kwargs):
+        self.guess_user_name()
+        super(User, self).save(*args, **kwargs)
+
+    def is_student(self):
+        return hasattr(self, 'student')
+
+    def is_instructor(self):
+        return hasattr(self, 'instructor')
+
     def image_url(self):
         if self.image and self.image.name:
             return self.image.url
@@ -56,9 +66,6 @@ class User(AbstractEmailUser):
             'country': self.country
         }
 
-    def save(self, *args, **kwargs):
-        self.guess_user_name()
-        super(User, self).save(*args, **kwargs)
 
 
 class Student(User):

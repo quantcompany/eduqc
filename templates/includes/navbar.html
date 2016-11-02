@@ -15,21 +15,21 @@
                 <li><a href="{% url 'index' %}">Inicio</a></li>
                 <li><a href="{% url 'courses:index' %}">Cursos</a>
                 <li><a href="{% url 'contact' %}">Contacto</a></li>
+                <li><a href="#">Idioma</a>
+                    <ul class="sub-menu">
+                        <li><a href="#"><span class="flag-icon flag-icon-es"></span> Español <i class="fa fa-check pull-right"></i></a></li>
+                        <li><a href="#"><span class="flag-icon flag-icon-us"></span> English</a></li>
+                    </ul>
+                </li>
                 {% if user.is_authenticated %}
-                <li><a href="#">{{ user.user_name }}</a>
+                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> {{ user.user_name }}</a>
                   <ul class="sub-menu">
-                    <li><a href="{% url 'users:profile' %}">Perfil</a></li>
-                    <li><a href="#">Idioma <i class="fa fa-angle-right pull-right"></i></a>
-                        <ul class="sub-menu">
-                            <li><a href="#"><span class="flag-icon flag-icon-es"></span> Español <i class="fa fa-check pull-right"></i></a></li>
-                            <li><a href="#"><span class="flag-icon flag-icon-us"></span> English</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="{% url 'users:profile' user.id %}">Perfil</a></li>
                     <li><a href="{% url 'users:signout' %}">Salir</a></li>
                   </ul>
                 </li>
                 {% else %}
-                <li><a data-toggle="modal" data-target="#signin-modal">Ingresar</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#signin-modal"><i class="fa fa-user" aria-hidden="true"></i> Ingresar</a></li>
                 {% endif %}
             </ul>
         </div>

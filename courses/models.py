@@ -5,6 +5,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 class Category(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
+    fa_icon = models.CharField(max_length=20, default='fa-graduation-cap')
 
     class Meta:
         ordering = ['name']
@@ -27,7 +28,7 @@ class Course(models.Model):
 
     name = models.CharField(max_length=300)
     description = models.TextField()
-    duration = models.IntegerField()
+    duration = models.IntegerField() # in weeks
     category = models.ForeignKey('courses.Category', related_name='courses')
     monthly_price = models.DecimalField(max_digits=6, decimal_places=2)
     main_image = models.ImageField(upload_to='courses/images')

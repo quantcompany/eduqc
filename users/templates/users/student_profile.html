@@ -1,0 +1,44 @@
+{% extends 'users/profile_base.html' %}
+
+{% block intro %}
+<h2 class="heading">{{ profile_user.user_name }}</h2>
+{% endblock %}
+
+{% block personal %}
+<div>
+    <span>Email Address</span>
+    <span>{{ profile_user.email }}</span>
+</div>
+
+<div>
+    <span>Country</span>
+    <span>{{ profile_user.get_country_display|default:"None" }}</span>
+</div>
+{% endblock %}
+
+{% block sessions %}
+  {% if profile_user.enrollments.count > 0 %}
+    <h2>My <span class="color2">Sessions</span></h2>
+    <div class="time-table">
+      <div class="row">
+        <div>COURSE</div>
+        <div>INSTRUCTOR</div>
+        <div>START</div>
+        <div>END</div>
+        <div>STATUS</div>
+      </div>
+      {% for enrollment in profile_user.enrollments.all %}
+      <div class="row">
+        <div>Friday</div>
+        <div>Micro Science</div>
+        <div>Basic Economics</div>
+        <div>Area Geometry</div>
+        <div>Atomic Physics</div>
+        <div>Micro Science</div>
+      </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <h2>Aun no te has inscrito en un <span class="color2">curso</span>!</h2>
+  {% endif %}
+{% endblock %}
