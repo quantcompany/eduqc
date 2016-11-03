@@ -25,6 +25,12 @@
                       {% endblock %}
                     </div>
 
+                    {% if user.id == profile_user.id %}
+                    <div class="mb-20">
+                      <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#profile-modal">Editar mi perfil <i class="fa fa-pencil" aria-hidden="true"></i></button>
+                    </div>
+                    {% endif %}
+
                     <div class="personal">
                         {% block personal %}
                         {% endblock %}
@@ -34,7 +40,7 @@
                       {% if profile_user.description %}
                         {{ profile_user.description }}
                       {% else %}
-                        <i>User has no description yet!</i>
+                        <i>Aun no hay descripcion!</i>
                       {% endif %}
                     </p>
                 </div>
@@ -61,6 +67,33 @@
     </div>
 
     <div class="clearfix"></div>
+
+    {% if user.id == profile_user.id %}
+      <div class="modal fade" id="profile-modal" data-open-delay="750" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="modal-body" style="background-image:url('{% static 'images/modal-background.jpg' %}'); background-size:cover;">
+              <div class="row" style="height:100%">
+                <div class="col-md-12 bginverse pt-20 pb-20" style="height:100%">
+                  <h1>Mi <span class="color2">perfil</span></h1>
+
+                  <div class="tab-content">
+                    {% if profile_user.is_student %}
+                      {% include 'users/includes/student_profile_form.html' %}
+                    {% elif profile_user.is_instructor %}
+                      {% include 'users/includes/instructor_profile_form.html' %}
+                    {% else %}
+                      {% include 'users/includes/profile_form_base.html' %}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
 {% endblock %}
 
 {% block tail_js %}
@@ -69,4 +102,13 @@
 
     <!-- Appear -->
     <script src="{% static 'js/jquery.appear.js' %}" type="text/javascript"></script>
+
+
+    {% if profile_user.is_student %}
+      <script src="{% static 'users/js/studentProfileForm.js' %}"></script>
+    {% elif profile_user.is_instructor %}
+      <script src="{% static 'users/js/instructorProfileForm.js' %}"></script>
+    {% else %}
+      <script src="{% static 'users/js/profileFormBase.js' %}"></script>
+    {% endif %}
 {% endblock %}

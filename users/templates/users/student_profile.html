@@ -1,40 +1,45 @@
 {% extends 'users/profile_base.html' %}
 
 {% block intro %}
-<h2 class="heading">{{ profile_user.user_name }}</h2>
+  <h2 class="heading">{{ profile_user.user_name }}
+    <ul class="social">
+      {% for category in profile_user.categories.all %}
+      <li><a data-toggle="tooltip" data-animation="false" title="{{ category.name }}"><i class="fa {{ category.fa_icon }}"></i></a></li>
+      {% endfor %}
+    </ul>
+  </h2>
 {% endblock %}
 
 {% block personal %}
-<div>
-    <span>Email Address</span>
-    <span>{{ profile_user.email }}</span>
-</div>
+  <div>
+      <span>Correo Electronico</span>
+      <span>{{ profile_user.email }}</span>
+  </div>
 
-<div>
-    <span>Country</span>
-    <span>{{ profile_user.get_country_display|default:"None" }}</span>
-</div>
+  <div>
+      <span>Pais</span>
+      <span>{{ profile_user.get_country_display|default:"None" }}</span>
+  </div>
 {% endblock %}
 
 {% block sessions %}
   {% if profile_user.enrollments.count > 0 %}
-    <h2>My <span class="color2">Sessions</span></h2>
+    <h2>Mis <span class="color2">Sesiones</span></h2>
     <div class="time-table">
       <div class="row">
-        <div>COURSE</div>
+        <div>CURSO</div>
         <div>INSTRUCTOR</div>
-        <div>START</div>
-        <div>END</div>
-        <div>STATUS</div>
+        <div>INICIO</div>
+        <div>FIN</div>
+        <div>ESTATUS</div>
       </div>
       {% for enrollment in profile_user.enrollments.all %}
       <div class="row">
-        <div>Friday</div>
-        <div>Micro Science</div>
-        <div>Basic Economics</div>
-        <div>Area Geometry</div>
-        <div>Atomic Physics</div>
-        <div>Micro Science</div>
+        <div>{{ enrollment.session.course.name }}</div>
+        <div><a href="{% url 'users:profile' enrollment.session.instructor.id %}">{{ enrollment.session.instructor.get_full_name }}</a></div>
+        <div>{{ enrollment.session.start_date }}</div>
+        <div>{{ enrollment.session.end_date }}</div>
+        <div>{{ enrollment.get_status_display }}</div>
       </div>
       {% endfor %}
     </div>

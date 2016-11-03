@@ -1,3 +1,5 @@
+import itertools
+import math
 import uuid
 
 from django.contrib.auth import login, logout
@@ -10,12 +12,15 @@ from django.urls import reverse
 
 from emails import send_verification_email
 
+from courses.models import Category
+
 from .models import User, EmailVerification
 from .forms import SignUpForm
+from .choices import COUNTRY_CHOICES
 
 
 def signin(request):
-    form = AuthenticationForm(request, data=request.POST)    # email = request.POST.get('email', None)
+    form = AuthenticationForm(request, data=request.POST)
 
     if form.is_valid():
         login(request, form.get_user())
@@ -63,6 +68,12 @@ def profile(request, user_id):
     profile_user = get_object_or_404(User, id=user_id)
 
     ctx = dict()
+    ctx['COUNTRY_CHOICES'] = COUNTRY_CHOICES
+
+    category_cutoff = math.ceil(Category.objects.count() / 2)
+    c1 = Category.objects.all()[:category_cutoff]
+    c2 = Category.objects.all()[category_cutoff:]
+    ctx['category_pairs'] = itertools.zip_longest(c1, c2)
 
     if profile_user.is_student():
         template = 'users/student_profile.html'

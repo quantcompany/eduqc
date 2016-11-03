@@ -1,0 +1,27 @@
+{% extends 'users/includes/profile_form_base.html' %}
+
+{% block extra %}
+    <div class="form-group" rv-class-has-error="form.years_of_experience.error">
+      <input class="form-control" name="years_of_experience" type="text" placeholder="Años De Experiencia" rv-value="form.years_of_experience.value" >
+      <label class="control-label" rv-show="form.years_of_experience.error"><small rv-html="form.years_of_experience.error"></small></label>
+    </div>
+
+    <h5>Categorias</h5>
+
+    {% for pair in category_pairs %}
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <input id="category{{ pair.0.id }}" type="checkbox" name="categories" value="{{ pair.0.id }}" style="cursor:pointer;"/>
+                <label for="category{{ pair.0.id }}" style="cursor:pointer;">{{ pair.0.name }}</label>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+                {% if pair.1 %}
+                <input id="category{{ pair.1.id }}" type="checkbox" name="categories" value="{{ pair.1.id }}" style="cursor:pointer;"/>
+                <label for="category{{ pair.1.id }}" style="cursor:pointer">{{ pair.1.name }}</label>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

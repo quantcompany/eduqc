@@ -24,7 +24,7 @@
                 {% if user.is_authenticated %}
                 <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> {{ user.user_name }}</a>
                   <ul class="sub-menu">
-                    <li><a href="{% url 'users:profile' user.id %}">Perfil</a></li>
+                    <li><a href="{% url 'users:me' %}">Perfil</a></li>
                     <li><a href="{% url 'users:signout' %}">Salir</a></li>
                   </ul>
                 </li>

@@ -43,7 +43,7 @@ $('.signin-form').on('submit', function(e){
         console.log('Success\n' + jqXHR.responseText);
         signinForm.submitting = false;
         signinForm.done = true;
-        window.location.href = '/users/profile';
+        window.location.href = '/users/me';
     });
 
     request.fail(function(jqXHR, textStatus, errorThrown) {
