@@ -54,7 +54,7 @@ def signout(request):
     return redirect(reverse('index'))
 
 
-@login_required
+# @login_required
 def verify(request, code):
     verification = get_object_or_404(EmailVerification, code=code)
     user = verification.user

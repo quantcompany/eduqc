@@ -313,8 +313,8 @@ blockquote footer{
     overflow: hidden;
     background-color: #ff9c00;
     max-height: 0px;
-    -webkit-transition: 750ms ease all;
-    transition: 750ms ease all;
+    -webkit-transition: 3500ms ease all;
+    transition: 400ms ease all;
 }
 
 .announcement.open{
