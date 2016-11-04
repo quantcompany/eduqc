@@ -18,7 +18,11 @@
 
   <div>
       <span>Pais</span>
-      <span>{{ profile_user.get_country_display|default:"None" }}</span>
+      {% if profile_user.country %}
+      <span class="flag-icon flag-icon-{{ profile_user.country|lower }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ profile_user.country }}</span>
+      {% else %}
+      <span>---</span>
+      {% endif %}
   </div>
 {% endblock %}
 
@@ -28,7 +32,6 @@
     <div class="time-table">
       <div class="row">
         <div>CURSO</div>
-        <div>INSTRUCTOR</div>
         <div>INICIO</div>
         <div>FIN</div>
         <div>ESTATUS</div>
@@ -36,7 +39,6 @@
       {% for enrollment in profile_user.enrollments.all %}
       <div class="row">
         <div>{{ enrollment.session.course.name }}</div>
-        <div><a href="{% url 'users:profile' enrollment.session.instructor.id %}">{{ enrollment.session.instructor.get_full_name }}</a></div>
         <div>{{ enrollment.session.start_date }}</div>
         <div>{{ enrollment.session.end_date }}</div>
         <div>{{ enrollment.get_status_display }}</div>

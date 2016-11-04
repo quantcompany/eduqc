@@ -1,44 +1,48 @@
-<form action="{% url 'users:profile' user.id %}" class="profile-form" method="POST">
-    <div rv-hide="form.done">
-        {% csrf_token %}
-        <ul rv-show="form.errors">
-            <li rv-each-error="form.errors">{ error }</li>
-        </ul>
+<form action="{% url 'users:me' %}" class="profile-form" method="POST">
+    {% csrf_token %}
+    <ul rv-show="form.errors">
+        <li rv-each-error="form.errors">{ error }</li>
+    </ul>
 
-        <div class="form-group" rv-class-has-error="form.user_name.error">
-            <input class="form-control" name="user_name" type="text" placeholder="Nombre De Usuario" rv-value="form.user_name.value" >
-            <label class="control-label" rv-show="form.user_name.error"><small rv-html="form.user_name.error"></small></label>
-        </div>
+    <div class="form-group" rv-class-has-error="form.user_name.error">
+        <input class="form-control" name="user_name" type="text" placeholder="Nombre De Usuario" rv-value="form.user_name.value">
+        <label class="control-label" rv-show="form.user_name.error"><small rv-html="form.user_name.error"></small></label>
+    </div>
 
-        <div class="form-group" rv-class-has-error="form.first_name.error">
-            <input class="form-control" name="first_name" type="text" placeholder="Nombre" rv-value="form.first_name.value" >
-            <label class="control-label" rv-show="form.first_name.error"><small rv-html="form.first_name.error"></small></label>
-        </div>
+    <div class="form-group" rv-class-has-error="form.first_name.error">
+        <input class="form-control" name="first_name" type="text" placeholder="Nombre" rv-value="form.first_name.value" >
+        <label class="control-label" rv-show="form.first_name.error"><small rv-html="form.first_name.error"></small></label>
+    </div>
 
-        <div class="form-group" rv-class-has-error="form.last_name.error">
-            <input class="form-control" name="last_name" type="text" placeholder="Apellido" rv-value="form.last_name.value">
-            <label class="control-label" rv-show="form.last_name.error"><small rv-html="form.last_name.error"></small></label>
-        </div>
+    <div class="form-group" rv-class-has-error="form.last_name.error">
+        <input class="form-control" name="last_name" type="text" placeholder="Apellido" rv-value="form.last_name.value">
+        <label class="control-label" rv-show="form.last_name.error"><small rv-html="form.last_name.error"></small></label>
+    </div>
 
-        <div class="form-group" rv-class-has-error="form.description.error">
-            <textarea class="form-control" name="description" type="text" placeholder="Descripcion" rv-html="form.description.value"></textarea>
-            <label class="control-label" rv-show="form.description.error"><small rv-html="form.description.error"></small></label>
-        </div>
+    <div class="form-group" rv-class-has-error="form.description.error">
+        <textarea class="form-control" name="description" type="text" placeholder="Descripcion" rv-value="form.description.value"></textarea>
+        <label class="control-label" rv-show="form.description.error"><small rv-html="form.description.error"></small></label>
+    </div>
 
-        <div class="form-group" rv-class-has-error="form.country.error">
-            <select class="form-control" name="country">
-              {% for choice in COUNTRY_CHOICES %}
-              <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-              {% endfor %}
-            </select>
-            <label class="control-label" rv-show="form.country.error"><small rv-html="form.country.error"></small></label>
-        </div>
+    <div class="form-group" rv-class-has-error="form.country.error">
+        <select class="form-control" name="country" rv-value="form.country.value">
+          <option value="">---------</option>
+          {% for choice in COUNTRY_CHOICES %}
+          <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+          {% endfor %}
+        </select>
+        <label class="control-label" rv-show="form.country.error"><small rv-html="form.country.error"></small></label>
+    </div>
 
-        {% block extra %}
-        {% endblock %}
+    <div class="form-group" rv-class-has-error="form.last_name.error">
+        <div id="image-preview"></div>
+        <input class="form-control" id="image" name="image" type="file"/>
+    </div>
 
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block" rv-class-active="form.submitting">Guardar</button>
-        </div>
+    {% block extra %}
+    {% endblock %}
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block" rv-class-active="form.submitting">Guardar</button>
     </div>
 </form>

@@ -3,19 +3,18 @@ import math
 import uuid
 
 from django.contrib.auth import login, logout
-from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.sites.shortcuts import get_current_site
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 
+from courses.models import Category
 from emails import send_verification_email
 
-from courses.models import Category
-
 from .models import User, EmailVerification
-from .forms import SignUpForm
+from .forms import SignUpForm, StudentProfileForm, InstructorProfileForm, StaffProfileForm
 from .choices import COUNTRY_CHOICES
 
 
@@ -54,7 +53,6 @@ def signout(request):
     return redirect(reverse('index'))
 
 
-@login_required
 def verify(request, code):
     verification = get_object_or_404(EmailVerification, code=code)
     user = verification.user
@@ -87,4 +85,18 @@ def profile(request, user_id):
 
 @login_required
 def me(request):
-    return profile(request, request.user.id)
+    if request.method == 'GET':
+        return profile(request, request.user.id)
+    elif request.method == 'POST':
+        if request.user.is_student():
+            form = StudentProfileForm(request.POST, instance=request.user.student)
+        elif request.user.is_instructor():
+            form = InstructorProfileForm(request.POST, instance=request.user.instructor)
+        else:
+            form = StaffProfileForm(request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            return JsonResponse({})
+        else:
+            return JsonResponse(form.errors, status=400)

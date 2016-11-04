@@ -18,7 +18,11 @@
 
   <div>
       <span>Pais</span>
-      <span>{{ profile_user.get_country_display|default:"None" }}</span>
+      {% if profile_user.country %}
+      <span class="flag-icon flag-icon-{{ profile_user.country|lower }}"></span><span> {{ profile_user.country }}</span>
+      {% else %}
+      <span>---</span>
+      {% endif %}
   </div>
 
   <div>
