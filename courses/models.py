@@ -28,9 +28,10 @@ class Course(models.Model):
 
     name = models.CharField(max_length=300)
     description = models.TextField()
-    duration = models.IntegerField() # in weeks
+    duration = models.IntegerField()  # in weeks
     category = models.ForeignKey('courses.Category', related_name='courses')
     monthly_price = models.DecimalField(max_digits=6, decimal_places=2)
+    slug = models.SlugField(max_length=100, blank=True)
     main_image = models.ImageField(upload_to='courses/images')
     level = models.IntegerField(choices=LEVEL_CHOICES)
     topics = models.TextField()

@@ -138,7 +138,7 @@ function callAnnouncement()
         center:true,
         loop: true,
         autoplay: true,
-        autoplayTimeout: 2500                       // Announcements transition time from one to another in milliseconds
+        autoplayTimeout: 5000                       // Announcements transition time from one to another in milliseconds
     });
 }
 
@@ -440,5 +440,5 @@ function callFormSubmit(){
 }
 
 function callTooltip(){
-  $('[data-toggle="tooltip"]').tooltip(); 
+  $('[data-toggle="tooltip"]').tooltip();
 }

@@ -4,67 +4,56 @@
 {% block head_css %}
 {% endblock %}
 
-{% block page_header %}Contact Us{% endblock %}
+{% block page_header %}Contacto{% endblock %}
 
 {% block breadcrumbs %}
-    <li class="active">Contact</li>
+    <li class="active">Contacto</li>
 {% endblock %}
 
 {% block content %}
     <div class="container mt-80 mb-100">
         <div class="row">
             <div class="col-sm-7 mt-20">
-                <h4 class="heading">Happy to <span class="color2">help!</span></h4>
+                <h4 class="heading">Encantados de estar en <span class="color2">contacto!</span></h4>
                 <form id="contact-form" action="{% url 'contact' %}" method="POST">
                     {% csrf_token %}
                     <div rv-hide="form.done">
                       <div class="form-group" rv-class-has-error="form.name.error">
                           <input id="name" type="text" class="form-control" name="name" rv-value="form.name.value">
-                          <label class="control-label" for="contact-name">Your Name <span rv-show="form.name.error"><small rv-text="form.name.error"></small></span></label>
+                          <label class="control-label" for="contact-name">Nombre <span rv-show="form.name.error"><small rv-text="form.name.error"></small></span></label>
                       </div>
                       <div class="form-group" rv-class-has-error="form.email.error">
                           <input id="contact-email" type="text" class="form-control" name="email" rv-value="form.email.value">
-                          <label class="control-label" for="contact-email">Email ID <span rv-show="form.email.error"><small rv-text="form.email.error"></small></span></label>
+                          <label class="control-label" for="contact-email">Email<span rv-show="form.email.error"><small rv-text="form.email.error"></small></span></label>
                       </div>
                       <div class="form-group" rv-class-has-error="form.subject.error">
                           <input id="contact-number" type="text" class="form-control" name="subject" rv-value="form.subject.value">
-                          <label class="control-label" for="contact-number">Subject <span rv-show="form.subject.error"><small rv-text="form.subject.error"></small></span></label>
+                          <label class="control-label" for="contact-number">Asunto <span rv-show="form.subject.error"><small rv-text="form.subject.error"></small></span></label>
                       </div>
                       <div class="form-group" rv-class-has-error="form.message.error">
                           <textarea id="contact-message" class="form-control" rows="6" name="message" rv-value="form.message.value"></textarea>
-                          <label class="control-label" for="contact-message">Your Message <span rv-show="form.message.error"><small rv-text="form.message.error"></small></span></label>
+                          <label class="control-label" for="contact-message">Mensaje <span rv-show="form.message.error"><small rv-text="form.message.error"></small></span></label>
                       </div>
 
                       <p id="status"></p>
 
-                      <button type="submit" name="submit" class="btn btn-primary">Send Query</button>
+                      <button type="submit" name="submit" class="btn btn-primary">Enviar</button>
                     </div>
 
                     <div class="row" rv-show="form.done">
                         <div class="col-md-12">
-                            <h5>Thank you for contacting us, your message has been <span class="color2">received</span>. We will respond as soon as possible!</h5>
+                            <h5>Gracias por contactarnos! tu mensaje fue <span class="color2">enviado</span>. Te responderemos lo mas pronto posible!</h5>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="col-sm-5 mt-20">
-                <h4 class="heading">Or Contact us <span class="color2">directly</span></h4>
+                <h4 class="heading">Contacto<span class="color2"> directo</span></h4>
                 <address>
-                    <strong>EduComp Group of Institutions</strong>
-                    <br/>
-                    <span>45th Floor,<br> Newzek Estate Building,<br> United Kingdom</span>
+                    <strong>Quant Company</strong>
                 </address>
-                <p class="phone"><i class="fa fa-phone fa-fw"></i> +452 564 4563</p>
-                <p class="email"><i class="fa fa-envelope fa-fw"></i> info@company.com</p>
-                <br/>
-                <h5 class="heading">We're <span class="color2">Social</span></h5>
-                <ul class="social">
-                    <li><a href="#"><i class=" fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class=" fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class=" fa fa-pinterest-p"></i></a></li>
-                    <li><a href="#"><i class=" fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class=" fa fa-reddit-alien"></i></a></li>
-                </ul>
+                <p class="phone"><i class="fa fa-phone fa-fw"></i> +57 300 894 4212</p>
+                <p class="email"><i class="fa fa-envelope fa-fw"></i> info@quantcompany.com</p>
             </div>
         </div>
     </div>
