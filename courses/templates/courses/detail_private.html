@@ -36,7 +36,10 @@
                           <span>${{ course.monthly_price|floatformat:2 }}</span>
                       </div>
                       <div>
-                          <a href="#" class="btn btn-primary">Download PDF</a>
+                          <form id="myContainer" method="post" action="{%url 'courses:checkout' course.id%}">
+                              {% csrf_token %}
+                          </form>
+                          <!--<a href="#" class="btn btn-primary">Download PDF</a>-->
                       </div>
                   </div>
                   <p>{{ course.description }}</p>
@@ -178,4 +181,15 @@
 
 
 {% block tail_js %}
+
+<script>
+window.paypalCheckoutReady = function() {
+    paypal.checkout.setup('KAPME6JM2REHY', {
+        environment: 'sandbox',
+        container: 'myContainer'
+    });
+};
+</script>
+<script src="//www.paypalobjects.com/api/checkout.js" async></script>
+
 {% endblock %}
