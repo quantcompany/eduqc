@@ -36,7 +36,7 @@
                           <span>${{ course.monthly_price|floatformat:2 }}</span>
                       </div>
                       <div>
-                          <form id="myContainer" method="post" action="{%url 'courses:checkout' course.id%}">
+                          <form id="myContainer" method="post" action="{% url 'payments:checkout' %}?session_id=1">
                               {% csrf_token %}
                           </form>
                           <!--<a href="#" class="btn btn-primary">Download PDF</a>-->

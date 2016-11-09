@@ -13,21 +13,37 @@ class Session(models.Model):
     def __str__(self):
         return '{} ({})'.format(self.course, self.instructor)
 
+    def enroll(self, student, payment_id):
+        print('type of payment_id:')
+        print(type(payment_id))
+        self.enrollments.create(
+            session=self,
+            student=student,
+            status='pending',
+            total_price=self.course.monthly_price,
+            payment_id=payment_id
+        )
+
     @property
     def end_date(self):
         return self.start_date + timedelta(days=self.course.duration * 7)
 
 
 class Enrollment(models.Model):
-    STATUS_CHOICES = [('active', 'Active'), ('cancelled', 'Cancelled'), ('finished', 'Finished')]
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('active', 'Active'),
+        ('cancelled', 'Cancelled'),
+        ('finished', 'Finished')
+    ]
 
     session = models.ForeignKey('sesiones.Session', related_name='enrollments')
     student = models.ForeignKey('users.Student', related_name='enrollments')
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
     enrollment_date = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     total_price = models.DecimalField(max_digits=6, decimal_places=2)
-    transaction = models.CharField(max_length=100, default='0')
+    payment_id = models.CharField(max_length=100, unique=True)
 
     class Meta:
         ordering = ['last_modified', 'enrollment_date']
