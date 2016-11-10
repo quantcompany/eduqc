@@ -60,7 +60,7 @@
                             <li><i class="fa fa-clock-o"></i> { course.duration } weeks</li>
                         </ul>
                         <p class="brief" rv-text="course.description"></p>
-                        <a rv-href="course.id | decorate '/courses/{0}'" class="btn btn-primary btn-sm">View Details</a>
+                        <a rv-href="course.slug | decorate '/courses/{0}'" class="btn btn-primary btn-sm">View Details</a>
                     </div>
                 </div>
 

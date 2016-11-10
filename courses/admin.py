@@ -15,6 +15,7 @@ class CourseAdmin(admin.ModelAdmin):
         'level',
         'topics',
         'audience',
+        'private_text',
     ]
 
     list_display = [

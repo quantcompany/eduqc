@@ -1,6 +1,6 @@
 from django.db import models
 from custom_user.models import AbstractEmailUser
-from .choices import COUNTRY_CHOICES
+from .choices import COUNTRY_CHOICES, GENDER_CHOICES
 
 
 class EmailVerification(models.Model):
@@ -69,7 +69,7 @@ class User(AbstractEmailUser):
 
 
 class Student(User):
-    pass
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
 
     class Meta:
         verbose_name = 'student'

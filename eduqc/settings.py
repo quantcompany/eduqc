@@ -39,12 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'custom_user',
+    'django_markdown',
 
     'courses',
     'emails',
     'index',
     'payments',
-    'sesiones',
     'users',
 ]
 

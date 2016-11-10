@@ -38,7 +38,7 @@ def execute_payment(request, payment_id, payer_id, enrollment_id):
     url = 'https://api.sandbox.paypal.com/v1/payments/payment/{0}/execute/'.format(payment_id)
 
     headers = {
-        'PayPal-Request-Id': str(enrollment_id),
+        # 'PayPal-Request-Id': str(enrollment_id),
         'Content-Type': 'application/json',
         'Authorization': 'Bearer %s' % get_token()
     }
@@ -48,12 +48,12 @@ def execute_payment(request, payment_id, payer_id, enrollment_id):
     }
 
     response = requests.post(url, headers=headers, data=json.dumps(payload))
-    print('****************************')
+    # print('****************************')
     # print(token)
-    print(payment_id)
-    print(payer_id)
-    print(response.status_code)
-    print(response.text)
+    # print(payment_id)
+    # print(payer_id)
+    # print(response.status_code)
+    # print(response.text)
     return response
     # print(r)
     # print(r.json())
@@ -63,60 +63,3 @@ def execute_payment(request, payment_id, payer_id, enrollment_id):
     #         return HttpResponseRedirect(redirect_to=link['href'])
 
     # return HttpResponse('Approval Failed')
-
-# '''
-# curl -v https://api.sandbox.paypal.com/v1/payments/payment \\
-#   -H 'Content-Type: application/json' \\
-#   -H 'Authorization: Bearer Access-Token' \\
-#   -d '{
-#   'intent': 'sale',
-#   'experience_profile_id':'experience_profile_id',
-#   'redirect_urls':
-#   {
-#     'return_url': 'http://return-url',
-#     'cancel_url': 'http://cancel-url'
-#   },
-#   'payer':
-#   {
-#     'payment_method': 'paypal'
-#   },
-#   'transactions': [
-#   {
-#     'amount':
-#     {
-#       'total': '4.00',
-#       'currency': 'USD',
-#       'details':
-#       {
-#         'subtotal': '2.00',
-#         'shipping': '1.00',
-#         'tax': '2.00',
-#         'shipping_discount': '-1.00'
-#       }
-#     },
-#     'item_list':
-#     {
-#       'items': [
-#       {
-#         'quantity': '1',
-#         'name': 'item 1',
-#         'price': '1',
-#         'currency': 'USD',
-#         'description': 'item 1 description',
-#         'tax': '1'
-#       },
-#       {
-#         'quantity': '1',
-#         'name': 'item 2',
-#         'price': '1',
-#         'currency': 'USD',
-#         'description': 'item 2 description',
-#         'tax': '1'
-#       }]
-#     },
-#     'description': 'The payment transaction description.',
-#     'invoice_number': 'merchant invoice',
-#     'custom': 'merchant custom data'
-#   }]
-# }'
-# '''

@@ -6,8 +6,6 @@ from django.core.paginator import Paginator
 from django.http import JsonResponse, HttpResponse, HttpResponseRedirect, HttpResponseServerError
 from django.shortcuts import render, get_object_or_404
 
-from sesiones.models import Session
-
 from .forms import CourseFilterForm
 from .models import Course, Category
 
@@ -16,13 +14,15 @@ def index(request, *args, **kwargs):
     return render(request, 'courses/index.html', {'categories': Category.objects.all()})
 
 
-def detail(request, course_id):
-    course = get_object_or_404(Course, id=course_id)
-    # if len(course.sessions.all() == 0):
-    #     Session.objects.create(
-    #
-    #     )
-    return render(request, 'courses/detail_private.html', {'course': course})
+def detail(request, course_slug):
+    course = get_object_or_404(Course, slug=course_slug)
+    if request.user.is_authenticated:
+        if request.user.is_student() and request.user.student.enrollments.filter(course=course, status='active').exists():
+            return render(request, 'courses/detail_private.html', {'course': course})
+        else:
+            return render(request, 'courses/detail_public.html', {'course': course})
+    else:
+        return render(request, 'courses/detail_public.html', {'course': course})
 
 
 def course_filter(request):

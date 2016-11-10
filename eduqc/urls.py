@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^contact$', contact, name='contact'),
     url(r'^courses/', include('courses.urls', namespace='courses')),
+    url(r'^markdown/', include( 'django_markdown.urls')),
     url(r'^payments/', include('payments.urls', namespace='payments')),
     url(r'^users/', include('users.urls', namespace='users')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
