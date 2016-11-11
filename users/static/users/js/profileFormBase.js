@@ -2,30 +2,12 @@ var profileForm = {
     done: false,
     errors: [],
     submitting: false,
-
-    user_name: {value: '', error: ''},
-    first_name: {value: '', error: ''},
-    last_name: {value: '', error: ''},
-    description: {value: '', error: ''},
-    country: {value: '', error: ''},
-
+    changePassword: false,
+    togglePasswordForm: function(){
+      this.changePassword = !this.changePassword;
+    },
     clear: function(){
         this.errors = [];
-
-        user_name.value = '';
-        user_name.error = '';
-
-        first_name.value = '';
-        first_name.error = '';
-
-        last_name.value = '';
-        last_name.error = '';
-
-        description.value = '';
-        description.error = '';
-
-        country.value = '';
-        country.error = '';
     }
 };
 

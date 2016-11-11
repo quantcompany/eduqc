@@ -1,0 +1,13 @@
+{% extends "password_reset/base.html" %}{% load i18n %}
+
+{% block title %}{% trans "New password set" %}{% endblock %}
+
+{% block content %}
+<div class="container mt-60 mb-60">
+    <div class="row">
+        <div class="col-sm-12">
+        		<p>{% trans "Your password has successfully been reset. You can use it right now on the login page." %}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

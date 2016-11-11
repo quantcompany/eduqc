@@ -89,7 +89,7 @@ class Enrollment(models.Model):
     payment_id = models.CharField(max_length=100, unique=True)
 
     class Meta:
-        ordering = ['last_modified', 'enrollment_date']
+        ordering = ['-enrollment_date']
 
     def __str__(self):
         return '{} ({})'.format(self.session, self.student)

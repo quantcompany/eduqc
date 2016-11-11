@@ -27,6 +27,7 @@ class StudentProfileForm(forms.ModelForm):
             'last_name',
             'description',
             'country',
+            'image',
         )
 
 
@@ -39,6 +40,7 @@ class InstructorProfileForm(forms.ModelForm):
             'last_name',
             'description',
             'country',
+            'image',
             'categories',
             'years_of_experience',
         )
@@ -53,4 +55,5 @@ class StaffProfileForm(forms.ModelForm):
             'last_name',
             'description',
             'country',
+            'image',
         )

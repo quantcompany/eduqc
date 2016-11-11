@@ -34,9 +34,50 @@
         <label class="control-label" rv-show="form.country.error"><small rv-html="form.country.error"></small></label>
     </div>
 
-    <div class="form-group" rv-class-has-error="form.last_name.error">
-        <div id="image-preview"></div>
-        <input class="form-control" id="image" name="image" type="file"/>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group" rv-class-has-error="form.last_name.error">
+          <center>
+            <div class="fileinput fileinput-new" data-provides="fileinput">
+              <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px; backgroun">
+              </div>
+
+              <div>
+                <span class="btn btn-default btn-file">
+                  <span class="fileinput-new">Nueva Imagen</span>
+                  <span class="fileinput-exists">Cambiar</span>
+                  <input type="file" name="image">
+                </span>
+                <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
+              </div>
+            </div>
+          </center>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div rv-show="form.changePassword">
+          <div class="form-group" rv-class-has-error="form.user_name.error">
+              <input class="form-control" name="user_name" type="text" placeholder="Nombre De Usuario" rv-value="form.user_name.value">
+              <label class="control-label" rv-show="form.user_name.error"><small rv-html="form.user_name.error"></small></label>
+          </div>
+
+          <hr/>
+
+          <div class="form-group" rv-class-has-error="form.user_name.error">
+              <input class="form-control" name="user_name" type="text" placeholder="Nombre De Usuario" rv-value="form.user_name.value">
+              <label class="control-label" rv-show="form.user_name.error"><small rv-html="form.user_name.error"></small></label>
+          </div>
+
+          <div class="form-group" rv-class-has-error="form.user_name.error">
+              <input class="form-control" name="user_name" type="text" placeholder="Nombre De Usuario" rv-value="form.user_name.value">
+              <label class="control-label" rv-show="form.user_name.error"><small rv-html="form.user_name.error"></small></label>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" rv-hide="form.changePassword" rv-on-click="form.togglePasswordForm">Cambiar Clave</button>
+        <button type="button" class="btn btn-primary" rv-show="form.changePassword" rv-on-click="form.togglePasswordForm">Cancelar</button>
+      </div>
     </div>
 
     {% block extra %}

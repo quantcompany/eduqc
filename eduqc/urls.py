@@ -28,4 +28,5 @@ urlpatterns = [
     url(r'^markdown/', include( 'django_markdown.urls')),
     url(r'^payments/', include('payments.urls', namespace='payments')),
     url(r'^users/', include('users.urls', namespace='users')),
+    url(r'^users/password/', include('password_reset.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

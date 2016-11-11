@@ -89,11 +89,11 @@ def me(request):
         return profile(request, request.user.id)
     elif request.method == 'POST':
         if request.user.is_student():
-            form = StudentProfileForm(request.POST, instance=request.user.student)
+            form = StudentProfileForm(request.POST, request.FILES, instance=request.user.student)
         elif request.user.is_instructor():
-            form = InstructorProfileForm(request.POST, instance=request.user.instructor)
+            form = InstructorProfileForm(request.POST, request.FILES, instance=request.user.instructor)
         else:
-            form = StaffProfileForm(request.POST, instance=request.user)
+            form = StaffProfileForm(request.POST, request.FILES, instance=request.user)
 
         if form.is_valid():
             form.save()

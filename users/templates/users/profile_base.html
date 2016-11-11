@@ -68,6 +68,13 @@
 
     <div class="clearfix"></div>
 
+    <div class="container mb-100">
+        {% block extra %}
+        {% endblock %}
+    </div>
+
+    <div class="clearfix"></div>
+
     {% if user.id == profile_user.id %}
       <div class="modal fade" id="profile-modal" data-open-delay="750" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
@@ -104,19 +111,19 @@
     <script src="{% static 'js/jquery.appear.js' %}" type="text/javascript"></script>
 
     <script type="text/javascript">
-        document.getElementById("image").onchange = function () {
-            console.log('change');
-            console.log(this.files);
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                console.log(e);
-                // get loaded data and render thumbnail.
-                document.getElementById("image-preview").src = e.target.result;
-            };
-
-            // read the image file as a data URL.
-            reader.readAsDataURL(this.files[0]);
-        };
+        // document.getElementById("image").onchange = function () {
+        //     console.log('change');
+        //     console.log(this.files);
+        //     var reader = new FileReader();
+        //     reader.onload = function (e) {
+        //         console.log(e);
+        //         // get loaded data and render thumbnail.
+        //         document.getElementById("image-preview").src = e.target.result;
+        //     };
+        //
+        //     // read the image file as a data URL.
+        //     reader.readAsDataURL(this.files[0]);
+        // };
 
         var profileForm = {
             errors: [],
@@ -128,6 +135,10 @@
             description: {value: '{{ profile_user.description }}', error: ''},
             country: {value: '{{ profile_user.country }}', error: ''},
 
+            togglePasswordForm: function(){
+              this.changePassword = !this.changePassword;
+            },
+            
             clear: function(){
                 this.errors = [];
                 this.user_name.value = '';

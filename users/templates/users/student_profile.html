@@ -1,4 +1,5 @@
 {% extends 'users/profile_base.html' %}
+{% load django_markdown %}
 
 {% block intro %}
   <h2 class="heading">{{ profile_user.user_name }}
@@ -28,24 +29,31 @@
 
 {% block sessions %}
   {% if profile_user.enrollments.count > 0 %}
-    <h2>Mis <span class="color2">Sesiones</span></h2>
+    <h2>Mis <span class="color2">Cursos</span></h2>
     <div class="time-table">
       <div class="row">
-        <div>CURSO</div>
-        <div>INICIO</div>
-        <div>FIN</div>
+        <div>NOMBRE</div>
+        <div>DURACION</div>
+        <div>FECHA DE INSCRIPCIÓN</div>
         <div>ESTATUS</div>
+        <div>ENLACE</div>
       </div>
       {% for enrollment in profile_user.enrollments.all %}
       <div class="row">
-        <div>{{ enrollment.session.course.name }}</div>
-        <div>{{ enrollment.session.start_date }}</div>
-        <div>{{ enrollment.session.end_date }}</div>
+        <div>{{ enrollment.course.name }}</div>
+        <div>{{ enrollment.course.duration }} semana{{ enrollment.course.duration|pluralize }}</div>
+        <div>{{ enrollment.enrollment_date }}</div>
         <div>{{ enrollment.get_status_display }}</div>
+        <div><a href="{% url 'courses:detail' enrollment.course.slug %}">Ir al curso</a></div>
       </div>
       {% endfor %}
     </div>
   {% else %}
     <h2>Aun no te has inscrito en un <span class="color2">curso</span>!</h2>
   {% endif %}
+{% endblock %}
+
+{% block extra %}
+    <h3>Credenciales <span class="color2">WizIQ</span></h3>
+    <p>{{ profile_user.wiziq_credentials|markdown }}<p>
 {% endblock %}

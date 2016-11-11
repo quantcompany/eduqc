@@ -107,4 +107,5 @@ def execute(request):
 
 
 def cancel(request):
+    print("########### CANCELED PAYMENT ##############")
     return HttpResponseRedirect(reverse('courses:index'))
