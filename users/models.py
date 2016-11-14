@@ -83,6 +83,9 @@ class Student(User):
         verbose_name = 'student'
         verbose_name_plural = 'students'
 
+    def enrollment_history(self):
+        return self.enrollments.exclude(status='pending')
+
 
 class Instructor(User):
     categories = models.ManyToManyField('courses.Category', related_name='instructors')

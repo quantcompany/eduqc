@@ -34,8 +34,33 @@
         <label class="control-label" rv-show="form.country.error"><small rv-html="form.country.error"></small></label>
     </div>
 
-    <div class="row">
+
+    <div class="row mt-40">
       <div class="col-md-6">
+        <center><h5>Cambiar Clave</h5></center>
+
+        <div>
+          <div class="form-group" rv-class-has-error="form.old_password.error">
+            <input class="form-control" name="old_password" type="password" placeholder="Clave vieja" rv-value="form.old_password.value">
+            <label class="control-label" rv-show="form.old_password.error"><small rv-html="form.old_password.error"></small></label>
+          </div>
+
+          <hr/>
+
+          <div class="form-group" rv-class-has-error="form.new_password1.error">
+            <input class="form-control" name="new_password1" type="password" placeholder="Clave nueva" rv-value="form.new_password1.value">
+            <label class="control-label" rv-show="form.new_password1.error"><small rv-html="form.new_password1.error"></small></label>
+          </div>
+
+          <div class="form-group" rv-class-has-error="form.new_password2.error">
+            <input class="form-control" name="new_password2" type="password" placeholder="Repetir clave nueva" rv-value="form.new_password2.value">
+            <label class="control-label" rv-show="form.new_password2.error"><small rv-html="form.new_password2.error"></small></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <center><h5>Imagen De Perfil</h5></center>
         <div class="form-group" rv-class-has-error="form.last_name.error">
           <center>
             <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -54,32 +79,13 @@
           </center>
         </div>
       </div>
-
-      <div class="col-md-6">
-        <div rv-show="form.changePassword">
-          <div class="form-group" rv-class-has-error="form.user_name.error">
-              <input class="form-control" name="user_name" type="text" placeholder="Nombre De Usuario" rv-value="form.user_name.value">
-              <label class="control-label" rv-show="form.user_name.error"><small rv-html="form.user_name.error"></small></label>
-          </div>
-
-          <hr/>
-
-          <div class="form-group" rv-class-has-error="form.user_name.error">
-              <input class="form-control" name="user_name" type="text" placeholder="Nombre De Usuario" rv-value="form.user_name.value">
-              <label class="control-label" rv-show="form.user_name.error"><small rv-html="form.user_name.error"></small></label>
-          </div>
-
-          <div class="form-group" rv-class-has-error="form.user_name.error">
-              <input class="form-control" name="user_name" type="text" placeholder="Nombre De Usuario" rv-value="form.user_name.value">
-              <label class="control-label" rv-show="form.user_name.error"><small rv-html="form.user_name.error"></small></label>
-          </div>
-        </div>
-
-        <button type="button" class="btn btn-primary" rv-hide="form.changePassword" rv-on-click="form.togglePasswordForm">Cambiar Clave</button>
-        <button type="button" class="btn btn-primary" rv-show="form.changePassword" rv-on-click="form.togglePasswordForm">Cancelar</button>
-      </div>
     </div>
 
+    <div class="row">
+      <div class="col-md-6">
+        <center><p>*Si no desea cambiar su clave o imagen de perfil, favor dejar los campos en blanco</p></center>
+      </div>
+    </div>
     {% block extra %}
     {% endblock %}
 

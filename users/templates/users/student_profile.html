@@ -28,7 +28,7 @@
 {% endblock %}
 
 {% block sessions %}
-  {% if profile_user.enrollments.count > 0 %}
+  {% if profile_user.enrollment_history.count > 0 %}
     <h2>Mis <span class="color2">Cursos</span></h2>
     <div class="time-table">
       <div class="row">
@@ -38,7 +38,7 @@
         <div>ESTATUS</div>
         <div>ENLACE</div>
       </div>
-      {% for enrollment in profile_user.enrollments.all %}
+      {% for enrollment in profile_user.enrollment_history.all %}
       <div class="row">
         <div>{{ enrollment.course.name }}</div>
         <div>{{ enrollment.course.duration }} semana{{ enrollment.course.duration|pluralize }}</div>

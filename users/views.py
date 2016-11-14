@@ -79,7 +79,9 @@ def profile(request, user_id):
     elif profile_user.is_instructor():
         template = 'users/instructor_profile.html'
         ctx['profile_user'] = profile_user.instructor
-
+    else:
+        template = 'users/profile_base.html'
+        ctx['profile_user'] = profile_user
     return render(request, template, ctx)
 
 
@@ -97,6 +99,12 @@ def me(request):
 
         if form.is_valid():
             form.save()
+            if form.cleaned_data.get('change_password') == True:
+                new_password = form.cleaned_data.get('new_password2')
+                request.user.set_password(new_password)
+                request.user.save()
+                login(request, request.user)
+
             return JsonResponse({})
         else:
             return JsonResponse(form.errors, status=400)
