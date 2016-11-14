@@ -79,7 +79,9 @@ def profile(request, user_id):
     elif profile_user.is_instructor():
         template = 'users/instructor_profile.html'
         ctx['profile_user'] = profile_user.instructor
-
+    else:
+        template = 'users/profile_base.html'
+        ctx['profile_user'] = profile_user
     return render(request, template, ctx)
 
 
