@@ -69,7 +69,7 @@ class User(AbstractEmailUser):
 
 class Student(User):
     default_credentials = """<p>
-        Para recibir tus clases, debes ingresar a <a href="#">www.wiziq.com/quantcompany</a> con las siguientes credenciales:
+        Para recibir tus clases, debes ingresar a <a href="http://quantcompany.wiziq.com/">http://quantcompany.wiziq.com/</a> con las siguientes credenciales:
         <br/>
         Usuario: ########
         Password: ########
