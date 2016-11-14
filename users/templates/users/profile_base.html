@@ -134,23 +134,20 @@
             last_name: {value: '{{ profile_user.last_name }}', error: ''},
             description: {value: '{{ profile_user.description }}', error: ''},
             country: {value: '{{ profile_user.country }}', error: ''},
+            old_password: {value: '', error: ''},
+            new_password1: {value: '', error: ''},
+            new_password2: {value: '', error: ''},
 
-            togglePasswordForm: function(){
-              this.changePassword = !this.changePassword;
-            },
-            
             clear: function(){
-                this.errors = [];
-                this.user_name.value = '';
-                this.user_name.error = '';
-                this.first_name.value = '';
-                this.first_name.error = '';
-                this.last_name.value = '';
-                this.last_name.error = '';
-                this.description.value = '';
-                this.description.error = '';
-                this.country.value = '';
-                this.country.error = '';
+                profileForm.errors = [];
+                profileForm.user_name = {value: '', error: ''};
+                profileForm.first_name = {value: '', error: ''};
+                profileForm.last_name = {value: '', error: ''};
+                profileForm.description = {value: '', error: ''};
+                profileForm.country = {value: '', error: ''};
+                profileForm.old_password = {value: '', error: ''};
+                profileForm.new_password1 = {value: '', error: ''};
+                profileForm.new_password2 = {value: '', error: ''};
             }
         };
 
@@ -164,11 +161,16 @@
             e.preventDefault();
 
             var fd = new FormData(this);
+            var p1 = fd.get('old_password');
+            var p2 = fd.get('new_password1');
+            var p3 = fd.get('new_password2');
+            var change = Boolean(p1 || p2 || p3) ? 'on' : '';
+            fd.set('change_password', change);
 
             var request = $.ajax({
                 url: this.getAttribute('action'),
                 method: 'POST',
-                data: new FormData(this),
+                data: fd,
                 processData: false,  // tell jQuery not to process the data
                 contentType: false,  // tell jQuery not to set contentType
             });
@@ -182,15 +184,19 @@
             request.fail(function(jqXHR, textStatus, errorThrown) {
                 console.log('Error ' + jqXHR.status + '\n' + jqXHR.responseText);
 
-                var data = JSON.parse(jqXHR.responseText);
-
                 if (jqXHR.status == 400){
+                    var data = JSON.parse(jqXHR.responseText);
                     profileForm.errors = data.__all__ || [];
                     profileForm.user_name.error = data.user_name ? data.user_name[0] : '';
                     profileForm.first_name.error = data.first_name ? data.first_name[0] : '';
                     profileForm.last_name.error = data.last_name ? data.last_name[0] : '';
                     profileForm.description.error = data.description ? data.description[0] : '';
                     profileForm.country.error = data.country ? data.country[0] : '';
+                    profileForm.old_password.error = data.old_password ? data.old_password[0] : '';
+                    profileForm.new_password1.error = data.new_password1 ? data.new_password1[0] : '';
+                    profileForm.new_password2.error = data.new_password2 ? data.new_password2[0] : '';
+                } else {
+                    console.log(jqXHR.status + ' response!');
                 }
 
                 profileForm.submitting = false;

@@ -97,6 +97,12 @@ def me(request):
 
         if form.is_valid():
             form.save()
+            if form.cleaned_data.get('change_password') == True:
+                new_password = form.cleaned_data.get('new_password2')
+                request.user.set_password(new_password)
+                request.user.save()
+                login(request, request.user)
+
             return JsonResponse({})
         else:
             return JsonResponse(form.errors, status=400)
