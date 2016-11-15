@@ -100,9 +100,9 @@ def execute(request):
         else:
             return HttpResponseServerError('Payment not approved!')
     else:
-        print(response.status_code)
-        print(response.text)
-        return HttpResponseServerError('Error executing payment!')
+        text = "Error executing payment!"
+        text += "<br/>" + str(response.status_code) + "<br/>" + response.text
+        return HttpResponseServerError(text)
     # return-url-custom?paymentId=PAY-7M8836987D341211CLARSTLY&token=EC-96U885238J8845306&PayerID=H8SMNJNFHPSHW
 
 
