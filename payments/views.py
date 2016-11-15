@@ -44,14 +44,14 @@ def checkout(request):
                 'name': course.name,
                 'price': '%.2f' % course.monthly_price,
                 'currency': 'USD',
-                'description': course.description,
+                'description': course.description[:200],
                 'tax': '0'
             }]
         },
         'invoice_number': '{0}-{1}-{2}'.format(
             course_id,
             request.user.id,
-            timezone.now().strftime('%y%m%d%H%M%S')),
+            timezone.now().strftime('%y%m%d%H')),
         'description': 'Enrollment payment',
         # 'custom': 'merchant custom data'
     }

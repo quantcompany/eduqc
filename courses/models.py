@@ -77,7 +77,8 @@ class Enrollment(models.Model):
         ('pending', 'Pending'),
         ('active', 'Active'),
         ('cancelled', 'Cancelled'),
-        ('finished', 'Finished')
+        ('finished', 'Finished'),
+        ('refunded', 'Refunded'),
     ]
 
     course = models.ForeignKey('courses.Course', related_name='enrollments')
@@ -92,7 +93,7 @@ class Enrollment(models.Model):
         ordering = ['-enrollment_date']
 
     def __str__(self):
-        return '{} ({})'.format(self.session, self.student)
+        return '{} ({}) - {}'.format(self.course, self.student, self.enrollment_date)
 
 
 class FAQ(models.Model):

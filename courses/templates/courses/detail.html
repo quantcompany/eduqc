@@ -36,9 +36,15 @@
                           <span>Inversión</span>
                           <span>${{ course.monthly_price|floatformat:2 }}</span>
                       </div>
+                      {% if user.is_authenticated %}
+
                       <div id="coupon-box">
                           <span>Cupón</span>
-                          <input type="text" rv-value="form.coupon.value" />
+                          <!-- <form> -->
+                              <!-- <div class="form-group"> -->
+                                  <input name="coupon" type="text" placeholder="Codigo" style="width:100px" rv-value="form.coupon.value" />
+                              <!-- </div> -->
+                          <!-- </form> -->
                       </div>
 
                       <div>
@@ -46,6 +52,13 @@
                               {% csrf_token %}
                           </form>
                       </div>
+                      {% else %}
+
+                      <div>
+                        <!-- <span>Para comprar el curso</span> -->
+                        <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#signin-modal">Compra Este Curso<br/>Iniciar Sesion</button>
+                      </div>
+                      {% endif %}
                   </div>
                   <p>{{ course.description }}</p>
               </div>
