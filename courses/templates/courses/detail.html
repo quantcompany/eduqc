@@ -5,10 +5,10 @@
 {% block head_css %}
 {% endblock %}
 
-{% block page_header %}Course Details{% endblock %}
+{% block page_header %}Detalle del Curso{% endblock %}
 
 {% block breadcrumbs %}
-    <li><a href="{% url 'courses:index' %}">Courses</a></li>
+    <li><a href="{% url 'courses:index' %}">Cursos</a></li>
     <li class="active">{{ course.name }}</li>
 {% endblock %}
 
@@ -25,19 +25,19 @@
                   <h2 class="heading">{{ course.name }}</h2>
                   <div class="personal">
                       <div>
-                          <span>Level</span>
+                          <span>Nivel</span>
                           <span>{{ course.get_level_display }}</span>
                       </div>
                       <div>
-                          <span>Duration</span>
-                          <span>{{ course.duration }} week{{ course.duration|pluralize }}</span>
+                          <span>Duración</span>
+                          <span>{{ course.duration }} semana{{ course.duration|pluralize }}</span>
                       </div>
                       <div>
-                          <span>Fee</span>
+                          <span>Inversión</span>
                           <span>${{ course.monthly_price|floatformat:2 }}</span>
                       </div>
                       <div id="coupon-box">
-                          <span>Cupon</span>
+                          <span>Cupón</span>
                           <input type="text" rv-value="form.coupon.value" />
                       </div>
 
@@ -105,10 +105,10 @@
 
   <div class="container mt-80 mb-100">
       <div class="row">
-          <h3 class="heading text-center">Related <span class="color2">Courses</span></h3>
+          <h3 class="heading text-center">Cursos <span class="color2">Relacionados</span></h3>
           <div class="col-sm-4">
               <div class="course-card">
-                  <img src="images/course-grid-1.jpg" class="img-responsive course-img" alt="">
+                  <img src="{% static 'images/course-list-1.jpg'%}" class="img-responsive" alt="">
                   <a href="course-detail.html" class="course-link"><i class="fa fa-link" aria-hidden="true"></i></a>
                   <div class="course-detail">
                       <h4 class="heading">Diploma in Marketing</h4>

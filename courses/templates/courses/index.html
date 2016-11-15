@@ -4,10 +4,10 @@
 {% block head_css %}
 {% endblock %}
 
-{% block page_header %}Course List{% endblock %}
+{% block page_header %}Lista de Cursos{% endblock %}
 
 {% block breadcrumbs %}
-    <li class="active">Courses</li>
+    <li class="active">Cursos</li>
 {% endblock %}
 
 {% block content %}
@@ -20,7 +20,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <input type="text" id="query" name="query" class="form-control">
-                            <label for="query">Enter Keywords...</label>
+                            <label for="query">Busqueda...</label>
                         </div>
                     </div>
 
@@ -31,13 +31,13 @@
                                 <option value="{{ category.id }}">{{ category.name }}</option>
                             {% endfor %}
                             </select>
-                            <label for="categories">Categories</label>
+                            <label for="categories">Categorías</label>
                         </div>
                     </div>
 
                     <div class="col-md-3">
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block" rv-class-active="form.submitting"><i class="fa fa-search"></i> Search</button>
+                            <button type="submit" class="btn btn-primary btn-block" rv-class-active="form.submitting"><i class="fa fa-search"></i> Buscar</button>
                         </div>
                     </div>
                 </form>
@@ -57,10 +57,10 @@
                         <h4 class="heading">{ course.name }</h4>
                         <ul class="course-features">
                             <li><i class="fa fa-book"></i> { course.category.name }</li>
-                            <li><i class="fa fa-clock-o"></i> { course.duration } weeks</li>
+                            <li><i class="fa fa-clock-o"></i> { course.duration } semanas</li>
                         </ul>
                         <p class="brief" rv-text="course.description"></p>
-                        <a rv-href="course.slug | decorate '/courses/{0}'" class="btn btn-primary btn-sm">View Details</a>
+                        <a rv-href="course.slug | decorate '/courses/{0}'" class="btn btn-primary btn-sm">Ver Detalles</a>
                     </div>
                 </div>
 
@@ -92,57 +92,6 @@
                         <p class="inverse font24">Join the best people in industry.</p><br/>
                         <a href="admission-process.html" class="btn btn-default">Apply Now</a>
                     </div>
-                </aside>
-                <aside class="widget twitter-widget">
-                    <h5 class="heading">Twitter Feed</h5>
-                    <ul class="tweet-list">
-                        <li>We've done it again. Educomp wins <a href="">#SirEdward</a> award yet again! Kudos to all Educomp family!</li>
-                    </ul>
-                </aside>
-                <aside class="widget category-widget">
-                    <h5 class="heading">Categories</h5>
-                    <ul class="categories">
-                        <li><a href="#">Personality Development</a></li>
-                        <li><a href="#">Techonology</a></li>
-                        <li><a href="#">Life Teachings</a></li>
-                        <li><a href="#">Stress Management</a></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="#">Techonology</a></li>
-                        <li><a href="#">Life Teachings</a></li>
-                    </ul>
-                </aside>
-                <aside class="widget tagcloud-widget">
-                    <h5 class="heading">Trending Tags</h5>
-                    <ul class="tagcloud">
-                        <li><a href="#">Maths</a></li>
-                        <li><a href="#">Science</a></li>
-                        <li><a href="#">Course</a></li>
-                        <li><a href="#">Study</a></li>
-                        <li><a href="#">Bachelors</a></li>
-                        <li><a href="#">Best</a></li>
-                        <li><a href="#">Technology</a></li>
-                        <li><a href="#">Life</a></li>
-                        <li><a href="#">Fun</a></li>
-                        <li><a href="#">Maths</a></li>
-                        <li><a href="#">Study</a></li>
-                    </ul>
-                </aside>
-                <aside class="widget blog-widget">
-                    <h5 class="heading">Recent Blog</h5>
-                    <ul class="blog-thumbnail">
-                        <li class="entry">
-                            <div class="entry-content">
-                                <h4 class="entry-header"><a href="blog-single.html">What it takes to be National Best</a></h4>
-                                <p class="entry-text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings.</p>
-                            </div>
-                        </li>
-                        <li class="entry">
-                            <div class="entry-content">
-                                <h4 class="entry-header"><a href="blog-single.html">What it takes to be National Best</a></h4>
-                                <p class="entry-text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings.</p>
-                            </div>
-                        </li>
-                    </ul>
                 </aside>
             </div>
         </div>
