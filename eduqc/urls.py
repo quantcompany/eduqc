@@ -17,6 +17,7 @@ from django.conf import settings
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.views.generic.base import RedirectView
 
 from index.views import index, contact
 
@@ -29,4 +30,5 @@ urlpatterns = [
     url(r'^payments/', include('payments.urls', namespace='payments')),
     url(r'^users/', include('users.urls', namespace='users')),
     url(r'^users/password/', include('password_reset.urls')),
+    url(r'^favicon.ico$', RedirectView.as_view(url='/static/images/favicon.ico', permanent=True))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
