@@ -36,7 +36,8 @@ def create_payment(request, transaction):
 
 
 def execute_payment(request, payment_id, payer_id, enrollment_id):
-    url = 'https://api.sandbox.paypal.com/v1/payments/payment/{0}/execute/'.format(payment_id)
+    # url = 'https://api.sandbox.paypal.com/v1/payments/payment/{0}/execute/'.format(payment_id)
+    url = 'https://api.paypal.com/v1/payments/payment/{0}/execute/'.format(payment_id)
 
     headers = {
         # 'PayPal-Request-Id': str(enrollment_id),
