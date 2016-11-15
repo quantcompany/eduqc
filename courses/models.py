@@ -1,6 +1,15 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 
+########################################################
+from django.utils.translation import ugettext_lazy as _
+# esta funcion (ugettext_lazy) se usa para marcar traducciones en los models.
+# se importa aqui con el alias "_" (un guion bajo) para que se pueda usar sin
+# tener que escribir el nombre completo. Entonces, en lugar de esto:
+# ugettext_lazy('Courses')
+# se puede escribir esto:
+# _('Courses')
+
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
@@ -9,8 +18,8 @@ class Category(models.Model):
 
     class Meta:
         ordering = ['name']
-        verbose_name = 'category'
-        verbose_name_plural = 'categories'
+        verbose_name = _('category')
+        verbose_name_plural = _('categories')
 
     def __str__(self):
         return self.name
@@ -24,7 +33,11 @@ class Category(models.Model):
 
 
 class Course(models.Model):
-    LEVEL_CHOICES = [(1, 'Beginner'), (2, 'Intermediate'), (3, 'Advanced')]
+    LEVEL_CHOICES = [
+        (1, _('Beginner')),
+        (2, _('Intermediate')),
+        (3, _('Advanced'))
+    ]
 
     name = models.CharField(max_length=300)
     description = models.TextField()
@@ -40,8 +53,8 @@ class Course(models.Model):
 
     class Meta:
         ordering = ['name']
-        verbose_name = 'course'
-        verbose_name_plural = 'courses'
+        verbose_name = _('course')
+        verbose_name_plural = _('courses')
 
     def __str__(self):
         return self.name
@@ -74,11 +87,11 @@ class Course(models.Model):
 
 class Enrollment(models.Model):
     STATUS_CHOICES = [
-        ('pending', 'Pending'),
-        ('active', 'Active'),
-        ('cancelled', 'Cancelled'),
-        ('finished', 'Finished'),
-        ('refunded', 'Refunded'),
+        ('pending', _('Pending')),
+        ('active', _('Active')),
+        ('cancelled', _('Cancelled')),
+        ('finished', _('Finished')),
+        ('refunded', _('Refunded')),
     ]
 
     course = models.ForeignKey('courses.Course', related_name='enrollments')
@@ -91,6 +104,8 @@ class Enrollment(models.Model):
 
     class Meta:
         ordering = ['-enrollment_date']
+        verbose_name = _('enrollment')
+        verbose_name_plural = _('enrollments')
 
     def __str__(self):
         return '{} ({}) - {}'.format(self.course, self.student, self.enrollment_date)
@@ -101,6 +116,10 @@ class FAQ(models.Model):
     answer = models.TextField()
     course = models.ForeignKey('courses.Course', related_name='faqs')
 
+    class Meta:
+        verbose_name = _('FAQs')
+        verbose_name_plural = _('FAQs')
+
 
 class Review(models.Model):
     text = models.TextField()
@@ -108,3 +127,7 @@ class Review(models.Model):
     course = models.ForeignKey('courses.Course', related_name='reviews')
     user = models.ForeignKey('users.Student', related_name='reviews')
     created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = _('review')
+        verbose_name_plural = _('reviews')

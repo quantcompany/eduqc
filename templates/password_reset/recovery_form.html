@@ -6,11 +6,16 @@
 {% block content %}
 <div class="container mt-60 mb-60">
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-4 col-sm-offset-4">
             <form method="post" action="{{ url }}">
 							{% csrf_token %}
-							{{ form.as_p }}
-							<p><input type="submit" value="{% trans "Recover my password" %}"></p>
+              <div class="form-group {% if form.username_or_email.errors %}has-error{% endif %}">
+                  <input class="form-control" type="text" id="id_username_or_email" name="username_or_email" placeholder="Correo Electronico" value="{{ form.username_or_email.value|default:'' }}"/>
+                  <label class="control-label"><small>{{ form.username_or_email.errors.0|default:"&nbsp" }}</small></label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block mt-20">{% trans "Recover my password" %}</button>
+
 						</form>
         </div>
     </div>

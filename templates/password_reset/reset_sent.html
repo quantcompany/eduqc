@@ -6,8 +6,8 @@
 {% block content %}
 <div class="container mt-60 mb-60">
     <div class="row">
-        <div class="col-sm-12">
-            <p>{% blocktrans with ago=timestamp|timesince %}An email was sent to <strong>{{ email }}</strong> {{ ago }} ago. Use the link in it to set a new password.{% endblocktrans %}</p>
+        <div class="col-sm-6 col-sm-offset-3">
+            <p style="text-align:center;">{% blocktrans with ago=timestamp|timesince %}An email was sent to <strong>{{ email }}</strong> {{ ago }} ago. Use the link in it to set a new password.{% endblocktrans %}</p>
         </div>
     </div>
 </div>

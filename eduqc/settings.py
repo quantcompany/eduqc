@@ -154,9 +154,6 @@ AUTH_USER_MODEL = 'users.User'
 # We redirect to the root url because our landing page is also our login page
 LOGIN_URL = '/'
 
-# Print emails to terminal instead of trying to actually send them:
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 DATE_INPUT_FORMATS = ('%d/%m/%Y',)
 
 EMAIL_USE_TLS = True
