@@ -92,16 +92,16 @@
                              <div class="row" style="height:100%">
                                  <div class="col-md-5 pull-right bginverse pt-20 pb-20" style="height:100%">
                                    <ul class="nav nav-tabs" role="tablist">
-                                     <li role="presentation" ><a href=".signin-container" aria-controls="signin-container" role="tab" data-toggle="tab"> Ingresar</a></li>
-                                     <li role="presentation" class="active"><a href=".signup-container" aria-controls="signup-container" role="tab" data-toggle="tab"> Registrarse</a></li>
+                                     <li role="presentation" class="active"><a href=".signin-container" aria-controls="signin-container" role="tab" data-toggle="tab"> Ingresar</a></li>
+                                     <li role="presentation" ><a href=".signup-container" aria-controls="signup-container" role="tab" data-toggle="tab"> Registrarse</a></li>
                                    </ul>
 
                                    <div class="tab-content">
-                                     <div role="tabpanel" class="signin-container tab-pane fade ">
+                                     <div role="tabpanel" class="signin-container tab-pane fade in active">
                                        {% include 'users/includes/signin.html' %}
                                      </div>
 
-                                     <div role="tabpanel" class="signup-container tab-pane fade in active">
+                                     <div role="tabpanel" class="signup-container tab-pane fade">
                                        {% include 'users/includes/signup.html' %}
                                      </div>
                                    </div>
@@ -128,7 +128,7 @@
 
         <!--Jasny bootstrap-->
         <script src="{% static 'js/jasny-bootstrap.min.js' %}" type="text/javascript"></script>
-        
+
         <!--Intercooler JS-->
         <script src="{% static 'js/intercooler.min.js' %}" type="text/javascript"></script>
 

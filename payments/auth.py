@@ -11,7 +11,9 @@ environ.Env.read_env()
 # AUTH = 'Basic ' + base64(CLIENT_ID:SECRET)
 
 def get_token():
-    url = 'https://api.sandbox.paypal.com/v1/oauth2/token'
+    # url = 'https://api.sandbox.paypal.com/v1/oauth2/token'
+    url = 'https://api.paypal.com/v1/oauth2/token'
+
     paypal_authorization = env('PAYPAL_AUTHORIZATION')
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded',

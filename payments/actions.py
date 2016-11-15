@@ -10,7 +10,8 @@ from payments.auth import get_token
 
 
 def create_payment(request, transaction):
-    url = 'https://api.sandbox.paypal.com/v1/payments/payment'
+    # url = 'https://api.sandbox.paypal.com/v1/payments/payment'
+    url = 'https://api.paypal.com/v1/payments/payment'
 
     headers = {
         'Content-Type': 'application/json',
