@@ -145,6 +145,22 @@
         <!--Custom Page-Level scripts-->
         {% block tail_js %}{% endblock %}
 
+        <!--Language choices-->
+        <script type="text/javascript">
+          $('.language-choice').on('click', function(e){
+            e.preventDefault();
+            var code = $(this).data('language-code');
+            $('input[name="language"]').val(code);
+
+            var next = $('input[name="next"]').val();
+            if (code === 'es') {
+              next = next.replace('/en/', '/');
+            }
+            $('input[name="next"]').val(next);
+
+            $('#set-language-form').submit();
+          });
+        </script>
         <!--Educomp Custom Script-->
         <script src="{% static 'js/main.js' %}" type="text/javascript"></script>
     </body>

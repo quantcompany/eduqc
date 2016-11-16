@@ -1,4 +1,8 @@
 {% load static %}
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
 
 <nav class="navbar navbar-default font16">         <!-- Navigation Bar -->
     <div class="container">
@@ -11,14 +15,23 @@
         </div>
 
         <div class="collapse navbar-collapse" id="main-navigation">         <!-- Main Menu -->
+          <form id="set-language-form" method="POST" action="{% url 'set_language' %}">
+            {% csrf_token %}
+            <input type="hidden" name="language" value="{{ LANGUAGE_CODE }}"/>
+            <input type="hidden" name="next" value="{{ request.get_full_path }}" />
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{% url 'index' %}">Inicio</a></li>
                 <li><a href="{% url 'courses:index' %}">Cursos</a>
                 <li><a href="{% url 'contact' %}">Contacto</a></li>
                 <li><a href="#">Idioma/Language</a>
                     <ul class="sub-menu">
-                        <li><a href="#"> Español <i class="fa fa-check pull-right"></i></a></li>
-                        <li><a href="#"> English</a></li>
+                        {% if LANGUAGE_CODE == 'es' %}
+                        <li><a class="language-choice" data-language-code="es" href="#"> Español <i class="fa fa-check pull-right"></i></a></li>
+                        <li><a class="language-choice" data-language-code="en" href="#"> English</a></li>
+                        {% else %}
+                        <li><a class="language-choice" data-language-code="es" href="#"> Español</a></li>
+                        <li><a class="language-choice" data-language-code="en" href="#"> English <i class="fa fa-check pull-right"></i></a></li>
+                        {% endif %}
                     </ul>
                 </li>
                 {% if user.is_authenticated %}
@@ -32,6 +45,7 @@
                 <li><a href="#" data-toggle="modal" data-target="#signin-modal"><i class="fa fa-user" aria-hidden="true"></i> Ingresar</a></li>
                 {% endif %}
             </ul>
+          </form>
         </div>
     </div>
 </nav>

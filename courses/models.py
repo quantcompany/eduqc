@@ -34,7 +34,7 @@ class Category(models.Model):
 
 class Course(models.Model):
     LEVEL_CHOICES = [
-        (1, _('Beginner')),
+        (1, _('Principiante')),
         (2, _('Intermediate')),
         (3, _('Advanced'))
     ]
