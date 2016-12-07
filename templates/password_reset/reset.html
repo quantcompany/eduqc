@@ -3,15 +3,24 @@
 {% block content %}
 <div class="container mt-60 mb-60">
 		<div class="row">
-				<div class="col-sm-12">
+				<div class="col-sm-4 col-sm-offset-4">
 					{% if invalid %}{% url "password_reset_recover" as recovery_url %}
-					<p>{% blocktrans %}Sorry, this password reset link is invalid. You can still <a href="{{ recovery_url }}">request a new one</a>.{% endblocktrans %}</p>
+					<p stlye="text-align:center;">{% blocktrans %}Sorry, this password reset link is invalid. You can still <a href="{{ recovery_url }}">request a new one</a>.{% endblocktrans %}</p>
 					{% else %}
-					<p>{% blocktrans %}Hi, <strong>{{ username }}</strong>. Please choose your new password.{% endblocktrans %}</p>
+					<p stlye="text-align:center;">{% blocktrans %}Hi, <strong>{{ username }}</strong>. Please choose your new password.{% endblocktrans %}</p>
 					<form method="post" action="{% url "password_reset_reset" token %}">
 						{% csrf_token %}
-						{{ form.as_p }}
-						<p><input type="submit" value="{% trans "Set new password" %}"></p>
+						<div class="form-group {% if form.password1.errors %}has-error{% endif %}" style="margin-top:0px;margin-bottom:0px;">
+								<input class="form-control" type="password" id="id_password1" name="password1" placeholder="Nueva clave" value="" />
+								<label class="control-label"><small>{{ form.password1.errors.0|default:" " }}</small></label>
+						</div>
+
+						<div class="form-group {% if form.password2.errors %}has-error{% endif %}" style="margin-top:0px;margin-bottom:0px;">
+								<input class="form-control" type="password" id="id_password2" name="password2" placeholder="Repetir clave" value="" />
+								<label class="control-label"><small>{{ form.password2.errors.0|default:" " }}</small></label>
+						</div>
+
+						<button type="submit" class="btn btn-primary btn-block mt-20">{% trans "Set new password" %}</button>
 					</form>
 					{% endif %}
 				</div>

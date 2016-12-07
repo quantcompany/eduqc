@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-16 07:53-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\courses\models.py:21
+msgid "category"
+msgstr ""
+
+#: .\courses\models.py:22
+msgid "categories"
+msgstr ""
+
+#: .\courses\models.py:37
+msgid "Principiante"
+msgstr "Beginner"
+
+#: .\courses\models.py:38
+msgid "Intermediate"
+msgstr ""
+
+#: .\courses\models.py:39
+msgid "Advanced"
+msgstr ""
+
+#: .\courses\models.py:56
+msgid "course"
+msgstr ""
+
+#: .\courses\models.py:57
+msgid "courses"
+msgstr ""
+
+#: .\courses\models.py:90
+msgid "Pending"
+msgstr ""
+
+#: .\courses\models.py:91
+msgid "Active"
+msgstr ""
+
+#: .\courses\models.py:92
+msgid "Cancelled"
+msgstr ""
+
+#: .\courses\models.py:93
+msgid "Finished"
+msgstr ""
+
+#: .\courses\models.py:94
+msgid "Refunded"
+msgstr ""
+
+#: .\courses\models.py:107
+msgid "enrollment"
+msgstr ""
+
+#: .\courses\models.py:108
+msgid "enrollments"
+msgstr ""
+
+#: .\courses\models.py:120 .\courses\models.py:121
+msgid "FAQs"
+msgstr ""
+
+#: .\courses\models.py:132
+msgid "review"
+msgstr ""
+
+#: .\courses\models.py:133
+msgid "reviews"
+msgstr ""
+
+#: .\emails\templates\emails\verification.html:3
+msgid "Dear"
+msgstr ""
+
+#: .\emails\templates\emails\verification.html:5
+msgid "Please click on the following link to activate your account:"
+msgstr ""
+
+#: .\index\templates\index\index.html:94
+msgid "Ciencia de Datos"
+msgstr "Data Science"
+
+#: .\index\templates\index\index.html:115
+msgid "CURSOS"
+msgstr "COURSES"
+
+#: .\templates\password_reset\recovery_done.html:3
+msgid "New password set"
+msgstr ""
+
+#: .\templates\password_reset\recovery_done.html:9
+msgid ""
+"Your password has successfully been reset. You can use it right now on the "
+"login page."
+msgstr ""
+
+#: .\templates\password_reset\recovery_email.txt:1
+#, python-format
+msgid "Dear %(username)s,"
+msgstr ""
+
+#: .\templates\password_reset\recovery_email.txt:3
+#, python-format
+msgid ""
+"You -- or someone pretending to be you -- has requested a password reset on "
+"%(domain)s."
+msgstr ""
+
+#: .\templates\password_reset\recovery_email.txt:5
+msgid "You can set your new password by following this link:"
+msgstr ""
+
+#: .\templates\password_reset\recovery_email.txt:9
+msgid ""
+"If you don't want to reset your password, simply ignore this email and it "
+"will stay unchanged."
+msgstr ""
+
+#: .\templates\password_reset\recovery_email_subject.txt:1
+#, python-format
+msgid "Password recovery on %(domain)s"
+msgstr ""
+
+#: .\templates\password_reset\recovery_form.html:4
+msgid "Password recovery"
+msgstr ""
+
+#: .\templates\password_reset\recovery_form.html:17
+msgid "Recover my password"
+msgstr ""
+
+#: .\templates\password_reset\reset.html:8
+#, python-format
+msgid ""
+"Sorry, this password reset link is invalid. You can still <a href="
+"\"%(recovery_url)s\">request a new one</a>."
+msgstr ""
+
+#: .\templates\password_reset\reset.html:10
+#, python-format
+msgid "Hi, <strong>%(username)s</strong>. Please choose your new password."
+msgstr ""
+
+#: .\templates\password_reset\reset.html:23
+msgid "Set new password"
+msgstr ""
+
+#: .\templates\password_reset\reset_sent.html:4
+msgid "Password recovery sent"
+msgstr ""
+
+#: .\templates\password_reset\reset_sent.html:10
+#, python-format
+msgid ""
+"An email was sent to <strong>%(email)s</strong> %(ago)s ago. Use the link in "
+"it to set a new password."
+msgstr ""

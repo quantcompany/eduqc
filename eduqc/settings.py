@@ -27,9 +27,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['edu.quantcompany.com', '198.199.111.154']
 
 
 # Application definition
@@ -61,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'eduqc.urls'
@@ -153,9 +154,6 @@ AUTH_USER_MODEL = 'users.User'
 # Where to redirect when an anonymous user tries to access a login_required page
 # We redirect to the root url because our landing page is also our login page
 LOGIN_URL = '/'
-
-# Print emails to terminal instead of trying to actually send them:
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 DATE_INPUT_FORMATS = ('%d/%m/%Y',)
 

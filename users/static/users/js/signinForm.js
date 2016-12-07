@@ -43,7 +43,11 @@ $('.signin-form').on('submit', function(e){
         console.log('Success\n' + jqXHR.responseText);
         signinForm.submitting = false;
         signinForm.done = true;
-        window.location.href = '/users/me';
+        if (window.location.pathname.indexOf('courses') >= 0) {
+          window.location.reload();
+        } else {
+          window.location.href = '/users/me';
+        }
     });
 
     request.fail(function(jqXHR, textStatus, errorThrown) {

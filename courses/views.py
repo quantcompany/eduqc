@@ -6,6 +6,8 @@ from django.core.paginator import Paginator
 from django.http import JsonResponse, HttpResponse, HttpResponseRedirect, HttpResponseServerError
 from django.shortcuts import render, get_object_or_404
 
+from django.utils.translation import ugettext as _
+
 from .forms import CourseFilterForm
 from .models import Course, Category
 

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block head_css %}
     <!--Slider Revolution -->
@@ -90,7 +91,7 @@
                         data-splitin="none"
                         data-splitout="none"
                         data-responsive_offset="on"
-                        style="z-index: 7; min-width: 600px; max-width: 600px; white-space: normal; text-shadow:0px 2px 2px #000; text-transform:capitalize; font-weight:600; text-align:right; font-family: 'Montserrat', sans-serif;">Ciencia de Datos
+                        style="z-index: 7; min-width: 600px; max-width: 600px; white-space: normal; text-shadow:0px 2px 2px #000; text-transform:capitalize; font-weight:600; text-align:right; font-family: 'Montserrat', sans-serif;">{% trans 'Ciencia de Datos' %}
                     </div>
 
                     <!-- Button -->
@@ -111,7 +112,7 @@
                         data-splitout="none"
                         data-responsive_offset="on"
                         data-responsive="off"
-                        style="z-index: 8;font-size:30px;">CURSOS
+                        style="z-index: 8;font-size:30px;">{% trans 'CURSOS' %}
                     </a>
                 </li>
 
@@ -582,6 +583,6 @@
     <script src="{% static 'js/parallax.js' %}" type="text/javascript"></script>
 
     <script type="text/javascript">
-    
+
     </script>
 {% endblock %}
