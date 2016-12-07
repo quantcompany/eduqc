@@ -47,7 +47,7 @@
                           </form>
                       </div>
                   </div>
-                  <p>{{ course.description }}</p>
+                  <p>{{ course.description|markdown }}</p>
               </div>
           </div>
       </div>
@@ -85,14 +85,14 @@
 
       <div class="row mt-60">
           <div class="col-sm-12">
-              <h3>Topics</h3>
+              <h3>Temas</h3>
               <p>{{ course.topics|markdown }}<p>
           </div>
       </div>
 
       <div class="row mt-60">
           <div class="col-sm-12">
-              <h3>Audience</h3>
+              <h3>Público Objetivo</h3>
               <p>{{ course.audience|markdown }}</p>
           </div>
       </div>
@@ -105,49 +105,8 @@
 
   <div class="container mt-80 mb-100">
       <div class="row">
-          <h3 class="heading text-center">Cursos <span class="color2">Relacionados</span></h3>
-          <div class="col-sm-4">
-              <div class="course-card">
-                  <img src="{% static 'images/course-list-1.jpg'%}" class="img-responsive" alt="">
-                  <a href="course-detail.html" class="course-link"><i class="fa fa-link" aria-hidden="true"></i></a>
-                  <div class="course-detail">
-                      <h4 class="heading">Diploma in Marketing</h4>
-                      <span class="brief">In this course, you learn the basics of Marketing techniques.</span>
-                      <ul class="course-features">
-                          <li><i class="fa fa-map-marker"></i> London</li>
-                          <li><i class="fa fa-clock-o"></i> 1 year</li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-          <div class="col-sm-4">
-              <div class="course-card">
-                  <img src="images/course-grid-2.jpg" class="img-responsive course-img" alt="">
-                  <a href="course-detail.html" class="course-link"><i class="fa fa-link" aria-hidden="true"></i></a>
-                  <div class="course-detail">
-                      <h4 class="heading">Bachelors in Marketing</h4>
-                      <span class="brief">In this course, you learn the basics of Marketing techniques.</span>
-                      <ul class="course-features">
-                          <li><i class="fa fa-map-marker"></i> Paris</li>
-                          <li><i class="fa fa-clock-o"></i> 3 year</li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-          <div class="col-sm-4">
-              <div class="course-card">
-                  <img src="images/course-grid-3.jpg" class="img-responsive course-img" alt="">
-                  <a href="course-detail.html" class="course-link"><i class="fa fa-link" aria-hidden="true"></i></a>
-                  <div class="course-detail">
-                      <h4 class="heading">Masters in Marketing</h4>
-                      <span class="brief">In this course, you learn the basics of Marketing techniques.</span>
-                      <ul class="course-features">
-                          <li><i class="fa fa-map-marker"></i> California</li>
-                          <li><i class="fa fa-clock-o"></i> 2 year</li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
+          <h3 class="heading text-center">¿Dudas o <span class="color2">preguntas?</span></h3>
+          <p>Si tienes alguna pregunta o deseas mas información sobre este curso, por favor <a href="{% url 'contact' %}">contáctanos</a> con mucho gusto te ayudaremos!</p>
       </div>
   </div>
 {% endblock %}
