@@ -7,14 +7,21 @@ class CourseAdmin(admin.ModelAdmin):
     fields = [
         'name',
         'slug',
+        'subtitle',
         'description',
+        'extended_description',
         'duration',
         'category',
         'monthly_price',
         'main_image',
+        'details_document',
         'level',
         'topics',
         'audience',
+        'classes',
+        'mentorship_sessions',
+        'materials',
+        'projects',
         'private_text',
     ]
 

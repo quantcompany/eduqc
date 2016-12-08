@@ -50,7 +50,7 @@ def course_filter(request):
 
         if sq is not None:
             sv = SearchVector('name', 'description')
-            courses = courses.annotate(rank=SearchRank(sv, sq)).order_by('-rank')
+            courses = courses.annotate(rank=SearchRank(sv, sq)).order_by('rank')
 
     paginator = Paginator(courses, settings.COURSES_PER_PAGE)
 

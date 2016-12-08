@@ -40,16 +40,24 @@ class Course(models.Model):
     ]
 
     name = models.CharField(max_length=300)
+    subtitle = models.CharField(max_length=500)
     description = models.TextField()
+    extended_description = models.TextField()
     duration = models.IntegerField()  # in weeks
     category = models.ForeignKey('courses.Category', related_name='courses')
     monthly_price = models.DecimalField(max_digits=6, decimal_places=2)
     slug = models.SlugField(max_length=100, unique=True)
     main_image = models.ImageField(upload_to='courses/images')
+    details_document = models.FileField(upload_to='courses/pdf')
     level = models.IntegerField(choices=LEVEL_CHOICES)
     topics = models.TextField()
     audience = models.TextField()
     private_text = models.TextField()
+    classes = models.IntegerField()
+    mentorship_sessions = models.IntegerField()
+    materials = models.TextField()
+    projects = models.TextField()
+
 
     class Meta:
         ordering = ['name']
