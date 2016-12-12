@@ -57,6 +57,7 @@ class Course(models.Model):
     mentorship_sessions = models.IntegerField()
     materials = models.TextField()
     projects = models.TextField()
+    next_session = models.TextField()
 
 
     class Meta:

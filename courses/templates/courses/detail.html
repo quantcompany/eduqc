@@ -96,7 +96,7 @@
                             <img src="{% static 'images/icons/personal.png' %}" />
                         </div>
                         <div class="icon-box-content">
-                            <h5 class="heading">{{ course.mentorship_sessions}} Sesiones 1 a 1</h5>
+                            <h5 class="heading">{{ course.mentorship_sessions}} Sesiones de mentoría individual</h5>
                             <span>Tendrás una sesión semanal de mentoría privada de 30 min. para recibir ayuda en los temas que se te dificulten o profundizar en aquellos que te interesen.</span>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                         </div>
                         <div class="icon-box-content">
                             <h5 class="heading">Los mejores materiales</h5>
-                            <span>{{course.materials|markdown}}</span>
+                            <span>{{course.materials}}</span>
                         </div>
                     </div>
                 </div>
@@ -145,14 +145,16 @@
       <div class="row mt-60">
           <div class="col-sm-12">
               <h3>Público Objetivo</h3>
-              <p>{{ course.audience|markdown }}</p>
+                <p>{{ course.audience|markdown }}</p>
               <h3>Resumen de temas</h3>
-              <p>{{ course.topics|markdown }}<p>
+                <p>{{ course.topics|markdown }}<p>
+              <h3>Próxima sesión</h3>
+                <p>{{ course.next_session|markdown }}</p>
           </div>
       </div>
 
     <div>
-        <h4 class="heading text-center"><a href="{{ course.details_document.url }}" target="_blank">Consulta aquí detalles del curso, horarios y próximas sesiones</a></h4>
+        <h4 class="heading text-center"><a href="{{ course.details_document.url }}" target="_blank">Consulta aquí más detalles sobre el curso</a></h4>
     </div>
     <div class="cta-light-full cta-anim">
         <div class="container">
@@ -166,8 +168,6 @@
             </div>
         </div>
     </div>
-
-
 
       {% block private %}
       {% endblock %}

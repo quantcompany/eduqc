@@ -22,6 +22,7 @@ class CourseAdmin(admin.ModelAdmin):
         'mentorship_sessions',
         'materials',
         'projects',
+        'next_session',
         'private_text',
     ]
 
