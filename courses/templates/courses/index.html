@@ -47,7 +47,7 @@
 
     <div class="container mt-20 mb-60">
         <div class="row">
-            <div id="course-search-results" class="col-sm-8">
+            <div id="course-search-results">
 
                 <div class="course-list new" rv-each-course="results.current_page | call results.current_page_index results.pages">
                     <div class="course-media">
@@ -55,7 +55,7 @@
                     </div>
                     <div class="course-detail">
                         <h4 class="heading">{ course.name }</h4>
-                        <h5>{ course.subtitle }</h5>
+                            <h6>{ course.subtitle }</h6>
                         <ul class="course-features">
                             <li><i class="fa fa-book"></i> { course.category.name }</li>
                             <li><i class="fa fa-clock-o"></i> { course.duration } semanas</li>
@@ -85,15 +85,6 @@
                         </li>
                     </ul>
                 </nav>
-            </div>
-
-            <div class="col-sm-4">                  <!-- sidebar -->
-                <aside class="widget download-widget text-center">
-                    <div class="download-info">
-                        <p class="inverse font24">Join the best people in industry.</p><br/>
-                        <a href="admission-process.html" class="btn btn-default">Apply Now</a>
-                    </div>
-                </aside>
             </div>
         </div>
     </div>

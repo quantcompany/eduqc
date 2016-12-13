@@ -8,6 +8,7 @@ class CourseAdmin(admin.ModelAdmin):
         'name',
         'slug',
         'subtitle',
+        'order',
         'description',
         'extended_description',
         'duration',

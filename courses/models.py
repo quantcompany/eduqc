@@ -58,6 +58,7 @@ class Course(models.Model):
     materials = models.TextField()
     projects = models.TextField()
     next_session = models.TextField()
+    order = models.IntegerField() # Order used to order the courses 1 = first
 
 
     class Meta:
@@ -72,6 +73,7 @@ class Course(models.Model):
         return {
             'id': self.id,
             'name': self.name,
+            'subtitle': self.subtitle,
             'slug': self.slug,
             'description': self.description,
             'duration': self.duration,
