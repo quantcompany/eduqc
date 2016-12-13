@@ -32,7 +32,11 @@
                     data-description="Nurturing the most awesome minds.">
 
                     <!-- MAIN IMAGE -->
-                    <img src="{% static 'images/front02_01.jpg' %}" data-lazyload="{% static 'images/front02_01.jpg' %}" alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <img src="{% static 'images/front02_01.jpg' %}" data-lazyload="{% static 'images/front02_01.jpg' %}"
+                         alt=""  data-bgposition="center center" data-bgfit="cover"
+                         data-hoffset="['-100','-100','-100','-100']"
+                         data-voffset="['500','500','0','0']"
+                         data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                     <!-- Overlay-->
                     <div class="tp-caption tp-shape tp-shapewrapper   tp-resizeme rs-parallaxlevel-0"
                         id="slide-1-overlay"
@@ -53,12 +57,13 @@
                     <!-- Small Text -->
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-0 color1"
                         id="slide-1-small-text"
-                        data-x="['right','right','right','right']" data-hoffset="['50','50','50','30']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['-120','-120','-120','-120']"
-                        data-width="none"
-                        data-fontsize="['26', '26', '26', '16']"
-                        data-height="28"
-                        data-whitespace="nowrap"
+                        data-x="['left','left','left','left']" data-hoffset="['675','675','675','675']"
+                        data-y="['center','center','center','center']" data-voffset="['-110','-110','-110','-110']"
+                        data-fontsize="['38', '38', '25', '25']"
+                        data-lineheight="['50', '50', '50', '50']"
+                        data-width="['550', '550', '550', '550']"
+                        data-height="['auto', 'auto', 'auto', 'auto']"
+                        data-whitespace="['normal', 'normal', 'nowrap', 'normal']"
                         data-transform_idle="o:1;"
                         data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
                         data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
@@ -68,16 +73,16 @@
                         data-splitin="none"
                         data-splitout="none"
                         data-responsive_offset="on"
-                        style="z-index: 6; white-space: nowrap; font-weight:bold; font-family: 'Libre Baskerville', serif;">Aprende la habilidad más valiiosa y demandada de la actualidad
+                        style="z-index: 6; font-weight:bold; font-family: 'Libre Baskerville', serif;">Aprende la habilidad más valiosa y demandada de la actualidad
                     </div>
 
                     <!-- Main Text -->
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-0"
                         id="slide-1-main-text"
-                        data-x="['right','right','right','right']" data-hoffset="['50','50','50','30']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['-50','-50','-50','-50']"
-                        data-fontsize="['55','55','55','32']"
-                        data-lineheight="['55','55','55','35']"
+                        data-x="['right','right','right','right']" data-hoffset="['10','10','10','10']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                        data-fontsize="['60','60','60','60']"
+                        data-lineheight="['63','63','63','63']"
                         data-color="['#fff']"
                         data-width="['600','600','600','420']"
                         data-height="none"
@@ -98,7 +103,7 @@
                     <a  href="{% url 'courses:index' %}" class="tp-caption btn btn-primary btn-lg rs-parallaxlevel-0 hidden-xs"
                         id="slide-1-button"
                         data-x="['right','right','right','right']" data-hoffset="['53','53','53','30']"
-                        data-y="['middle','middle','middle','middle']" data-voffset="['50','50','50','50']"
+                        data-y="['middle','middle','middle','middle']" data-voffset="['100','100','100','100']"
                         data-width="none"
                         data-height="none"
                         data-whitespace="nowrap"
@@ -112,7 +117,7 @@
                         data-splitout="none"
                         data-responsive_offset="on"
                         data-responsive="off"
-                        style="z-index: 8;font-size:30px;">{% trans 'CURSOS' %}
+                        style="z-index: 8;font-size:30px;">{% trans 'VER CURSOS' %}
                     </a>
                 </li>
 
@@ -385,7 +390,7 @@
                                 <span class="head">
                                     <span class="count" data-from="0" data-to="20" data-speed="2000"></span>+ Materiales
                                 </span>
-                                <span class="foot"> de aprendizaje. Te damos acceso a los mejores libros, ejercicios, videos y artículos.</span>
+                                <span class="foot"> de aprendizaje por curso. Te damos acceso a los mejores libros, ejercicios, videos y artículos.</span>
                             </div>
                             <div class="fact col-sm-4">
                                 <span class="head">
