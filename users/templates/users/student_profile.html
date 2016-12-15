@@ -9,22 +9,25 @@
       {% endfor %}
     </ul>
   </h2>
+   <h4> {{ profile_user.fist_name }} {{ profile_user.last_name }} </h4>
 {% endblock %}
 
 {% block personal %}
   <div>
-      <span>Correo Electronico</span>
+      <span>Correo Electrónico</span>
       <span>{{ profile_user.email }}</span>
   </div>
 
   <div>
-      <span>Pais</span>
+      <span>País</span>
       {% if profile_user.country %}
       <span class="flag-icon flag-icon-{{ profile_user.country|lower }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ profile_user.country }}</span>
       {% else %}
       <span>---</span>
       {% endif %}
   </div>
+
+
 {% endblock %}
 
 {% block sessions %}
@@ -49,11 +52,12 @@
       {% endfor %}
     </div>
   {% else %}
-    <h2>Aun no te has inscrito en un <span class="color2">curso</span>!</h2>
+    <h2>Aun no estás inscrito en ninguno de nuestros <span class="color2"><a href="{% url 'courses' %}">cursos</a></span>!</h2>
   {% endif %}
 {% endblock %}
 
 {% block extra %}
-    <h3>Credenciales <span class="color2">WizIQ</span></h3>
+    <h3>Credenciales plataforma<span class="color2">clases virtuales</span>:</h3>
+    <p> Para recibir tus clases virtuales, debes ingresar a <a href="http://quantcompany.wiziq.com/SignIn">http://quantcompany.wiziq.com/SignIn</a> con las siguientes credenciales:<br>
     <p>{{ profile_user.wiziq_credentials|markdown }}<p>
 {% endblock %}

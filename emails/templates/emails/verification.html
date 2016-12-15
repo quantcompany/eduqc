@@ -1,7 +1,8 @@
 {% load i18n %}
 
-<h3>{% blocktrans %}Dear{% endblocktrans %} {{ verification.user.email }},</h3>
+<h3>{% blocktrans %}Hola! Bienvenido a Quant Company muchas gracias por crear tu cuenta con el correo: {% endblocktrans %} {{ verification.user.email }},</h3>
 
-<p>{% blocktrans%}Please click on the following link to activate your account:{% endblocktrans %}</p>
+<p>{% blocktrans%}Este es el primer paso para aprender todo lo relacionado con la Ciencia de Datos.{% endblocktrans %}</p>
+<p>{% blocktrans%}Por favor da clic en el siguiente link para verificar tu correo y activar tu cuenta.{% endblocktrans %}</p>
 
 <p>http{% if secure %}s{% endif %}://{{ site.domain }}{% url 'users:verify' verification.code %}</p>

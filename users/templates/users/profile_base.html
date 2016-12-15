@@ -4,10 +4,10 @@
 {% block head_css %}
 {% endblock %}
 
-{% block page_header %}Profile{% endblock %}
+{% block page_header %}{% blocktrans%}Perfil{% endblocktrans%}{% endblock %}
 
 {% block breadcrumbs %}
-    <li class="active">Profile</li>
+    <li class="active">{% blocktrans%}Perfil{% endblocktrans%}</li>
 {% endblock %}
 
 {% block content %}
@@ -44,16 +44,11 @@
                       {% endif %}
                     </p>
                 </div>
-                <div class="teacher-facts">
-                    <div class="fact col-sm-4">
-                        <span class="head"><span class="count" data-from="0" data-to="80" data-speed="3000">80</span>Average Score</span>
-                    </div>
-                    <div class="fact col-sm-4">
-                        <span class="head"><span class="count" data-from="0" data-to="94" data-speed="3000">94</span> Students Passed</span>
-                    </div>
-                    <div class="fact col-sm-4">
-                        <span class="head"><span class="count" data-from="0" data-to="20" data-speed="3000">20%</span> Scholar Students</span>
-                    </div>
+                <div>
+                    <h3> Descargas disponibles para nuestros usuarios: </h3>
+                        <ul>
+                            <li><h5><a href="https://drive.google.com/file/d/0B_m6-Vv4JZbRSjVUZTJpX21LSTA/view?usp=sharing" target="_blank">Introducción a la Ciencia de Datos</a></h5></li>
+                        </ul>
                 </div>
             </div>
         </div>

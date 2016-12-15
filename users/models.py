@@ -68,13 +68,10 @@ class User(AbstractEmailUser):
 
 
 class Student(User):
-    default_credentials = """<p>
-        Para recibir tus clases, debes ingresar a <a href="http://quantcompany.wiziq.com/">http://quantcompany.wiziq.com/</a> con las siguientes credenciales:
-        <br/>
-        Usuario: ########
-        Password: ########
-        <br/>
-        </p>"""
+    default_credentials = """
+        <b>Email</b>: ######## <br>
+        <b>Password</b>: ########
+        """
 
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
     wiziq_credentials = models.TextField(blank=True, default=default_credentials)
