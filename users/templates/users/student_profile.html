@@ -1,5 +1,5 @@
 {% extends 'users/profile_base.html' %}
-{% load i18n %}
+
 {% load django_markdown %}
 
 {% block intro %}
@@ -10,7 +10,7 @@
       {% endfor %}
     </ul>
   </h2>
-   <h4> {{ profile_user.fist_name }} {{ profile_user.last_name }} </h4>
+   <h3> {{ profile_user.first_name }} {{ profile_user.last_name }} </h3>
 {% endblock %}
 
 {% block personal %}
@@ -53,12 +53,12 @@
       {% endfor %}
     </div>
   {% else %}
-    <h2>Aun no estás inscrito en ninguno de nuestros <span class="color2"><a href="{% url 'courses' %}">cursos</a></span>!</h2>
+    <h2>Aun no estás inscrito en ninguno de nuestros <span class="color2"><a href="{% url 'courses:index' %}">cursos</a></span>!</h2>
   {% endif %}
 {% endblock %}
 
 {% block extra %}
-    <h3>Credenciales plataforma<span class="color2">clases virtuales</span>:</h3>
+    <h3>Credenciales para la plataforma de clases virtuales:</h3>
     <p> Para recibir tus clases virtuales, debes ingresar a <a href="http://quantcompany.wiziq.com/SignIn">http://quantcompany.wiziq.com/SignIn</a> con las siguientes credenciales:<br>
     <p>{{ profile_user.wiziq_credentials|markdown }}<p>
 {% endblock %}
